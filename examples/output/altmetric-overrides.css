@@ -1,0 +1,72 @@
+div.altmetric-embed > a {
+  text-indent: 0px;
+  float: right;
+  margin-left: 20px;
+  position: relative;
+  margin-bottom: .5em;
+}
+
+.google-scholar {
+	float: right;
+	position: relative;
+	margin-bottom: .5em;
+}
+
+.google-scholar img {
+	border: 1px solid lightgrey;
+	position: relative;
+	top: -1px;
+}
+
+.clear {
+	clear: right;
+}
+
+.metricbubble {
+   padding: .2em 1.2em .2em 1.2em;
+   height: 18px;
+   position: relative;
+   top: -.1em;
+   left: 35px;
+   border: 1px solid lightgrey;
+   font-family: arial;
+   font-size: .7em;
+   color: grey;
+   background-color: white;
+}
+
+.singlespace + dl dd p::before {
+	content: ':: ';
+}
+
+.singlespace + dl dd+dd {
+	margin-top: -1.5em;
+}
+
+.noheading + dl dt {
+	height: 0px;
+}
+
+a.externalLink {
+	content: url('external_link.png');    
+	height: .7em;
+}
+
+
+a.videoLink {
+	content: url('video_link.png');    
+	height: 1em;
+}
+
+a.slidesLink {
+	content: url('slides_link.png');    
+	height: .8em;
+}
+
+@media print {
+	a.externalLink,
+	a.videoLink,
+	a.slidesLink {
+		display: none;
+	}
+}

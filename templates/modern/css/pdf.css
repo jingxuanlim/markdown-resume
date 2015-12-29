@@ -24,6 +24,10 @@ body.pdf {
         display: none;
     }
 
+    a[href$='link'] {
+        display: none;
+    }    
+
     h1 {
         letter-spacing: 0;
         margin-top: 0;
@@ -87,24 +91,62 @@ body.pdf {
         border-top: none;
     }
 
+    ol li:nth-child(4):nth-last-child(5n+2) {
+        border-top: none;
+    }
+    ol li:nth-child(5):nth-last-child(5n+1) {
+        border-top: none;
+    }
+    ol li:nth-child(5n + 1):nth-last-child(5n + 5) {
+        width: 37%;
+        clear: left;
+        padding-right: 3%;
+    }
+    ol li:nth-child(5n + 2):nth-last-child(5n + 4) {
+        width: 15%;
+        clear: none;
+        padding-right: 2%;
+    }
+    ol li:nth-child(5n + 3):nth-last-child(5n + 3) {
+        width: 13%;
+        clear: none;
+        padding-right: 2%;
+    }
+    ol li:nth-child(5n + 4):nth-last-child(5n + 2) {
+        width: 8%;
+        clear: none;
+        text-align: right;
+        padding-right: 2%;
+    }
+    ol li:nth-child(5n):nth-last-child(5n + 1) {
+        width: 15%;
+        clear: right;
+        text-align: right;
+        font-weight: bold;
+    }
     dl {
         margin: .7em 0 0;
         page-break-inside: avoid !important;
         display: block;
-        width:79%;
+        width:69%;
         float: left;
         dt {}
         dd {
+            position: relative;
+            font-size: 100%;
         }
-        strong {
+/*        dd strong:last-of-type{
+            position: absolute;
+            top: 0px;
+            right: -14%;
+        }
+*/      dd strong:last-of-type {
             float: right;
-            margin-top: -2em;
+            display: block;
+            margin: .15em 0 .5em;
+            font-style: bold;
         }
-        em {
-            font-size: 130%;
-            font-style: normal;
-        }
-
     }
+
 
 }
