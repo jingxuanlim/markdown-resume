@@ -16,6 +16,8 @@ div.altmetric-embed > a {
 	border: 1px solid lightgrey;
 	position: relative;
 	top: -1px;
+	height: 12px;
+	padding: 3px 3px 1px 3px;
 }
 
 .clear {

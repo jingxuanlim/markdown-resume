@@ -6,7 +6,7 @@
       $(element).wrapInner('<p></p>');
     });
 
-    $.getScript('http://git.local/scholar-scraper/stats-ir.js', function() {
+    $.getScript('stats-ir.js', function() {
       article_stats = data[0]['stats']['articles'];
 
       $('a').each(function(i, element) { 
@@ -14,8 +14,6 @@
         if ($(element)[0].innerHTML.indexOf('doi.org') == 0 ) {
 
           var doi = $(element)[0].innerHTML;
-          console.log($(element)[0]);
-          console.log(doi);
           doi = doi.substr(doi.indexOf('/') + 1);  // strip out doi.org/ 
           $($(element)[0]).closest('dd').append('<div data-badge-popover="right" data-badge-type="2" data-doi="' + doi + '" data-hide-no-mentions="true" class="altmetric-embed"></div>');
             metrics = true;
@@ -23,7 +21,7 @@
           var gsid = href.substring(href.indexOf('cites=') + 6)
           for (var i=0; i<article_stats.length; i++) {
             if (article_stats[i][0].indexOf(gsid) > 0) {
-              $($(element)[0]).closest('dd').append('<div class="google-scholar"><a href="' + href +'" ><img src="scholar_logo2.png" align="left" height="18px" /></a><span class="metricbubble">' + article_stats[i][1] + '</span></div>');
+              $($(element)[0]).closest('dd').append('<div class="google-scholar"><a href="' + href +'" ><img src="scholar_logo_long.png" align="left" /></a><span class="metricbubble">' + article_stats[i][1] + '</span></div>');
               $(element).remove()
             }
           }
