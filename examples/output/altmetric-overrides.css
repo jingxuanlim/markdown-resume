@@ -39,6 +39,8 @@ div.altmetric-embed > a {
 
 .singlespace + dl dd p::before {
 	content: ':: ';
+	position: relative;
+	top: -.15em;
 }
 
 .singlespace + dl dd+dd {
