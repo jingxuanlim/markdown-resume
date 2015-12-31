@@ -1,4 +1,4 @@
-var date = "Tue Dec 29 2015 16:47:29 GMT-0800 (PST)"
+var date = "Wed Dec 30 2015 16:58:15 GMT-0800 (PST)"
 var data = [
   {
     "name": "Juan Pablo Alperin",
@@ -13,8 +13,8 @@ var data = [
     "url": "https://scholar.google.com/citations?user=QW-eo0MAAAAJ",
     "stats": {
       "citations": [
-        "155",
-        "149"
+        "161",
+        "155"
       ],
       "hindex": [
         "6",
@@ -42,15 +42,15 @@ var data = [
           "20"
         ],
         [
+          "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=13918265887449564160,1996403120889663033",
+          "9"
+        ],
+        [
           "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=14015674882563791507",
           "8"
         ],
         [
           "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=7472416283065230354",
-          "6"
-        ],
-        [
-          "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=13918265887449564160",
           "6"
         ],
         [
@@ -64,6 +64,10 @@ var data = [
         [
           "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=14244773496994540438,2061042163236346089,11442781361128510626",
           "4"
+        ],
+        [
+          "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=17113154892488784039",
+          "3"
         ],
         [
           "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=1154013045948546741",

@@ -132,13 +132,13 @@
         }
         dd {
             position: relative;
-            width: 75%;
+            width: 74%;
         }
         dd strong:last-of-type {
             float: right;
             position: absolute;
             top: 0px;
-            right: -19%;
+            right: -20%;
         }        
     }
 
@@ -268,12 +268,12 @@
         float: left;
         width: 79%;
         margin: .7em 0 0;
-        font-size: 122%;
     }
 
     ol li {
         width: 33%;
         margin: 0;
+        page-break-inside: avoid !important; 
     }
     ol li:nth-child(3n) {
         width: 34%;
@@ -347,22 +347,27 @@
     dl {
         margin: .7em 0 0;
         display: block;
-        width:69%;
+        width:68%;
         float: left;
         dt {}
         dd {
             position: relative;
-            font-size: 90%;
             page-break-inside: avoid !important;    
         }
         dd strong:last-of-type {
             position: absolute;
             top: 0px;
-            right: -15%;    
+            right: -16%;    
             float: right;
             display: block;
             margin: .15em 0 .5em;
             font-style: bold;
         }
     }
+}
+
+@page {
+   @bottom-right {
+    content: counter(page) " of " counter(pages);
+   }
 }

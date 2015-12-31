@@ -10,6 +10,7 @@
       article_stats = data[0]['stats']['articles'];
 
       $('a').each(function(i, element) { 
+
         var href = $(element)[0].getAttribute('href');
         if ($(element)[0].innerHTML.indexOf('doi.org') == 0 ) {
 
@@ -119,9 +120,9 @@ Lecture Courses
  __2014__
 
 Guest Lectures
- : Escribir para Publicar, National University de Colombia 
+ : *Escribir para Publicar*, National University de Colombia 
  __Nov. 2014__
- : The Emergence of Latin American Science, University of Costa Rica
+ : *The Emergence of Latin American Science*, University of Costa Rica
  __Mar. 2012__
 
 Section Leader
@@ -138,11 +139,11 @@ Section Leader
 ------
 
 ### Research Projects {#funding .five-column}
-1. Title
-2. Role
-3. Funder
-4. Total
-5. Year
+1. **Title**
+2. **Role**
+3. **Funder**
+4. **Total**
+5. **Year**
 
 1. Understanding Societal Impact of Research through Social Media
 2. Principal Investigator
@@ -150,8 +151,14 @@ Section Leader
 4. (Submitted) CA$285,901
 5. 2015
 
+1. Who Shares Research Articles on Social Media: Piloting New Methods for Micro-Surveying on Twitter
+2. Principal Investigator
+3. SSHRC
+4. (Submitted) CA$6,875
+5. 2015
+
 1. Incentivizing Open Peer-Review
-2. Co-Principal Investigator
+2. Principal Investigator
 3. OpenAire
 4. U$27,600
 5. 2015-2016
@@ -197,11 +204,10 @@ resources from developing regions
 ### Publications
 
 Edited Volumes
-: **Alperin, J.P.** *&* Fischman, G.E. *Made in Latin America: Open Access, Scholarly Journals, and Regional Innovations*, Buenos Aires: CLACSO. [link](http://www.clacso.org.ar/libreria-latinoamericana/libro_detalle.php?id_libro=1001&pageNum_rs_libros=0&totalRows_rs_libros=966)
+: **Alperin, J.P.** *&* Fischman, G.E. (Eds.). *Made in Latin America: Open Access, Scholarly Journals, and Regional Innovations*, Buenos Aires: CLACSO. [link](http://www.clacso.org.ar/libreria-latinoamericana/libro_detalle.php?id_libro=1001&pageNum_rs_libros=0&totalRows_rs_libros=966) [Google Scholar](https://scholar.google.com/scholar?cites=17113154892488784039)
 __2015__
 
-: **Alperin, J.P.**, Babini, D., *&* Fischman, G.E. *Open Access Indicators and Scholarly Communications in Latin America*, Buenos
-Aires: CLACSO. [link](http://www.clacso.org.ar/libreria-latinoamericana/libro_detalle.php?id_libro=906&pageNum_rs_libros=1&totalRows_rs_libros=824) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=8352684746038389618)
+: **Alperin, J.P.**, Babini, D., *&* Fischman, G.E. (Eds.). *Open Access Indicators and Scholarly Communications in Latin America*, Buenos Aires: CLACSO. [link](http://www.clacso.org.ar/libreria-latinoamericana/libro_detalle.php?id_libro=906&pageNum_rs_libros=1&totalRows_rs_libros=824) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=8352684746038389618)
 __2014__
 
 Select Peer-Reviewed Publications
@@ -211,7 +217,7 @@ __submitted__
 : **Alperin, J.P.** The Public Impact of Latin America's Approach to Open Access. Doctoral Dissertation, Stanford University. [link](http://purl.stanford.edu/jr256tk1194) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2304846227896743763) 
 __2015__
 
-: **Alperin, J.P.** Geographic variation in social media metrics: an analysis of Latin American journal articles, *Aslib Journal of Information Management* 67(3). [link](https://purl.stanford.edu/sr068mj0031) [doi.org/10.1108/AJIM-12-2014-0176](http://doi.org/10.1108/AJIM-12-2014-0176) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=14244773496994540438)
+: **Alperin, J.P.** Geographic variation in social media metrics: an analysis of Latin American journal articles, *Aslib Journal of Information Management* 67(3). [link](https://purl.stanford.edu/sr068mj0031) [doi.org/10.1108/AJIM-12-2014-0176](http://doi.org/10.1108/AJIM-12-2014-0176) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=14244773496994540438,2061042163236346089,11442781361128510626  )
 __2015__
 
  : Garnett, A., **Alperin, J.P.**, Willinsky, J. The Public Knowledge Project XML Publishing Service and meTypeset: Don't call it "Yet Another Word-to-JATS Conversion Kit", *JATS-Con Proceedings 2015*, Bethesda: National Center for Biotechnology Information. [link](http://www.ncbi.nlm.nih.gov/books/NBK279666/)
@@ -220,7 +226,7 @@ __2015__
 : **Alperin, J.P**. Brazil's Exception to the World-Class University Movement. *Quality in Higher Education*, 19. [link](https://purl.stanford.edu/cp475cd5409) [doi.org/10.1080/13538322.2013.802573](http://doi.org/10.1080/13538322.2013.802573) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7663946573571325985)
 __2013__
 
-: **Alperin, J.P.**, Fischman, G.E., *&* Willinsky, J. Scholarly Communication Strategies in Latin America’s Research Universities. *Educación Superior y Sociedad*, 16. [link](https://purl.stanford.edu/fj828hg2133) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=603210712826963713)
+: **Alperin, J.P.**, Fischman, G.E., *&* Willinsky, J. Scholarly Communication Strategies in Latin America’s Research Universities. *Educación Superior y Sociedad*, 16. [link](https://purl.stanford.edu/fj828hg2133) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=603210712826963713,6115536236073831064)
 __2011__
 
 : Fischman, G.E., **Alperin, J.P.**, *&* Willinsky, J. Visibility and Quality in Spanish-Language Latin American Scholarly Publishing. *Information Technologies & International Development*, 6. [link](http://itidjournal.org/index.php/itid/article/view/639/274) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2339300654326134976)
@@ -239,10 +245,10 @@ __2015__
 : Fischman, G.E. *&* **Alperin, J.P.** About Lights and Shadows: Latin American Scientific Journals. In **Alperin, J.P.** *&* Fischman, G.E. (eds.) (2015). *Made in Latin America Open Access, Scholarly Journals, and Regional Innovations*, Buenos Aires: CLACSO. [link](http://www.clacso.org.ar/libreria-latinoamericana/libro_detalle.php?id_libro=1001&pageNum_rs_libros=0&totalRows_rs_libros=966)
 __2015__
 
-: **Alperin, J.P.** Assessing the Growth and Use of Open Access Resources from Developing Regions: The Case of Latin America, Open Access Indicators and Scholarly Communications. In **Alperin, J.P.**, Babini, D., *&* Fischman, G.E. (eds.) (2014). Open Access Indicators and Scholarly Communications in Latin America, Buenos Aires: CLACSO. [link](http://www.clacso.org.ar/libreria-latinoamericana/libro_detalle.php?id_libro=906&pageNum_rs_libros=1&totalRows_rs_libros=824) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=13918265887449564160)
+: **Alperin, J.P.** Assessing the Growth and Use of Open Access Resources from Developing Regions: The Case of Latin America, Open Access Indicators and Scholarly Communications. In **Alperin, J.P.**, Babini, D., *&* Fischman, G.E. (eds.) (2014). Open Access Indicators and Scholarly Communications in Latin America, Buenos Aires: CLACSO. [link](http://www.clacso.org.ar/libreria-latinoamericana/libro_detalle.php?id_libro=906&pageNum_rs_libros=1&totalRows_rs_libros=824) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=13918265887449564160,1996403120889663033)
 __2014__
 
-: Fischman, G.E., **Alperin, J.P.**, *&* Willisnky, J. Old and New Challenges for Scholarly Communications in Spanish. In Cetto A.M., *&* Alonso O. *Quality and Impact of Ibero-American Scientific Journals*. Mexico: UNAM.
+: Fischman, G.E., **Alperin, J.P.**, *&* Willisnky, J. Old and New Challenges for Scholarly Communications in Spanish. In Cetto, A.M., *&* Alonso, O. *Quality and Impact of Ibero-American Scientific Journals*. Mexico: UNAM.
 __2011__
 
 Invited Publications
@@ -256,6 +262,12 @@ __2013__
 __2012__
 
 Other Publications
+: **Alperin, J.P.** *&* Bordini, A. How to reach a wider audience for your research. *SciDevNet*. [link](http://www.scidev.net/global/communication/practical-guide/altmetrics-audience-connect-research.html)
+__2015__
+
+: **Alperin, J.P.**,  Babini, D.,  Chan, L.,  Gray, E.,  Guédon, J.C., Joseph, H.,  Rodrigues, E.,  Shearer, K.,  Vessuri, H. Open Access in Latin America: a Paragon for the Rest of the World, *The Winnower*. [link](http://doi.org/10.15200/winn.143982.27959) [doi.org/10.15200/winn.143982.27959](http://doi.org/10.15200/winn.143982.27959)
+__2015__
+
 : **Alperin, J.P.,** Bordini, A., Pouyanne, S. PLOS, Please publish our articles on Wednesdays: A look at altmetrics by day of publication, *The Winnower*. [link](http://doi.org/10.15200/winn.142972.29198) [doi.org/10.15200/winn.142972.29198](http://doi.org/10.15200/winn.142972.29198)
 __2015__
 
@@ -263,7 +275,7 @@ __2015__
 __2014__
 
 : **Alperin, J.P.** Altmetrics could enable scholarship from developing countries to receive due recognition. *LSE Impact Blog.* [link](http://blogs.lse.ac.uk/impactofsocialsciences/2014/03/10/altmetrics-for-developing-regions/)
-__March 10, 2014__
+__2014__
 
 : **Alperin. J.P.** Academic Publishing in a Global Context: The Politics and Practices of Publishing in English. *Journal of Scholarly Publishing*, 42 (4), 545-549. [doi.org/10.1353/scp.2011.0034](http://doi.org/10.1353/scp.2011.0034)
 __2011__
@@ -272,7 +284,13 @@ __2011__
 
 ### Presentations 
 Invited Presenations 
-: **Alperin, J.P.** Openness in Higher Education: From the Classroom to the Research. *SFU/UBC Open Access Week*. [link](https://blogs.ubc.ca/bcrlglectures/2015/10/17/open-for-collaboration-a-special-event-for-open-access-week/) [slides](https://speakerdeck.com/jalperin/openness-in-higher-education-from-the-classroom-to-the-research)
+: **Alperin, J.P.** PKP and CrossRef: Two P's in a Cross. *CrossRef Annual General Meeting*. Boston, USA. [slides](http://www.slideshare.net/CrossRef/juan-pablo-alperin-crossref15)
+__Nov. 17, 2015__
+
+: **Alperin, J.P.** The Latin American Open Access Utopia. *OpenCon 2015*. Brussels, Belgium. [video](https://www.youtube.com/watch?v=aAB1DYVGEMM) [slides](http://www.slideshare.net/RightToResearch/open-con-latin-america-oa-model)
+__Nov. 14, 2015__
+
+: **Alperin, J.P.** Openness in Higher Education: From the Classroom to the Research. *SFU/UBC Open Access Week*. Vancouver, Canada [link](https://blogs.ubc.ca/bcrlglectures/2015/10/17/open-for-collaboration-a-special-event-for-open-access-week/) [slides](https://speakerdeck.com/jalperin/openness-in-higher-education-from-the-classroom-to-the-research)
 __Oct. 22, 2015__
 
 : **Alperin, J.P.** Do Things Get Better in Scholarly Publishing?. *PKP Scholarly Publishing Conference 2015.* Vancouver, Canada. [video](https://pkp.sfu.ca/pkp2015/paper/view/524/351)
@@ -318,7 +336,7 @@ __Oct 9, 2015__
 : **Alperin, J.P.** Evolving altmetrics to capture impact outside the academy. *2:AM Altmetrics Conference.* Amsterdam, Netherlands. [slides](https://speakerdeck.com/jalperin/evolving-altmetrics-to-capture-impact-outside-the-academy)
 __Oct. 7, 2015__
 
-: **Alperin. J.P.** Exploring altmetrics in an emerging country context. *Altmetrics14 Workshop, WebScience Conference 2014.* Bloomington, USA. [link] [slides](https://speakerdeck.com/jalperin/exploring-altmetrics-in-an-emerging-country-context) [doi.org/10.6084/m9.figshare.1041797](http://dx.doi.org/10.6084/m9.figshare.1041797)
+: **Alperin. J.P.** Exploring altmetrics in an emerging country context. *Altmetrics14 Workshop, WebScience Conference 2014.* Bloomington, USA. [link](http://dx.doi.org/10.6084/m9.figshare.1041797) [slides](https://speakerdeck.com/jalperin/exploring-altmetrics-in-an-emerging-country-context) [doi.org/10.6084/m9.figshare.1041797](http://dx.doi.org/10.6084/m9.figshare.1041797)
 __June 23, 2014__
 
 : **Alperin, J.P.** What it Means for PKP to Offer Article Level Metrics. *SciELO 15*. Sao Paolo, Brazil. [slides](https://speakerdeck.com/jalperin/what-it-means-for-pkp-to-offer-article-level-metrics)
@@ -340,58 +358,56 @@ __May 2, 2011__
 
 ### Student Supervision {.singlespace}
 Senior Supervisor
-: Pouyanne, Sophie. *Designing a Non-linear, Academic Web Book with Scalar*. Master in Publishing.
+: Pouyanne, Sophie. *Designing a Non-linear, Academic Web Book with Scalar*. Master in Publishing. SFU.
 __2016__
 
-: Dunlop, Laura. *E-Cookbooks: An Analysis of Profitability*. Master in Publishing. 
+: Dunlop, Laura. *E-Cookbooks: An Analysis of Profitability*. Master in Publishing. SFU. 
 __2016__
 
-: Fleischmann, Ariane. *Getting SaaSy: The Implementation of Magazine Manager at Canada Wide Media.* Master in Publishing.
+: Fleischmann, Ariane. *Getting SaaSy: The Implementation of Magazine Manager at Canada Wide Media.* Master in Publishing. SFU.
 __2015__
 
-: Simas Ferraz, João. *Improving Multi-Platform Workflow at Harbour Publishing and Douglas & McIntyre.* Master in Publishing.
-__2015__
-
-: Queitsch, Tilman. *Like, Tweet, Read: Exploratory Analyses of Social Media Data as an Indicator for Readership Behaviour in the Newspaper and Periodicals Industries.* Master in Publishing.
-__2014__
-
-Supervisor
-: Blom, Sophia. *Consistency and Community in* The New Quarterly’s *Bringing the Writer Home: Past and Future*. Master in Publishing.
-__2015__
-
-: Garby, Taisha. *Publishing Translated Works: Examining the Process*. Master in Publishing.
-__2015__
-
-: Zhang, Summer. *The Case Study of the Jinglun Digital Publishing Platform*. Master in Publishing.
-__2015__
-
-: Ross, Emily. *Quiet Content: Digital Publishing Through the Lens of a Startup.* Master in Publishing
+: Simas Ferraz, João. *Improving Multi-Platform Workflow at Harbour Publishing and Douglas & McIntyre.* Master in Publishing. SFU.
 __2015__
 
 : Soto, Arley. *Evaluation of non-core PKP services.* International Master in Digital Library Learning, University of Parma.
 __2015__
 
+: Queitsch, Tilman. *Like, Tweet, Read: Exploratory Analyses of Social Media Data as an Indicator for Readership Behaviour in the Newspaper and Periodicals Industries.* Master in Publishing. SFU.
+__2014__
+
+Supervisor
+: Blom, Sophia. *Consistency and Community in* The New Quarterly’s *Bringing the Writer Home: Past and Future*. Master in Publishing. SFU.
+__2015__
+
+: Garby, Taisha. *Publishing Translated Works: Examining the Process*. Master in Publishing. SFU.
+__2015__
+
+: Zhang, Summer. *The Case Study of the Jinglun Digital Publishing Platform*. Master in Publishing. SFU.
+__2015__
+
+: Ross, Emily. *Quiet Content: Digital Publishing Through the Lens of a Startup.* Master in Publishing
+__2015__
+
 --------
 ### Professional Activities {.singlespace.noheading}
 &nbsp;
-: Researcher
-Public Knowledge Project 
-__2007 — present__
+: Research Associate, *Public Knowledge Project*
+__2007 - present__
 
-: Chief Academic
-The Winnower
-__2015 — present__
+: Chief Academic, *The Winnower*
+__2015 - present__
 
 --------
 ### Professional Service {.singlespace}
 Board Memberships
 : Steering Committee: 
 *Scholarly Publishing and Academic Resources Coalition (SPARC) Steering Committee*
-__2015 — present__
+__2015 - present__
 
 : Scientific Academic Advisory Board: *Redalyc, Biblioteca Digital CTS
 Iberoamericana*
-__2014 — present__
+__2014 - present__
 
 Conference Activities
 : Application Review Team: 
@@ -410,10 +426,10 @@ __2013__
 
 Editorial Teams
 : Founding Editorial Team, *Scholarly and Research Communication*
-__2010 — present__
+__2010 - present__
 
 : Technical Editor, *Education Policy Analysis Archives*
-__2008 — present__
+__2008 - present__
 
 Reviewer
 : *Aslib Proceedings, Scientometrics, Scholarly and Research
@@ -427,15 +443,15 @@ Memberships
 ### Departmental Service {.singlespace.noheading}
 &nbsp;
 : Graduate Program Chair
-__2015 — present__
+__2015 - present__
 : Open Access Advisory
-__2015 – present__
+__2015 - present__
 : Undergraduate Program
-__2014 — present__
+__2014 - present__
 : two faculty search committees
-__2014—2016__
+__2014 - 2016__
 : Graduate Program
-__2014—2015__
+__2014 - 2015__
 
 --------
 ### Media Coverage {.singlespace.noheading}
@@ -480,7 +496,7 @@ __Jan. 26, 2011__
 -------
 ### Awards {.singlespace}
 Travel Scholarships
-: 2AM Altmetrics Confernece
+: 2AM Altmetrics Conference
 __2015__
 : ARCS Conference
 __2015__

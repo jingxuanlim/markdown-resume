@@ -139,7 +139,6 @@ ol li {
     float: left;
     list-style: none;
     line-height: 24px;
-    font-size: 14px;
 }
 ol li p {
     margin: 0px;
@@ -162,7 +161,6 @@ dl {
         clear: right;
         margin: 0 0 1.5em;
         padding: 0;
-        font-size: 90%;
         line-height: 1.4em;
         padding-left: 30px;
         text-indent: -30px;

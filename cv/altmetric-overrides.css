@@ -1,7 +1,7 @@
 div.altmetric-embed > a {
   text-indent: 0px;
   float: right;
-  margin-left: 20px;
+  margin-left: 10px;
   position: relative;
   margin-bottom: .5em;
 }
@@ -9,15 +9,15 @@ div.altmetric-embed > a {
 .google-scholar {
 	float: right;
 	position: relative;
+	left: -10px;
 	margin-bottom: .5em;
 }
 
 .google-scholar img {
 	border: 1px solid lightgrey;
 	position: relative;
-	top: -1px;
-	height: 12px;
-	padding: 3px 3px 1px 3px;
+	height: 13px;
+	padding: 3px 3px 2px 3px;
 }
 
 .clear {
@@ -33,7 +33,7 @@ div.altmetric-embed > a {
    border: 1px solid lightgrey;
    font-family: arial;
    font-size: .7em;
-   color: grey;
+   /*color: darkgrey;*/
    background-color: white;
 }
 
