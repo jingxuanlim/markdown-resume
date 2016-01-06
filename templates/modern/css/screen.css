@@ -134,11 +134,19 @@
             position: relative;
             width: 74%;
         }
+        dd strong {
+            padding-bottom: 1px;
+            border-bottom: 1px solid;
+            font-weight: normal;
+        }
         dd strong:last-of-type {
+            border-bottom: none;
             float: right;
             position: absolute;
             top: 0px;
             right: -20%;
+            font-weight: bold;
+            text-align: right;
         }        
     }
 
@@ -185,14 +193,16 @@
 */
 
 @media print {
-    color: black;
+    body {
+        color: black;
+        margin: 0px;  
+    }
 
     a {
         text-decoration: none;
         color: black;
     }
     .container {
-        width: 1000px;
         margin: 0 auto;
         padding: 0;
         background: none;
@@ -203,7 +213,7 @@
 
     .resume {
         position:relative;
-        padding: 40px 80px;
+        padding: 0px 20px 0px 0px;
     }
 
     a[href$='.pdf'] {
@@ -226,6 +236,7 @@
     h3 {
         float: left;
         width: 16%;
+        margin-left: 0px;
         font-style: normal;
         page-break-inside: avoid;
     }
@@ -266,7 +277,7 @@
 
     ol {
         float: left;
-        width: 79%;
+        width: 81%;
         margin: .7em 0 0;
     }
 
@@ -354,20 +365,40 @@
             position: relative;
             page-break-inside: avoid !important;    
         }
+        dd strong {
+            padding-bottom: 1px;
+            border-bottom: 1px solid;
+            font-weight: normal;
+        }
         dd strong:last-of-type {
+            border-bottom: none;
+            font-weight: bold;
             position: absolute;
             top: 0px;
-            right: -16%;    
+            right: -19%;    
             float: right;
             display: block;
             margin: .15em 0 .5em;
-            font-style: bold;
+            text-align: right;
+        }
+        dd + dt {
+            margin-top: 1em;
+        }        
+    }
+
+    .container {
+        width: 215mm; /* about the size of a page - 25mm margins */
+    }
+
+    @page { 
+        size: auto;   /* auto is the initial value */ 
+
+        /* this affects the margin in the printer settings */ 
+        margin: 25mm 25mm 25mm 25mm;  
+
+        @bottom-right {
+            content: counter(page) " of " counter(pages);
         }
     }
 }
 
-@page {
-   @bottom-right {
-    content: counter(page) " of " counter(pages);
-   }
-}

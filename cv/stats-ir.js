@@ -1,4 +1,4 @@
-var date = "Wed Dec 30 2015 16:58:15 GMT-0800 (PST)"
+var date = "Tue Jan 05 2016 00:42:21 GMT-0800 (PST)"
 var data = [
   {
     "name": "Juan Pablo Alperin",
@@ -14,7 +14,7 @@ var data = [
     "stats": {
       "citations": [
         "161",
-        "155"
+        "151"
       ],
       "hindex": [
         "6",
@@ -62,11 +62,11 @@ var data = [
           "4"
         ],
         [
-          "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=14244773496994540438,2061042163236346089,11442781361128510626",
+          "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=17113154892488784039",
           "4"
         ],
         [
-          "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=17113154892488784039",
+          "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=14244773496994540438,2061042163236346089,11442781361128510626",
           "3"
         ],
         [

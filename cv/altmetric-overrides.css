@@ -51,26 +51,66 @@ div.altmetric-embed > a {
 	height: 0px;
 }
 
-a.externalLink {
-	content: url('external_link.png');    
-	height: .7em;
+a.with-genericon {
+	text-decoration: none;
+	position: relative;
+	top: .15em;
+	font-size: 1.2em;
 }
 
-
-a.videoLink {
-	content: url('video_link.png');    
-	height: 1em;
+a.with-genericon {
+	font-family: genericons;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-a.slidesLink {
-	content: url('slides_link.png');    
-	height: .8em;
+a.externalLink:before {
+	content: '\f442';
+	color: orange;
+	font-weight: bold;
+}
+
+a.contant-icon {
+	font-size: 1.5em;
+}
+
+a.videoLink:before {
+	content: '\f213';
+	color: #cd201f;
+}
+
+a.slidesLink:before {
+	content: '\f213';
+	color: #396;
+}
+
+a.twitterLink:before {
+	content: '\f202';
+	color: #4099FF;
+}
+
+a.githubLink:before {
+	content: '\f200';
+	color: #gray;
+}
+
+a.emailLink:before {
+	content: '\f410';
+	color: #4f5d74;
+}
+
+@media screen {
+	h1 + h2 + p  {
+		margin-top: -1.3em;
+	}
 }
 
 @media print {
-	a.externalLink,
-	a.videoLink,
-	a.slidesLink {
+	a.doiLink {
+		display: none;
+	}
+
+	a.with-genericon {
 		display: none;
 	}
 }

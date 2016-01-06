@@ -635,11 +635,19 @@ dl dd p {
     position: relative;
     width: 74%;
   }
+  dl dd strong {
+    padding-bottom: 1px;
+    border-bottom: 1px solid;
+    font-weight: normal;
+  }
   dl dd strong:last-of-type {
+    border-bottom: none;
     float: right;
     position: absolute;
     top: 0px;
     right: -20%;
+    font-weight: bold;
+    text-align: right;
   }
   ol li:nth-child(4):nth-last-child(5n+2) {
     border-top: none;
@@ -676,13 +684,15 @@ dl dd p {
   }
 }
 @media print {
-  color: black;
+  body {
+    color: black;
+    margin: 0px;
+  }
   a {
     text-decoration: none;
     color: black;
   }
   .container {
-    width: 1000px;
     margin: 0 auto;
     padding: 0;
     background: none;
@@ -692,7 +702,7 @@ dl dd p {
   }
   .resume {
     position: relative;
-    padding: 40px 80px;
+    padding: 0px 20px 0px 0px;
   }
   a[href$='.pdf'] {
     display: none;
@@ -713,6 +723,7 @@ dl dd p {
   h3 {
     float: left;
     width: 16%;
+    margin-left: 0px;
     font-style: normal;
     page-break-inside: avoid;
   }
@@ -749,7 +760,7 @@ dl dd p {
   }
   ol {
     float: left;
-    width: 79%;
+    width: 81%;
     margin: .7em 0 0;
   }
   ol li {
@@ -835,14 +846,31 @@ dl dd p {
     position: relative;
     page-break-inside: avoid !important;
   }
+  dl dd strong {
+    padding-bottom: 1px;
+    border-bottom: 1px solid;
+    font-weight: normal;
+  }
   dl dd strong:last-of-type {
+    border-bottom: none;
+    font-weight: bold;
     position: absolute;
     top: 0px;
-    right: -16%;
+    right: -19%;
     float: right;
     display: block;
     margin: .15em 0 .5em;
-    font-style: bold;
+    text-align: right;
+  }
+  dl dd + dt {
+    margin-top: 1em;
+  }
+  .container {
+    width: 215mm;
+  }
+  @page {
+    size: auto;
+    margin: 25mm 25mm 25mm 25mm;
   }
 }
 
@@ -869,7 +897,7 @@ dl dd p {
 
         var href = $(element)[0].getAttribute('href');
         if ($(element)[0].innerHTML.indexOf('doi.org') == 0 ) {
-
+          $($(element)[0]).addClass('doiLink');
           var doi = $(element)[0].innerHTML;
           doi = doi.substr(doi.indexOf('/') + 1);  // strip out doi.org/ 
           $($(element)[0]).closest('dd').append('<div data-badge-popover="right" data-badge-type="2" data-doi="' + doi + '" data-hide-no-mentions="true" class="altmetric-embed"></div>');
@@ -890,23 +918,40 @@ dl dd p {
         $('head').append('<link rel="stylesheet" href="altmetric-overrides.css" type="text/css" />')
     });
 
+    $('head').append('<link rel="stylesheet" href="genericons/genericons.css" type="text/css" />');
+
     // Do some link handling
     $("a").attr('target','_blank');
 
     // change links called "link" to icon
     $("a").filter(function() {
       return $(this).text() === "link";
-    }).addClass("externalLink").attr('alt', 'link to open access version');
+    }).addClass("with-genericon").addClass("externalLink").attr('alt', 'link to open access version').text(' ');
 
     // change links called "video" to icon
     $("a").filter(function() {
       return $(this).text() === "video";
-    }).addClass("videoLink").attr('alt', 'link to video');
+    }).addClass("with-genericon").addClass("videoLink").attr('alt', 'link to video').text(' ');
 
     // change links called "slides" to icon
     $("a").filter(function() {
       return $(this).text() === "slides";
-    }).addClass("slidesLink").attr('alt', 'link to slides').attr('title', 'link to slides');
+    }).addClass("with-genericon").addClass("slidesLink").attr('alt', 'link to slides').attr('title', 'link to slides').text(' ');
+
+    // change Twitter link to icon
+    $("a").filter(function() {
+      return $(this).text() === "Twitter";
+    }).addClass("with-genericon").addClass("contant-icon").addClass("twitterLink").attr('alt', 'Twitter').attr('title', 'Twitter').text(' ');
+
+    // change Github link to icon
+    $("a").filter(function() {
+      return $(this).text() === "Github";
+    }).addClass("with-genericon").addClass("contant-icon").addClass("githubLink").attr('alt', 'Github').attr('title', 'Github').text(' ');
+
+    // change Github link to icon
+    $("a").filter(function() {
+      return $(this).text() === "email";
+    }).addClass("with-genericon").addClass("contant-icon").addClass("emailLink").attr('alt', 'email').attr('title', 'email').text(' ');    
 
   });
 </script>
@@ -914,6 +959,10 @@ dl dd p {
 <h1>Juan Pablo Alperin</h1>
 
 <h2>Assistant Professor</h2>
+
+<p><a href="http://twitter.com/juancommander">Twitter</a>
+<a href="http://github.com/jalperin">Github</a>
+<a href="mailto:juan@alperin.ca">email</a></p>
 
 <blockquote>
   <p><a href="alperinCV.pdf">Download PDF</a></p>
@@ -1076,7 +1125,7 @@ resources from developing regions</p></li>
 <strong>2014</strong></p>
 </dd>
 
-<dt>Select Peer-Reviewed Publications</dt>
+<dt>Peer-Reviewed Publications</dt>
 <dd>Carvalho Neto, S, Willinsky, J. &amp; <strong>Alperin, J.P.</strong> Measuring, Rating, Supporting, and Strengthening Open Access Scholarly Publishing in Brazil. <em>Transinformaçao</em>.
 <strong>submitted</strong></dd>
 
@@ -1168,7 +1217,7 @@ resources from developing regions</p></li>
 </dd>
 
 <dd>
-<p><strong>Alperin, J.P.</strong> South America: Citation databases omit local journals, <em>Nature</em>. <a href="http://doi.org/10.1038/511155c">doi.org/10.1038/511155c</a> <a href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=7472416283065230354">Google Scholar</a>
+<p><strong>Alperin, J.P.</strong> South America: Citation databases omit local journals, <em>Nature</em>. <a href="http://doi.org/10.1038/511155c">doi.org/10.1038/511155c</a> <a href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=7472416283065230354">Google Scholar</a>
 <strong>2014</strong></p>
 </dd>
 
@@ -1213,7 +1262,7 @@ resources from developing regions</p></li>
 </dd>
 
 <dd>
-<p><strong>Alperin, J.P.</strong> The Public Impact of Open Access: A survey of the SciELO research portal. <em>Advancing Research and Scholarship Conference (ARCSCon)</em>. Philadelphia, USA. <a href="http://doi.org/10.6084/m9.figshare.1391771">link</a> <a href="http://doi.org/10.6084/m9.figshare.1391771">doi.org/10.6084/m9.figshare.1391771</a>
+<p><strong>Alperin, J.P.</strong> <em>&amp;</em> Pouyanne, S. The Public Impact of Open Access: A survey of the SciELO research portal. <em>Advancing Research and Scholarship Conference (ARCSCon)</em>. Philadelphia, USA. <a href="http://doi.org/10.6084/m9.figshare.1391771">link</a> <a href="http://doi.org/10.6084/m9.figshare.1391771">doi.org/10.6084/m9.figshare.1391771</a>
 <strong>Apr. 27, 2015</strong></p>
 </dd>
 
@@ -1308,12 +1357,17 @@ resources from developing regions</p></li>
 
 <dl>
 <dt>Senior Supervisor</dt>
-<dd>Pouyanne, Sophie. <em>Designing a Non-linear, Academic Web Book with Scalar</em>. Master in Publishing. SFU.
-<strong>2016</strong></dd>
+<dd>Wan, Linlin. <em>Copyleft and creativity</em>. Communications Double Major. 
+<strong>in progress</strong></dd>
+
+<dd>
+<p>Pouyanne, Sophie. <em>Designing a Non-linear, Academic Web Book with Scalar</em>. Master in Publishing. SFU.
+<strong>in progress</strong></p>
+</dd>
 
 <dd>
 <p>Dunlop, Laura. <em>E-Cookbooks: An Analysis of Profitability</em>. Master in Publishing. SFU. 
-<strong>2016</strong></p>
+<strong>in progress</strong></p>
 </dd>
 
 <dd>
@@ -1389,20 +1443,20 @@ Iberoamericana</em>
 
 <dt>Conference Activities</dt>
 <dd>Application Review Team: 
-<em>OpenCon: The student and early career academic professional conference on Open Access, Open Education, and Open Data</em>
+<em>OpenCon: The student and early career academic professional conference on Open Access, Open Education, and Open Data</em>, Brussels, Belgium
 <strong>2015</strong></dd>
 
 <dd>
 <p>Organizing Committee: 
 <em>OpenCon: The student and early career
 academic professional conference on Open Access, Open Education, and
-Open Data</em>
+Open Data</em>, Washington, D.C., USA
 <strong>2014</strong></p>
 </dd>
 
 <dd>
 <p>Conference Director: 
-<em>PKP Scholarly Publishing Conference 2013, Mexico City, Mexico (250 participants)</em>
+<em>PKP Scholarly Publishing Conference 2013</em> (250 participants), Mexico City, Mexico
 <strong>2013</strong></p>
 </dd>
 
@@ -1516,7 +1570,7 @@ investigadores utilizar redes de comunicación.
 
 <dl>
 <dt>Travel Scholarships</dt>
-<dd>2AM Altmetrics Conference
+<dd>2AM Altmetrics Conference / Altmetrics15 Workshop
 <strong>2015</strong></dd>
 
 <dd>ARCS Conference

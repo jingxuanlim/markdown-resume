@@ -13,7 +13,7 @@
 
         var href = $(element)[0].getAttribute('href');
         if ($(element)[0].innerHTML.indexOf('doi.org') == 0 ) {
-
+          $($(element)[0]).addClass('doiLink');
           var doi = $(element)[0].innerHTML;
           doi = doi.substr(doi.indexOf('/') + 1);  // strip out doi.org/ 
           $($(element)[0]).closest('dd').append('<div data-badge-popover="right" data-badge-type="2" data-doi="' + doi + '" data-hide-no-mentions="true" class="altmetric-embed"></div>');
@@ -34,23 +34,40 @@
         $('head').append('<link rel="stylesheet" href="altmetric-overrides.css" type="text/css" />')
     });
 
+    $('head').append('<link rel="stylesheet" href="genericons/genericons.css" type="text/css" />');
+
     // Do some link handling
     $("a").attr('target','_blank');
 
     // change links called "link" to icon
     $("a").filter(function() {
       return $(this).text() === "link";
-    }).addClass("externalLink").attr('alt', 'link to open access version');
+    }).addClass("with-genericon").addClass("externalLink").attr('alt', 'link to open access version').text(' ');
 
     // change links called "video" to icon
     $("a").filter(function() {
       return $(this).text() === "video";
-    }).addClass("videoLink").attr('alt', 'link to video');
+    }).addClass("with-genericon").addClass("videoLink").attr('alt', 'link to video').text(' ');
 
     // change links called "slides" to icon
     $("a").filter(function() {
       return $(this).text() === "slides";
-    }).addClass("slidesLink").attr('alt', 'link to slides').attr('title', 'link to slides');
+    }).addClass("with-genericon").addClass("slidesLink").attr('alt', 'link to slides').attr('title', 'link to slides').text(' ');
+
+    // change Twitter link to icon
+    $("a").filter(function() {
+      return $(this).text() === "Twitter";
+    }).addClass("with-genericon").addClass("contant-icon").addClass("twitterLink").attr('alt', 'Twitter').attr('title', 'Twitter').text(' ');
+
+    // change Github link to icon
+    $("a").filter(function() {
+      return $(this).text() === "Github";
+    }).addClass("with-genericon").addClass("contant-icon").addClass("githubLink").attr('alt', 'Github').attr('title', 'Github').text(' ');
+
+    // change Github link to icon
+    $("a").filter(function() {
+      return $(this).text() === "email";
+    }).addClass("with-genericon").addClass("contant-icon").addClass("emailLink").attr('alt', 'email').attr('title', 'email').text(' ');    
 
   });
 </script>
@@ -59,9 +76,11 @@
 
 # Juan Pablo Alperin
 ## Assistant Professor
+[Twitter](http://twitter.com/juancommander)
+[Github](http://github.com/jalperin)
+[email](mailto:juan@alperin.ca)
 
 > [Download PDF](alperinCV.pdf)
->
 
 ------
 
@@ -210,7 +229,7 @@ __2015__
 : **Alperin, J.P.**, Babini, D., *&* Fischman, G.E. (Eds.). *Open Access Indicators and Scholarly Communications in Latin America*, Buenos Aires: CLACSO. [link](http://www.clacso.org.ar/libreria-latinoamericana/libro_detalle.php?id_libro=906&pageNum_rs_libros=1&totalRows_rs_libros=824) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=8352684746038389618)
 __2014__
 
-Select Peer-Reviewed Publications
+Peer-Reviewed Publications
 : Carvalho Neto, S, Willinsky, J. & **Alperin, J.P.** Measuring, Rating, Supporting, and Strengthening Open Access Scholarly Publishing in Brazil. *Transinformaçao*.
 __submitted__
 
@@ -271,7 +290,7 @@ __2015__
 : **Alperin, J.P.,** Bordini, A., Pouyanne, S. PLOS, Please publish our articles on Wednesdays: A look at altmetrics by day of publication, *The Winnower*. [link](http://doi.org/10.15200/winn.142972.29198) [doi.org/10.15200/winn.142972.29198](http://doi.org/10.15200/winn.142972.29198)
 __2015__
 
-: **Alperin, J.P.** South America: Citation databases omit local journals, *Nature*. [doi.org/10.1038/511155c](http://doi.org/10.1038/511155c) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7472416283065230354)
+: **Alperin, J.P.** South America: Citation databases omit local journals, *Nature*. [doi.org/10.1038/511155c](http://doi.org/10.1038/511155c) [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7472416283065230354)
 __2014__
 
 : **Alperin, J.P.** Altmetrics could enable scholarship from developing countries to receive due recognition. *LSE Impact Blog.* [link](http://blogs.lse.ac.uk/impactofsocialsciences/2014/03/10/altmetrics-for-developing-regions/)
@@ -299,7 +318,7 @@ __Aug. 13, 2015__
 : **Alperin, J.P.** Students, Open Access *&* Libraries. *The SPARC-ACRL Forum on Emerging Issues in Scholarly Communication*. San Francisco, USA. [link](http://sparc.arl.org/advancing-%E2%80%98open%E2%80%99-through-library-partnerships-students-and-early-career-researchers)
 __June 25, 2015__
 
-: **Alperin, J.P.** The Public Impact of Open Access: A survey of the SciELO research portal. *Advancing Research and Scholarship Conference (ARCSCon)*. Philadelphia, USA. [link](http://doi.org/10.6084/m9.figshare.1391771) [doi.org/10.6084/m9.figshare.1391771](http://doi.org/10.6084/m9.figshare.1391771)
+: **Alperin, J.P.** *&* Pouyanne, S. The Public Impact of Open Access: A survey of the SciELO research portal. *Advancing Research and Scholarship Conference (ARCSCon)*. Philadelphia, USA. [link](http://doi.org/10.6084/m9.figshare.1391771) [doi.org/10.6084/m9.figshare.1391771](http://doi.org/10.6084/m9.figshare.1391771)
 __Apr. 27, 2015__
 
 : **Alperin.** **J.P.** Special Session: Critical DH (Digital Humanities) Interventions in Scholarly Communications and Publishing. *Modern Language Association Annual Meeting 2015*. Vancouver, Canada.
@@ -358,11 +377,14 @@ __May 2, 2011__
 
 ### Student Supervision {.singlespace}
 Senior Supervisor
+: Wan, Linlin. *Copyleft and creativity*. Communications Double Major. 
+__in progress__
+
 : Pouyanne, Sophie. *Designing a Non-linear, Academic Web Book with Scalar*. Master in Publishing. SFU.
-__2016__
+__in progress__
 
 : Dunlop, Laura. *E-Cookbooks: An Analysis of Profitability*. Master in Publishing. SFU. 
-__2016__
+__in progress__
 
 : Fleischmann, Ariane. *Getting SaaSy: The Implementation of Magazine Manager at Canada Wide Media.* Master in Publishing. SFU.
 __2015__
@@ -411,17 +433,17 @@ __2014 - present__
 
 Conference Activities
 : Application Review Team: 
-*OpenCon: The student and early career academic professional conference on Open Access, Open Education, and Open Data*
+*OpenCon: The student and early career academic professional conference on Open Access, Open Education, and Open Data*, Brussels, Belgium
 __2015__
 
 : Organizing Committee: 
 *OpenCon: The student and early career
 academic professional conference on Open Access, Open Education, and
-Open Data*
+Open Data*, Washington, D.C., USA
 __2014__
 
 : Conference Director: 
-*PKP Scholarly Publishing Conference 2013, Mexico City, Mexico (250 participants)*
+*PKP Scholarly Publishing Conference 2013* (250 participants), Mexico City, Mexico
 __2013__
 
 Editorial Teams
@@ -496,7 +518,7 @@ __Jan. 26, 2011__
 -------
 ### Awards {.singlespace}
 Travel Scholarships
-: 2AM Altmetrics Conference
+: 2AM Altmetrics Conference / Altmetrics15 Workshop
 __2015__
 : ARCS Conference
 __2015__
