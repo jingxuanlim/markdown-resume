@@ -150,6 +150,13 @@
         }        
     }
 
+    #funding + dl dd em:last-of-type {
+        float: right;
+        font-weight: bold;
+        font-style: normal;
+        font-size: .9em;
+    }
+
     ol li:nth-child(4):nth-last-child(5n+2) {
         border-top: none;
     }
@@ -360,10 +367,12 @@
         display: block;
         width:68%;
         float: left;
-        dt {}
+        dt {
+            page-break-after: avoid !important;
+        }
         dd {
             position: relative;
-            page-break-inside: avoid !important;    
+            page-break-inside: avoid !important;
         }
         dd strong {
             padding-bottom: 1px;

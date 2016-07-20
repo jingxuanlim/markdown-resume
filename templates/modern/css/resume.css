@@ -17,6 +17,11 @@ h1, h2, h3, h4, ul dl dt {
     font-family: Futura, "Century Gothic", AppleGothic, sans-serif;
 }
 
+h4 {
+    margin: -.2em 0em .1em;
+    font-weight: normal;
+}
+
 .container {
     margin: 0 auto;
     padding: 0;
@@ -35,7 +40,7 @@ a {
     color: #990003;
 }
 
-a[href$='.pdf'] {
+blockquote > a[href$='.pdf'] {
     display: inline-block;
     background: #666;
     color: white;
@@ -143,8 +148,13 @@ ol li {
 ol li p {
     margin: 0px;
 }
+
 ol li:nth-child(1) {
     border-top: none;
+}
+
+ol li h4 {
+    margin: 1em 0em 0em;
 }
 
 dl {
