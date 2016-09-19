@@ -88,7 +88,7 @@ this.
 The application is deployed as a compiled phar file. In order to add new
 commands, you'll need to first get composer:
 
-1. [Download and install composer](https://getcomposer.org/download/) to `.`
+1. [Download and install composer](https://getcomposer.org/download/) to the root directory.
 
 	Run this in your terminal to get the latest Composer version:
 	
@@ -98,7 +98,7 @@ commands, you'll need to first get composer:
 	php composer-setup.php
 	php -r "unlink('composer-setup.php');"	
 	```
-	Once composer is installed, you will notice instructions to use it. For me, it is:
+	Once composer is installed, you will notice instructions to use it. For example:
 	
 	`Use it: php composer.phar`
 
@@ -111,7 +111,7 @@ commands, you'll need to first get composer:
 
 	`Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.`
 	
-	update your dependencies:
+	Update your dependencies:
 	
 	```php
 	php composer.phar update
