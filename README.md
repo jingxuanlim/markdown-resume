@@ -86,11 +86,42 @@ this.
 ## Feature Development
 
 The application is deployed as a compiled phar file. In order to add new
-commands, you'll need to first install the dependencies:
+commands, you'll need to first get composer:
 
-* `composer install`
+1. [Download and install composer](https://getcomposer.org/download/) to `.`
 
-After that, you can run the `md2resume_dev.php` file from the command line.
+	Run this in your terminal to get the latest Composer version:
+	
+	```php
+	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+	php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+	php composer-setup.php
+	php -r "unlink('composer-setup.php');"	
+	```
+	Once composer is installed, you will notice instructions to use it. For me, it is:
+	
+	`Use it: php composer.phar`
+
+2. Install the dependencies:
+
+	```php
+	php composer.phar install
+	```
+3. If you see the following:
+
+	`Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.`
+	
+	update your dependencies:
+	
+	```php
+	php composer.phar update
+	```
+
+4. After that, you should be able run the `md2resume_dev.php` file from the command line:
+
+	```php
+	php md2resume_dev.php
+	```
 
 ## Building a Release
 
