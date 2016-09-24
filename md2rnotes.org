@@ -227,7 +227,6 @@ Jingxuan-VirtualBox%  mv examples/output/sample_long.html examples/output/sample
 ** re-ran the generator but it didn't work -- the change in font size wasn't registered
 #+BEGIN_SRC 
 Jingxuan-VirtualBox% php md2resume_dev.php html --template modern ~/career/cv.md ~/career/
-php md2resume_dev.php html --template modern ~/career/cv.md ~/career/
 Wrote resume to: /u/jing/career/cv.html
 #+END_SRC
 ** tried to install the packages required
@@ -316,3 +315,24 @@ Generating autoload files
 
 - it makes sense now -- the packages could not be installed because the dependencies were out of sync (in terms of compatibility?)
 - after updating the dependencies, which showed that php-token-stream is being updated (in line with the compatibility issues before when tried to install the packages), it was showed that there was no packages to be installed (before I had already installed them previously)
+** [master 1200c16] updated requirement for php-cs-fixer fromfabpot/php-cs-fixer to friendsofphp/php-cs-fixer
+** update the dependencies again
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php composer.phar update
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Removing fabpot/php-cs-fixer (v0.4.0)
+  - Installing friendsofphp/php-cs-fixer (v0.4.0)
+    Downloading: 100%
+
+Writing lock file
+Generating autoload files
+#+END_SRC
+** install the packages again
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php composer.phar install
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Nothing to install or update
+Generating autoload files
+#+END_SRC

@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "600db956cc911e631b8dee3ec7c3fc9a",
-    "content-hash": "39fb5aa61751b79b54ae247198e0232e",
+    "hash": "3529d2a487b1735ef805207927fd35b4",
+    "content-hash": "44cfa80c1dc79b16b1a8636869a8ec0a",
     "packages": [
         {
-            "name": "fabpot/php-cs-fixer",
+            "name": "friendsofphp/php-cs-fixer",
             "version": "v0.4.0",
             "source": {
                 "type": "git",
@@ -53,7 +53,6 @@
                 }
             ],
             "description": "A script to automatically fix Symfony Coding Standard",
-            "abandoned": "friendsofphp/php-cs-fixer",
             "time": "2014-01-07 09:13:46"
         },
         {

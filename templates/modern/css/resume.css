@@ -80,10 +80,11 @@ h1 {
 h2 {
     margin: 0em 0em 1em;
     padding: 0;
-    font-size: 28px;
+    font-size: 18px;
     font-style: italic;
     letter-spacing: -1px;
     font-weight: normal;
+    color: red;
 }
 
 h3 {
