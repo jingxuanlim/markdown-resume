@@ -437,3 +437,15 @@ A    modern/index.html
 Checked out revision 125.
 #+END_SRC
 ** [master 7a98c2e] commit before renaming modern template to jalperin
+** checking for all the files I modified
+- examples/output/sample_long-a.html
+- examples/output/sample_long-b.html
+- the whole gif folder is new
+- templates/modern/css/resume.css
+- README.md
+- composer.json
+- composer.lock
+- md2notes.org is new
+*** files I should restore
+probably only templates/modern/css/resume.css
+** [master 9461443] reverted templates/modern/css/resume.css to the latest version from jalperin -- decided to start with there4's template instead so 'restting' jalperin's files to their mint condition
