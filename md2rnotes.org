@@ -198,3 +198,27 @@ Jingxuan-VirtualBox% php md2resume_dev.php html --template modern examples/sourc
 Wrote resume to: examples/output/sample_long.html
 #+END_SRC
 [[file:gif/20160919-sample_long-html-a.png][20160919-sample_long-html-a]]
+** [master d2cbe14] initial run; added results to repo
+#+BEGIN_SRC 
+ create mode 100644 examples/output/sample_long.html
+ create mode 100644 gif/20160919-sample_long-html-a.png
+#+END_SRC
+** [master 7c0250e] renamed examples/output/sample_long.html to examples/output/sample_long-a.html
+** [master 02808b9] changed h2 font size from 18px to 28px
+** generated html resume from sample_long.md
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php md2resume_dev.php html --template modern examples/source/sample_long.md examples/output/
+Wrote resume to: examples/output/sample_long.html
+#+END_SRC
+*** no change in h2 font-size
+[[file:gif/20160919-sample_long-html-b.png][20160919-sample_long-html-b]]
+** renamed latest output file to examples/output/sample_long-b.html
+#+BEGIN_SRC 
+Jingxuan-VirtualBox%  mv examples/output/sample_long.html examples/output/sample_long-b.html
+#+END_SRC
+** [master 01a2258] added output files to repo
+#+BEGIN_SRC 
+ 2 files changed, 1213 insertions(+)
+ create mode 100644 examples/output/sample_long-b.html
+ create mode 100644 gif/20160919-sample_long-html-b.png
+#+END_SRC
