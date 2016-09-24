@@ -422,3 +422,4 @@ Jingxuan-VirtualBox% grep -rni "28px" .
 *** it worked!
 [[file:gif/20160924-cv-d.png][20160924-cv-d]]
 ** [master c62c2e4] removed red h2 -- back to original
+** [master 9bcefc2] changed dt font-size to 140%, and removed text-indentation
