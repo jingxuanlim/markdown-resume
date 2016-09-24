@@ -436,3 +436,4 @@ A    modern/description.txt
 A    modern/index.html
 Checked out revision 125.
 #+END_SRC
+** [master 7a98c2e] commit before renaming modern template to jalperin

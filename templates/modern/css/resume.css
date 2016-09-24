@@ -112,10 +112,6 @@ ul {
 ul li {
     margin: 0;
     padding: 0;
-
-    dl dd {			/*definition description for Skills*/
-	text-indent: 0px;
-    }
 }
 
 ul dl {
@@ -148,7 +144,6 @@ ol li {
     float: left;
     list-style: none;
     line-height: 24px;
-    font-size: 14px;
 }
 ol li p {
     margin: 0px;
@@ -170,27 +165,20 @@ dl {
     dt {
         margin: 0;
         padding: 0;
-        font-size: 140%;
+        font-size: 120%;
     }
     dd {
         clear: right;
         margin: 0 0 1.5em;
         padding: 0;
-	font-size: 80%;
         line-height: 1.4em;
+        padding-left: 30px;
+        text-indent: -30px  ;
     }
     dd p {
         margin: 0px;
     }
-    strong {
-        display: block;
-    }
-    em {
-        display: block;
-        font-size: 110%;
-        margin: .15em 0 .5em;
-        font-style: bold;
-    }
+    
 }
 
 #footer {
