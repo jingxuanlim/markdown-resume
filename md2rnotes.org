@@ -222,3 +222,97 @@ Jingxuan-VirtualBox%  mv examples/output/sample_long.html examples/output/sample
  create mode 100644 examples/output/sample_long-b.html
  create mode 100644 gif/20160919-sample_long-html-b.png
 #+END_SRC
+* 16sep24
+** [master 18541f2] updated composer.json to include my details and pointers to my repository
+** re-ran the generator but it didn't work -- the change in font size wasn't registered
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php md2resume_dev.php html --template modern ~/career/cv.md ~/career/
+php md2resume_dev.php html --template modern ~/career/cv.md ~/career/
+Wrote resume to: /u/jing/career/cv.html
+#+END_SRC
+** tried to install the packages required
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php composer.phar install
+php composer.phar install
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - phpunit/php-code-coverage 1.2.x-dev requires phpunit/php-token-stream >=1.1.3,<1.3.0 -> no matching package found.
+    - phpunit/php-code-coverage 1.2.x-dev requires phpunit/php-token-stream >=1.1.3,<1.3.0 -> no matching package found.
+    - Installation request for phpunit/php-code-coverage 1.2.x-dev -> satisfiable by phpunit/php-code-coverage[1.2.x-dev].
+
+Potential causes:
+ - A typo in the package name
+ - The package is not available in a stable-enough version according to your minimum-stability setting
+   see <https://getcomposer.org/doc/04-schema.md#minimum-stability> for more details.
+
+Read <https://getcomposer.org/doc/articles/troubleshooting.md> for further common problems.
+#+END_SRC
+** re-installed composer stuff but still didn't work
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+Jingxuan-VirtualBox% php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+Installer verified
+Jingxuan-VirtualBox% php composer-setup.php
+php composer-setup.php
+All settings correct for using Composer
+Downloading 1.2.1...
+
+Composer successfully installed to: /home/jing/markdown-resume/composer.phar
+Use it: php composer.phar
+Jingxuan-VirtualBox% php -r "unlink('composer-setup.php');"
+php -r "unlink('composer-setup.php');"
+Jingxuan-VirtualBox% php composer.phar install
+php composer.phar install
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - phpunit/php-code-coverage 1.2.x-dev requires phpunit/php-token-stream >=1.1.3,<1.3.0 -> no matching package found.
+    - phpunit/php-code-coverage 1.2.x-dev requires phpunit/php-token-stream >=1.1.3,<1.3.0 -> no matching package found.
+    - Installation request for phpunit/php-code-coverage 1.2.x-dev -> satisfiable by phpunit/php-code-coverage[1.2.x-dev].
+
+Potential causes:
+ - A typo in the package name
+ - The package is not available in a stable-enough version according to your minimum-stability setting
+   see <https://getcomposer.org/doc/04-schema.md#minimum-stability> for more details.
+
+Read <https://getcomposer.org/doc/articles/troubleshooting.md> for further common problems.
+Jingxuan-VirtualBox% 
+#+END_SRC
+** tried to update composer
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php composer.phar selfupdate
+You are already using composer version 1.2.1 (stable channel).
+#+END_SRC
+** looks like updating the dependencies first, before installing the software, might be the solution
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php composer.phar update
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Updating phpunit/php-token-stream (dev-master cab6c6f => 1.2.2)
+    Checking out ad4e1e23ae01b483c16f600ff1bebec184588e32
+
+Package fabpot/php-cs-fixer is abandoned, you should avoid using it. Use friendsofphp/php-cs-fixer instead.
+Writing lock file
+Generating autoload files
+#+END_SRC
+** now it says that there is nothing to install or update!
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php composer.phar install
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Nothing to install or update
+Package fabpot/php-cs-fixer is abandoned, you should avoid using it. Use friendsofphp/php-cs-fixer instead.
+Generating autoload files
+#+END_SRC
+
+*** the error was not in actually installing the packages but finding a set of packages that are compatible with each other to install!
+
+- it makes sense now -- the packages could not be installed because the dependencies were out of sync (in terms of compatibility?)
+- after updating the dependencies, which showed that php-token-stream is being updated (in line with the compatibility issues before when tried to install the packages), it was showed that there was no packages to be installed (before I had already installed them previously)
