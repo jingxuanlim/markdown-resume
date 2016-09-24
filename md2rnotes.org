@@ -336,3 +336,88 @@ Installing dependencies (including require-dev) from lock file
 Nothing to install or update
 Generating autoload files
 #+END_SRC
+** tried to generate a new cv but the changes were registered
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php md2resume_dev.php html --template modern ~/career/cv.md ~/career/
+Wrote resume to: /u/jing/career/cv.html
+#+END_SRC
+** [master e40effe] changed h2 font-size back to 18px but color to red
+** generated a new cv but the changes were not what i expected!
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php md2resume_dev.php html --template modern ~/career/cv.md ~/career/
+Wrote resume to: /u/jing/career/cv.html
+#+END_SRC
+*** both h2 color and font-size were changed, although i had already changed the font-size back to 18px...
+[[file:gif/20160924-cv-a][20160924-cv-a]]
+*** as expected the pen-ultimate declaration of h2 is exactly the same as what declared in resume.css
+#+BEGIN_SRC 
+h2 {
+  margin: 0em 0em 1em;
+  padding: 0;
+  font-size: 18px;
+  font-style: italic;
+  letter-spacing: -1px;
+  font-weight: normal;
+  color: red;
+}
+#+END_SRC
+*** however, there's an additional declaration of h2 from, I'm guessing, the github repo (i.e. pushed changes), or another, as yet unknown, css file
+#+BEGIN_SRC 
+h2 {
+  margin: 0em 0em 1em;
+  padding: 0;
+  font-size: 28px;
+  font-style: italic;
+  letter-spacing: -1px;
+  font-weight: normal;
+}
+#+END_SRC
+
+- the second conjecture seems unlikely as changing the font-size to 28px was only done in resume.css
+- I'm guessing now that this css came from the online repo?
+
+** re-generated the html cv
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php md2resume_dev.php html --template modern ~/career/cv.md ~/career/
+Wrote resume to: /u/jing/career/cv.html
+#+END_SRC
+*** still the same -- 28 px h2 and red in color
+[[file:gif/20160924-cv-b.png][20160924-cv-b]]
+** pushed and try generating again
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% php md2resume_dev.php html --template modern ~/career/cv.md ~/career/
+Wrote resume to: /u/jing/career/cv.html
+#+END_SRC
+*** nope, still the same -- h2 28 px and red in color when i'm expecting h2 18px
+[[file:gif/20160924-cv-c.png][20160924-cv-c]]
+- wondering where the final css comes from?
+** investigating how the command to generate the cv works
+*** looks like the css is first stored in index.html before pre-pending it to the html generated of the cv
+see: [[file:src/Resume/Command/HtmlCommand.php::$templateIndexPath%20=%20join(DIRECTORY_SEPARATOR,%20array($templatePath,%20'index.html'));]]
+*** generating the pdf involves generating the html file first using the generateHtml() function in HtmlCommand.php
+see: [[file:src/Resume/Command/PdfCommand.php::$rendered%20=%20$this->generateHtml($source,%20$template,%20false);]]
+*** I suspect that the sequence at which the css files are concatenated are determined by the usort() function here
+see: [[file:src/Resume/Command/HtmlCommand.php::usort($assets,%20function%20(FileAsset%20$a,%20FileAsset%20$b)%20{]]
+
+#+BEGIN_SRC
+strcmp()
+
+Returns < 0 if str1 is less than str2; > 0 if str1 is greater than str2, and 0 if they are equal. 
+#+END_SRC
+- Adila is right -- css file concatenation sequence is probably by alphabetical order
+
+#+BEGIN_QUOTE
+What the script does is replace {{{style}}} with the concatenated css files in the css folder. I think it does this in alphabetical order (element.less --> normalize.css --> pdf.css --> resume.css --> screen.css) so if you want to try and hack your way around this, you could also add a zzz.css file in your css/ folder. Since zzz.css will get concatenated last, it should overwrite everything that comes before it. -- Adila
+#+END_QUOTE
+** AH I think the extra h2 declaration is coming from the history file!!
+*** grep for 28px
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% cd templates
+Jingxuan-VirtualBox% grep -rni "28px" .
+./modern/css/resume.css~:83:    font-size: 28px;
+#+END_SRC
+- the command likely took the whole dir into consideration so it's likely that resume.css~ also got concatenated!!
+** deleted resume.css~ and trying again
+** removed all the auto-saved files and tried again
+*** it worked!
+[[file:gif/20160924-cv-d.png][20160924-cv-d]]
