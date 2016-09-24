@@ -423,3 +423,16 @@ Jingxuan-VirtualBox% grep -rni "28px" .
 [[file:gif/20160924-cv-d.png][20160924-cv-d]]
 ** [master c62c2e4] removed red h2 -- back to original
 ** [master 9bcefc2] changed dt font-size to 140%, and removed text-indentation
+** checked out only the modern folder for easy reference
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% svn checkout https://github.com/there4/markdown-resume/trunk/templates/modern
+A    modern/css
+A    modern/css/elements.less
+A    modern/css/normalize.css
+A    modern/css/pdf.css
+A    modern/css/resume.css
+A    modern/css/screen.css
+A    modern/description.txt
+A    modern/index.html
+Checked out revision 125.
+#+END_SRC
