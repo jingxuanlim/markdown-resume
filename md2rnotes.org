@@ -479,3 +479,6 @@ remote: Total 863 (delta 0), reused 0 (delta 0), pack-reused 863
 Resolving deltas: 100% (335/335), done.
 Checking connectivity... done.
 #+END_SRC
+** [master 41e59a1] removed the whole submodule -- started in the whole folder
+ 3 files changed, 13 insertions(+), 4 deletions(-)
+ delete mode 160000 markdown-resume
