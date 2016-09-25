@@ -513,3 +513,5 @@ rm -rf .git/modules/templates/
 Jingxuan-VirtualBox% grep path .gitmodules | sed 's/.*= //'
 grep path .gitmodules | sed 's/.*= //'
 #+END_SRC
+** [master 4997872] added and now removing the submodule again -- want to start again
+ 1 file changed, 20 insertions(+)
