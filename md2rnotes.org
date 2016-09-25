@@ -957,3 +957,24 @@ git rm -rf bin/ build/ examples/ src/ tests composer.lock composer.json md2resum
 #+BEGIN_SRC 
 git rm -rf blockish/ readable/ swissen/ unstyled/
 #+END_SRC
+** doesn't work :(
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% git clone --recursive https://github.com/jingxlim/markdown-resume.git
+git clone --recursive https://github.com/jingxlim/markdown-resume.git
+Cloning into 'markdown-resume'...
+remote: Counting objects: 1259, done.
+remote: Compressing objects: 100% (107/107), done.
+remote: Total 1259 (delta 68), reused 0 (delta 0), pack-reused 1151
+Receiving objects: 100% (1259/1259), 8.96 MiB | 1.85 MiB/s, done.
+Resolving deltas: 100% (576/576), done.
+Checking connectivity... done.
+Submodule 'templates/modern' (https://github.com/there4/markdown-resume.git) registered for path 'templates/modern'
+Cloning into 'templates/modern'...
+remote: Counting objects: 863, done.
+remote: Total 863 (delta 0), reused 0 (delta 0), pack-reused 863
+Receiving objects: 100% (863/863), 7.04 MiB | 1.89 MiB/s, done.
+Resolving deltas: 100% (335/335), done.
+Checking connectivity... done.
+fatal: reference is not a tree: 32b32cd78d2960146ce18679cda0de953c15153b
+Unable to checkout '32b32cd78d2960146ce18679cda0de953c15153b' in submodule path 'templates/modern'
+#+END_SRC
