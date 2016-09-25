@@ -549,7 +549,6 @@ Checking connectivity... done.
 in the root folder:
 #+BEGIN_SRC 
 Jingxuan-VirtualBox% grep path .gitmodules | sed 's/.*= //'
-grep path .gitmodules | sed 's/.*= //'
 templates/modern
 #+END_SRC
 ** Couldn't find 'stable' so checked out 'master' 
@@ -942,3 +941,6 @@ Unable to checkout '26638a4ebb6f5460ffa95022eafb7004c0f152d0' in submodule path 
 - sparse checkout seems like a local thing and a filter
 - it doesn't make any changes in the repository, which therefore cannot be propagated to remote
 - I should try the final way I can think of: add submodule then remove all the unwanted stuff -- that way all the changes could be detected and propagate by git
+** [master b63aa18] deleted modern submodule -- ready to restart
+ 3 files changed, 35 insertions(+), 4 deletions(-)
+ delete mode 160000 templates/modern
