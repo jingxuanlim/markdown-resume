@@ -979,3 +979,12 @@ fatal: reference is not a tree: 32b32cd78d2960146ce18679cda0de953c15153b
 Unable to checkout '32b32cd78d2960146ce18679cda0de953c15153b' in submodule path 'templates/modern'
 #+END_SRC
 ** [master 0a669a1] removed submodule
+** [master cac9028] svn checkout there4's modern template and added them to the git repository
+ 8 files changed, 1118 insertions(+)
+ create mode 100755 templates/modern/css/elements.less
+ create mode 100644 templates/modern/css/normalize.css
+ create mode 100644 templates/modern/css/pdf.css
+ create mode 100644 templates/modern/css/resume.css
+ create mode 100644 templates/modern/css/screen.css
+ create mode 100644 templates/modern/description.txt
+ create mode 100644 templates/modern/index.html

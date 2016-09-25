@@ -103,6 +103,8 @@ ul {
     padding: 0;
     list-style: none;
     display: table;
+    width: 642px;
+    text-align: justify;
 }
 ul li {
     margin: 0;
