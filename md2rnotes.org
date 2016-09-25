@@ -531,3 +531,379 @@ Checking connectivity... done.
 ** [master 7949b79] removed submodule
  3 files changed, 1 insertion(+), 4 deletions(-)
  delete mode 160000 templates/modern
+** [master 7e5c823] added markdown-resume as a submodule, but put it in a folder called 'modern'
+ 3 files changed, 7 insertions(+)
+ create mode 160000 templates/modern
+
+in the templates folder:
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% git submodule add https://github.com/there4/markdown-resume.git modern
+Cloning into 'templates/modern'...
+remote: Counting objects: 863, done.
+remote: Total 863 (delta 0), reused 0 (delta 0), pack-reused 863
+Receiving objects: 100% (863/863), 7.04 MiB | 1.60 MiB/s, done.
+Resolving deltas: 100% (335/335), done.
+Checking connectivity... done.
+#+END_SRC
+
+in the root folder:
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% grep path .gitmodules | sed 's/.*= //'
+grep path .gitmodules | sed 's/.*= //'
+templates/modern
+#+END_SRC
+** Couldn't find 'stable' so checked out 'master' 
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% git checkout stable
+git checkout stable
+error: pathspec 'stable' did not match any file(s) known to git.
+Jingxuan-VirtualBox% git checkout master
+git checkout master
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+#+END_SRC
+** enabled sparse checkouts in my repo -- not sure to do it in the submodule dir or the dir of its set ups in '.git/modules'
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% pwd
+/home/jing/markdown-resume/templates/modern
+Jingxuan-VirtualBox% git config core.sparseCheckout true
+#+END_SRC
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% cd .git/modules/templates/modern/
+Jingxuan-VirtualBox% git config core.sparseCheckout true
+#+END_SRC
+** looks like the .git folder is not tracked by the master project?
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% git ls-tree -r master --name-only
+.gitignore
+.gitmodules
+.travis.yml
+README.md
+bin/md2resume
+build/empir
+build/lint
+composer.json
+composer.lock
+cv/alperinCV.html
+cv/alperinCV.md
+cv/alperinCV.pdf
+cv/altmetric-overrides.css
+cv/external_link.png
+cv/genericons/COPYING.txt
+cv/genericons/LICENSE.txt
+cv/genericons/README.md
+cv/genericons/genericons.css
+cv/genericons/genericons/Genericons.eot
+cv/genericons/genericons/Genericons.svg
+cv/genericons/genericons/Genericons.ttf
+cv/genericons/genericons/Genericons.woff
+cv/genericons/genericons/genericons.css
+cv/genericons/package.json
+cv/genericons/source/.fontcustom-manifest.json
+cv/genericons/source/fontcustom-templates/genericons.css
+cv/genericons/source/fontcustom-webfont/Genericons.eot
+cv/genericons/source/fontcustom-webfont/Genericons.svg
+cv/genericons/source/fontcustom-webfont/Genericons.ttf
+cv/genericons/source/fontcustom-webfont/Genericons.woff
+cv/genericons/source/fontcustom-webfont/genericons.css
+cv/genericons/source/fontcustom.yml
+cv/genericons/source/svg/404.svg
+cv/genericons/source/svg/activity.svg
+cv/genericons/source/svg/anchor.svg
+cv/genericons/source/svg/aside.svg
+cv/genericons/source/svg/attachment.svg
+cv/genericons/source/svg/audio.svg
+cv/genericons/source/svg/bold.svg
+cv/genericons/source/svg/book.svg
+cv/genericons/source/svg/bug.svg
+cv/genericons/source/svg/cart.svg
+cv/genericons/source/svg/category.svg
+cv/genericons/source/svg/chat.svg
+cv/genericons/source/svg/checkmark.svg
+cv/genericons/source/svg/close-alt.svg
+cv/genericons/source/svg/close.svg
+cv/genericons/source/svg/cloud-download.svg
+cv/genericons/source/svg/cloud-upload.svg
+cv/genericons/source/svg/cloud.svg
+cv/genericons/source/svg/code.svg
+cv/genericons/source/svg/codepen.svg
+cv/genericons/source/svg/cog.svg
+cv/genericons/source/svg/collapse.svg
+cv/genericons/source/svg/comment.svg
+cv/genericons/source/svg/day.svg
+cv/genericons/source/svg/digg.svg
+cv/genericons/source/svg/document.svg
+cv/genericons/source/svg/dot.svg
+cv/genericons/source/svg/downarrow.svg
+cv/genericons/source/svg/download.svg
+cv/genericons/source/svg/draggable.svg
+cv/genericons/source/svg/dribbble.svg
+cv/genericons/source/svg/dropbox.svg
+cv/genericons/source/svg/dropdown-left.svg
+cv/genericons/source/svg/dropdown.svg
+cv/genericons/source/svg/edit.svg
+cv/genericons/source/svg/ellipsis.svg
+cv/genericons/source/svg/expand.svg
+cv/genericons/source/svg/external.svg
+cv/genericons/source/svg/facebook-alt.svg
+cv/genericons/source/svg/facebook.svg
+cv/genericons/source/svg/fastforward.svg
+cv/genericons/source/svg/feed.svg
+cv/genericons/source/svg/flag.svg
+cv/genericons/source/svg/flickr.svg
+cv/genericons/source/svg/foursquare.svg
+cv/genericons/source/svg/fullscreen.svg
+cv/genericons/source/svg/gallery.svg
+cv/genericons/source/svg/github.svg
+cv/genericons/source/svg/googleplus-alt.svg
+cv/genericons/source/svg/googleplus.svg
+cv/genericons/source/svg/handset.svg
+cv/genericons/source/svg/heart.svg
+cv/genericons/source/svg/help.svg
+cv/genericons/source/svg/hide.svg
+cv/genericons/source/svg/hierarchy.svg
+cv/genericons/source/svg/home.svg
+cv/genericons/source/svg/image.svg
+cv/genericons/source/svg/info.svg
+cv/genericons/source/svg/instagram.svg
+cv/genericons/source/svg/italic.svg
+cv/genericons/source/svg/key.svg
+cv/genericons/source/svg/leftarrow.svg
+cv/genericons/source/svg/link.svg
+cv/genericons/source/svg/linkedin-alt.svg
+cv/genericons/source/svg/linkedin.svg
+cv/genericons/source/svg/location.svg
+cv/genericons/source/svg/lock.svg
+cv/genericons/source/svg/mail.svg
+cv/genericons/source/svg/maximize.svg
+cv/genericons/source/svg/menu.svg
+cv/genericons/source/svg/microphone.svg
+cv/genericons/source/svg/minimize.svg
+cv/genericons/source/svg/minus.svg
+cv/genericons/source/svg/month.svg
+cv/genericons/source/svg/move.svg
+cv/genericons/source/svg/next.svg
+cv/genericons/source/svg/notice.svg
+cv/genericons/source/svg/paintbrush.svg
+cv/genericons/source/svg/path.svg
+cv/genericons/source/svg/pause.svg
+cv/genericons/source/svg/phone.svg
+cv/genericons/source/svg/picture.svg
+cv/genericons/source/svg/pinned.svg
+cv/genericons/source/svg/pinterest-alt.svg
+cv/genericons/source/svg/pinterest.svg
+cv/genericons/source/svg/play.svg
+cv/genericons/source/svg/plugin.svg
+cv/genericons/source/svg/plus.svg
+cv/genericons/source/svg/pocket.svg
+cv/genericons/source/svg/polldaddy.svg
+cv/genericons/source/svg/portfolio.svg
+cv/genericons/source/svg/previous.svg
+cv/genericons/source/svg/print.svg
+cv/genericons/source/svg/quote.svg
+cv/genericons/source/svg/rating-empty.svg
+cv/genericons/source/svg/rating-full.svg
+cv/genericons/source/svg/rating-half.svg
+cv/genericons/source/svg/reddit.svg
+cv/genericons/source/svg/refresh.svg
+cv/genericons/source/svg/reply-alt.svg
+cv/genericons/source/svg/reply-single.svg
+cv/genericons/source/svg/reply.svg
+cv/genericons/source/svg/rewind.svg
+cv/genericons/source/svg/rightarrow.svg
+cv/genericons/source/svg/search.svg
+cv/genericons/source/svg/send-to-phone.svg
+cv/genericons/source/svg/send-to-tablet.svg
+cv/genericons/source/svg/share.svg
+cv/genericons/source/svg/show.svg
+cv/genericons/source/svg/shuffle.svg
+cv/genericons/source/svg/sitemap.svg
+cv/genericons/source/svg/skip-ahead.svg
+cv/genericons/source/svg/skip-back.svg
+cv/genericons/source/svg/skype.svg
+cv/genericons/source/svg/spam.svg
+cv/genericons/source/svg/spotify.svg
+cv/genericons/source/svg/standard.svg
+cv/genericons/source/svg/star.svg
+cv/genericons/source/svg/status.svg
+cv/genericons/source/svg/stop.svg
+cv/genericons/source/svg/stumbleupon.svg
+cv/genericons/source/svg/subscribe.svg
+cv/genericons/source/svg/subscribed.svg
+cv/genericons/source/svg/summary.svg
+cv/genericons/source/svg/tablet.svg
+cv/genericons/source/svg/tag.svg
+cv/genericons/source/svg/time.svg
+cv/genericons/source/svg/top.svg
+cv/genericons/source/svg/trash.svg
+cv/genericons/source/svg/tumblr.svg
+cv/genericons/source/svg/twitch.svg
+cv/genericons/source/svg/twitter.svg
+cv/genericons/source/svg/unapprove.svg
+cv/genericons/source/svg/unsubscribe.svg
+cv/genericons/source/svg/unzoom.svg
+cv/genericons/source/svg/uparrow.svg
+cv/genericons/source/svg/user.svg
+cv/genericons/source/svg/video.svg
+cv/genericons/source/svg/videocamera.svg
+cv/genericons/source/svg/vimeo.svg
+cv/genericons/source/svg/warning.svg
+cv/genericons/source/svg/website.svg
+cv/genericons/source/svg/week.svg
+cv/genericons/source/svg/wordpress.svg
+cv/genericons/source/svg/xpost.svg
+cv/genericons/source/svg/youtube.svg
+cv/genericons/source/svg/zoom.svg
+cv/scholar_logo.png
+cv/scholar_logo_long.png
+cv/slides_link.png
+cv/stats-ir.js
+cv/video_link.png
+examples/output/sample_long-a.html
+examples/output/sample_long-b.html
+examples/source/sample.md
+examples/source/sample_long.md
+examples/source/zhsample.md
+gif/20160919-sample_long-html-a.png
+gif/20160919-sample_long-html-b.png
+md2resume_dev.php
+md2rnotes.org
+pakefile
+phpunit.xml
+src/Resume/Cli/Resume.php
+src/Resume/Cli/TwigFormatters.php
+src/Resume/Command/HtmlCommand.php
+src/Resume/Command/PdfCommand.php
+src/Resume/Command/SelfUpdateCommand.php
+src/Resume/Command/StatsCommand.php
+src/Resume/Command/TemplatesCommand.php
+src/Resume/Command/VersionCommand.php
+src/Resume/Templates/frequency.twig
+src/Resume/Templates/templates.twig
+templates/blockish/css/elements.less
+templates/blockish/css/normalize.css
+templates/blockish/css/pdf.css
+templates/blockish/css/resume.css
+templates/blockish/css/screen.css
+templates/blockish/description.txt
+templates/blockish/index.html
+templates/jalperin/css/elements.less
+templates/jalperin/css/normalize.css
+templates/jalperin/css/pdf.css
+templates/jalperin/css/resume.css
+templates/jalperin/css/screen.css
+templates/jalperin/description.txt
+templates/jalperin/index.html
+templates/modern
+templates/readable/css/resume.css
+templates/readable/description.txt
+templates/readable/index.html
+templates/readable/links/bootswatch
+templates/swissen/css/elements.less
+templates/swissen/css/normalize.css
+templates/swissen/css/pdf.css
+templates/swissen/css/resume.css
+templates/swissen/css/screen.css
+templates/swissen/description.txt
+templates/swissen/index.html
+templates/unstyled/css/elements.less
+templates/unstyled/css/normalize.css
+templates/unstyled/css/pdf.css
+templates/unstyled/css/resume.css
+templates/unstyled/css/screen.css
+templates/unstyled/description.txt
+templates/unstyled/index.html
+tests/ListCommandTest.php
+tests/VersionCommandTest.php
+tests/bootstrap.php
+updatecv.py
+version
+#+END_SRC
+** created sparse-checkout file 
+dir: .git/modules/templates/modern/info/sparse-checkout
+#+BEGIN_SRC 
+templates/modern
+#+END_SRC
+** sparse-checkout
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% git read-tree -mu HEAD
+#+END_SRC
+** [master 26638a4] moved the modern template files up to the root level
+ 7 files changed, 0 insertions(+), 0 deletions(-)
+ rename {templates/modern/css => css}/elements.less (100%)
+ rename {templates/modern/css => css}/normalize.css (100%)
+ rename {templates/modern/css => css}/pdf.css (100%)
+ rename {templates/modern/css => css}/resume.css (100%)
+ rename {templates/modern/css => css}/screen.css (100%)
+ rename templates/modern/description.txt => description.txt (100%)
+ rename templates/modern/index.html => index.html (100%)
+
+ #+BEGIN_SRC 
+Jingxuan-VirtualBox% cd templates/modern/
+cd templates/modern/
+Jingxuan-VirtualBox% git mv * .[^.]* ..
+git mv * .[^.]* ..
+Jingxuan-VirtualBox% git status
+git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    css/elements.less -> ../css/elements.less
+	renamed:    css/normalize.css -> ../css/normalize.css
+	renamed:    css/pdf.css -> ../css/pdf.css
+	renamed:    css/resume.css -> ../css/resume.css
+	renamed:    css/screen.css -> ../css/screen.css
+	renamed:    description.txt -> ../description.txt
+	renamed:    index.html -> ../index.html
+
+Jingxuan-VirtualBox% cd ..
+cd ..
+Jingxuan-VirtualBox% pwd
+pwd
+/home/jing/markdown-resume/templates/modern/templates
+Jingxuan-VirtualBox% git rm -rf modern/
+git rm -rf modern/
+fatal: pathspec 'modern/' did not match any files
+Jingxuan-VirtualBox% rm -rf modern/
+rm -rf modern/
+Jingxuan-VirtualBox% git mv * .[^.]* ..
+git mv * .[^.]* ..
+Jingxuan-VirtualBox% git status
+git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    modern/css/elements.less -> ../css/elements.less
+	renamed:    modern/css/normalize.css -> ../css/normalize.css
+	renamed:    modern/css/pdf.css -> ../css/pdf.css
+	renamed:    modern/css/resume.css -> ../css/resume.css
+	renamed:    modern/css/screen.css -> ../css/screen.css
+	renamed:    modern/description.txt -> ../description.txt
+	renamed:    modern/index.html -> ../index.html
+
+Jingxuan-VirtualBox% cd ..
+cd ..
+Jingxuan-VirtualBox% rm -rf templates/
+rm -rf templates/
+Jingxuan-VirtualBox% git status
+git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    templates/modern/css/elements.less -> css/elements.less
+	renamed:    templates/modern/css/normalize.css -> css/normalize.css
+	renamed:    templates/modern/css/pdf.css -> css/pdf.css
+	renamed:    templates/modern/css/resume.css -> css/resume.css
+	renamed:    templates/modern/css/screen.css -> css/screen.css
+	renamed:    templates/modern/description.txt -> description.txt
+	renamed:    templates/modern/index.html -> index.html
+ #+END_SRC
