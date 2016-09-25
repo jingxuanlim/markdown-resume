@@ -949,3 +949,11 @@ Unable to checkout '26638a4ebb6f5460ffa95022eafb7004c0f152d0' in submodule path 
  create mode 160000 templates/modern
 ** [master 44cf2dc] remove everything except the templates folder
 ** [master e53ca3a] removed everything in the modern template except the templates folder
+#+BEGIN_SRC 
+git rm -rf bin/ build/ examples/ src/ tests composer.lock composer.json md2resume_dev.php pakefile phpunit.xml README.md version .travis.yml
+#+END_SRC
+** [master 32b32cd] removed all templates except modern and put it in the root directory of submodule
+** [master 4a73c6a] cleaned up submodule
+#+BEGIN_SRC 
+git rm -rf blockish/ readable/ swissen/ unstyled/
+#+END_SRC
