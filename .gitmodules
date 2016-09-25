@@ -1,0 +1,3 @@
+[submodule "templates/modern"]
+	path = templates/modern
+	url = https://github.com/there4/markdown-resume.git

@@ -528,3 +528,6 @@ Resolving deltas: 100% (335/335), done.
 Checking connectivity... done.
 #+END_SRC
 ** [master 07312ee] missed a few steps so going to start over again
+** [master 7949b79] removed submodule
+ 3 files changed, 1 insertion(+), 4 deletions(-)
+ delete mode 160000 templates/modern
