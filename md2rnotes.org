@@ -490,3 +490,6 @@ Checking connectivity... done.
 Jingxuan-VirtualBox% grep -nri "templates/templates/modern" *
 md2rnotes.org:487: create mode 160000 templates/templates/modern
 #+END_SRC
+** [master e621319] added the markdown-resume as a git submodule in the templates folder
+ 3 files changed, 10 insertions(+), 2 deletions(-)
+ rename templates/{templates/modern => markdown-resume} (100%)
