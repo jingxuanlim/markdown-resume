@@ -515,3 +515,15 @@ grep path .gitmodules | sed 's/.*= //'
 #+END_SRC
 ** [master 4997872] added and now removing the submodule again -- want to start again
  1 file changed, 20 insertions(+)
+** [master 569b52b] added the submodule to template/modern instead
+ 3 files changed, 6 insertions(+)
+ create mode 160000 templates/modern
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% git submodule add https://github.com/there4/markdown-resume.git modern
+Cloning into 'templates/modern'...
+remote: Counting objects: 863, done.
+remote: Total 863 (delta 0), reused 0 (delta 0), pack-reused 863
+Receiving objects: 100% (863/863), 7.04 MiB | 1.47 MiB/s, done.
+Resolving deltas: 100% (335/335), done.
+Checking connectivity... done.
+#+END_SRC
