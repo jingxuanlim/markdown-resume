@@ -978,3 +978,4 @@ Checking connectivity... done.
 fatal: reference is not a tree: 32b32cd78d2960146ce18679cda0de953c15153b
 Unable to checkout '32b32cd78d2960146ce18679cda0de953c15153b' in submodule path 'templates/modern'
 #+END_SRC
+** [master 0a669a1] removed submodule
