@@ -482,3 +482,11 @@ Checking connectivity... done.
 ** [master 41e59a1] removed the whole submodule -- started in the whole folder
  3 files changed, 13 insertions(+), 4 deletions(-)
  delete mode 160000 markdown-resume
+** [master 3b482e7] git submodule add https://github.com/there4/markdown-resume.git templates/modern
+ 3 files changed, 7 insertions(+)
+ create mode 160000 templates/templates/modern
+** not sure why cannot remove "templates/templates/modern" dir from the list of tracked files
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% grep -nri "templates/templates/modern" *
+md2rnotes.org:487: create mode 160000 templates/templates/modern
+#+END_SRC
