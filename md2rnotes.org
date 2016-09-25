@@ -948,3 +948,4 @@ Unable to checkout '26638a4ebb6f5460ffa95022eafb7004c0f152d0' in submodule path 
  3 files changed, 7 insertions(+), 1 deletion(-)
  create mode 160000 templates/modern
 ** [master 44cf2dc] remove everything except the templates folder
+** [master e53ca3a] removed everything in the modern template except the templates folder
