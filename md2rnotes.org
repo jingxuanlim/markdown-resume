@@ -493,3 +493,23 @@ md2rnotes.org:487: create mode 160000 templates/templates/modern
 ** [master e621319] added the markdown-resume as a git submodule in the templates folder
  3 files changed, 10 insertions(+), 2 deletions(-)
  rename templates/{templates/modern => markdown-resume} (100%)
+** [master ce75868] starting over -- removed all submodules
+ 3 files changed, 3 insertions(+), 4 deletions(-)
+ delete mode 160000 templates/markdown-resume
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% grep path .gitmodules | sed 's/.*= //'
+templates/markdown-resume
+Jingxuan-VirtualBox% git submodule deinit templates
+git submodule deinit templates
+Cleared directory 'templates/markdown-resume'
+Submodule 'templates/markdown-resume' (https://github.com/there4/markdown-resume.git) unregistered for path 'templates/markdown-resume'
+Jingxuan-VirtualBox% git rm templates/markdown-resume/
+git rm templates/markdown-resume/
+rm 'templates/markdown-resume'
+Jingxuan-VirtualBox% rm -rf .git/modules/markdown-resume/
+rm -rf .git/modules/markdown-resume/
+Jingxuan-VirtualBox% rm -rf .git/modules/templates/
+rm -rf .git/modules/templates/
+Jingxuan-VirtualBox% grep path .gitmodules | sed 's/.*= //'
+grep path .gitmodules | sed 's/.*= //'
+#+END_SRC
