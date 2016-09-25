@@ -449,3 +449,20 @@ Checked out revision 125.
 *** files I should restore
 probably only templates/modern/css/resume.css
 ** [master 9461443] reverted templates/modern/css/resume.css to the latest version from jalperin -- decided to start with there4's template instead so 'restting' jalperin's files to their mint condition
+** [master 0d52995] renamed jalperin's template from 'modern' to 'jalperin'
+#+BEGIN_SRC 
+ 8 files changed, 12 insertions(+)
+ rename templates/{modern => jalperin}/css/elements.less (100%)
+ rename templates/{modern => jalperin}/css/normalize.css (100%)
+ rename templates/{modern => jalperin}/css/pdf.css (100%)
+ rename templates/{modern => jalperin}/css/resume.css (100%)
+ rename templates/{modern => jalperin}/css/screen.css (100%)
+ rename templates/{modern => jalperin}/description.txt (100%)
+ rename templates/{modern => jalperin}/index.html (100%)
+#+END_SRC
+** idea about creating a git submodule of a subdirectory?
+- add submodule but don't clone
+- create sparse checkout file with only the templates/modern file to include
+- start cloning
+*** problems
+- still going to be a problem matching the directory because if cloning into the current working directory, then it would be something like that markdown-resume/markdown-resume/templates/modern
