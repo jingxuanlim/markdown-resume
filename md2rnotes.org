@@ -829,6 +829,7 @@ templates/modern
 Jingxuan-VirtualBox% git read-tree -mu HEAD
 #+END_SRC
 ** [master 26638a4] moved the modern template files up to the root level
+#+BEGIN_SRC 
  7 files changed, 0 insertions(+), 0 deletions(-)
  rename {templates/modern/css => css}/elements.less (100%)
  rename {templates/modern/css => css}/normalize.css (100%)
@@ -837,6 +838,7 @@ Jingxuan-VirtualBox% git read-tree -mu HEAD
  rename {templates/modern/css => css}/screen.css (100%)
  rename templates/modern/description.txt => description.txt (100%)
  rename templates/modern/index.html => index.html (100%)
+#+END_SRC
 
  #+BEGIN_SRC 
 Jingxuan-VirtualBox% cd templates/modern/
@@ -907,3 +909,36 @@ Changes to be committed:
 	renamed:    templates/modern/description.txt -> description.txt
 	renamed:    templates/modern/index.html -> index.html
  #+END_SRC
+** [master bed61f1] moved the modern template files onto the submodule's root level so that they are now effectively in 'templates/modern' in this superproject
+** not possible to access the 'templates/modern' folder on GitHub -- maybe it's because I moved the file around?
+** tried cloning the repository but the modern folder remains empty
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% git clone --recursive https://github.com/jingxlim/markdown-resume.git
+Cloning into 'markdown-resume'...
+remote: Counting objects: 1242, done.
+remote: Compressing objects: 100% (90/90), done.
+remote: Total 1242 (delta 56), reused 0 (delta 0), pack-reused 1151
+Receiving objects: 100% (1242/1242), 8.96 MiB | 1.72 MiB/s, done.
+Resolving deltas: 100% (564/564), done.
+Checking connectivity... done.
+Submodule 'templates/modern' (https://github.com/there4/markdown-resume.git) registered for path 'templates/modern'
+Cloning into 'templates/modern'...
+remote: Counting objects: 863, done.
+remote: Total 863 (delta 0), reused 0 (delta 0), pack-reused 863
+Receiving objects: 100% (863/863), 7.04 MiB | 2.18 MiB/s, done.
+Resolving deltas: 100% (335/335), done.
+Checking connectivity... done.
+fatal: reference is not a tree: 26638a4ebb6f5460ffa95022eafb7004c0f152d0
+Unable to checkout '26638a4ebb6f5460ffa95022eafb7004c0f152d0' in submodule path 'templates/modern'
+#+END_SRC
+** tried to init and update but also didn't work
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% git submodule init
+Jingxuan-VirtualBox% git submodule update
+fatal: reference is not a tree: 26638a4ebb6f5460ffa95022eafb7004c0f152d0
+Unable to checkout '26638a4ebb6f5460ffa95022eafb7004c0f152d0' in submodule path 'templates/modern'
+#+END_SRC
+** why didn't it work?
+- sparse checkout seems like a local thing and a filter
+- it doesn't make any changes in the repository, which therefore cannot be propagated to remote
+- I should try the final way I can think of: add submodule then remove all the unwanted stuff -- that way all the changes could be detected and propagate by git
