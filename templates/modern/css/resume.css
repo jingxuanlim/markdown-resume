@@ -97,6 +97,12 @@ h3+p {
     line-height: 24px;
 }
 
+h4 {
+    margin: -.2em 0em .1em;
+    font-weight: normal;
+    font-size: 120%;
+    margin: 0 0 0 170px;
+}
 
 ul {
     margin: 0;
@@ -163,6 +169,11 @@ dl {
         font-size: 80%;
         line-height: 1.4em;
     }
+    dd p {
+	margin: 0px;
+	display: table;
+	columns: 3;
+    }
     strong {
         display: block;
     }
@@ -173,6 +184,17 @@ dl {
         font-style: bold;
     }
     
+}
+
+table {
+    font-size: 14px;
+    width: 79%;
+    border-collapse: collapse;
+    margin: 0 0 0 170px;
+    
+    thead {
+	display:none;
+    }
 }
 
 

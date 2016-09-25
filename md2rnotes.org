@@ -460,6 +460,7 @@ probably only templates/modern/css/resume.css
  rename templates/{modern => jalperin}/description.txt (100%)
  rename templates/{modern => jalperin}/index.html (100%)
 #+END_SRC
+* 16sep25
 ** idea about creating a git submodule of a subdirectory?
 - add submodule but don't clone
 - create sparse checkout file with only the templates/modern file to include
@@ -988,3 +989,26 @@ Unable to checkout '32b32cd78d2960146ce18679cda0de953c15153b' in submodule path 
  create mode 100644 templates/modern/css/screen.css
  create mode 100644 templates/modern/description.txt
  create mode 100644 templates/modern/index.html
+** [master 609cf83] added width: 642px and text-align: justify to ul
+** TODO ul cannot take small screens anymore since I set it to a fixed width -- do something about it?
+- State "TODO"       from              [2016-09-26 Mon 02:47]
+** where is the singlespace class defined?
+(some output not copied)
+#+BEGIN_SRC 
+Jingxuan-VirtualBox% grep -nri "singlespace" *
+altmetric-overrides.css:40:.singlespace + dl dd p::before {
+altmetric-overrides.css:46:.singlespace + dl dd+dd {
+#+END_SRC
+** jalperin's h4 'blocks' are aligned because they are encapsulated by a definition list element
+[[file:gif/20160925-jalperin-a.png][20160925-jalperin-a]]
+#+BEGIN_SRC 
+<dl>
+
+<dt><h4> </dt></h4>
+<dd></dd>
+
+<dt><h4> </dt></h4>
+<dd></dd>
+
+</dl>
+#+END_SRC
