@@ -189,13 +189,20 @@ table {
     font-size: 14px;
     width: 79%;
     border-collapse: collapse;
-    margin: 0 0 0 170px;
+    margin: 0 0 0 12.1em;
     
     thead {
-	display:none;
+	    display:none;
+    }
+
+    td:nth-child(1) {
+        width: 45%;
+    }
+
+    td:nth-child(2) {
+        width: 45%;
     }
 }
-
 
 #footer {
     display: none;
