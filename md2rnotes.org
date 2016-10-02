@@ -1013,3 +1013,6 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
 </dl>
 #+END_SRC
 ** [master da672f7] started defining table and h4 -- have to worry about alignment
+* 16oct02
+** [master 309754e] adjusted h4's margin
+** [master 97c527c] fixed tables, so they all have the same column widths instead of depending on contents of the particular table

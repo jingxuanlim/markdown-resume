@@ -103,31 +103,32 @@ h4 {
     font-size: 120%;
 }
 
-ul {
+h3+ul {
     margin: 0;
     padding: 0;
     list-style: none;
     display: table;
     width: 642px;
-    text-align: justify;
-}
-ul li {
-    margin: 0;
-    padding: 0;
-}
+    text-align: left;
 
-ul dl {
-    margin: .3em 0 0;
-    padding: 0;
-    width: 100%;
-    dt {
-        font-size: 100%;
+    li {
+        margin: 0;
+        padding: 0;
     }
-    dd {
-        margin: 0 0 1em;
-        padding: 0 2em 0 0;
-        font-size: .8em;
-        line-height: 1.5em;
+
+    dl {
+        margin: .3em 0 0;
+        padding: 0;
+        width: 100%;
+        dt {
+            font-size: 100%;
+        }
+        dd {
+            margin: 0 0 1em;
+            padding: 0 2em 0 0;
+            font-size: .8em;
+            line-height: 1.5em;
+        }
     }
 }
 
