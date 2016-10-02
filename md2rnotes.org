@@ -1,4 +1,4 @@
-* 16sep19
+* 16sep19 Re-cloned the repo and first runs to get examples of the broken program
 ** fresh start
 Guide: https://github.com/adilapapaya/markdown-resume#feature-development
 *** installed composer
@@ -222,7 +222,7 @@ Jingxuan-VirtualBox%  mv examples/output/sample_long.html examples/output/sample
  create mode 100644 examples/output/sample_long-b.html
  create mode 100644 gif/20160919-sample_long-html-b.png
 #+END_SRC
-* 16sep24
+* 16sep24 Breakthrough: Emacs auto-save feature generates additional (and old) css files that are also used by the program to generate my CV -- therefore causing my new changes to be over-ridden by my old ones! Fixed that by auto-saving out of the directory.
 ** [master 18541f2] updated composer.json to include my details and pointers to my repository
 ** re-ran the generator but it didn't work -- the change in font size wasn't registered
 #+BEGIN_SRC 
@@ -460,7 +460,7 @@ probably only templates/modern/css/resume.css
  rename templates/{modern => jalperin}/description.txt (100%)
  rename templates/{modern => jalperin}/index.html (100%)
 #+END_SRC
-* 16sep25
+* 16sep25 Tried to make there4's original modern template into a submodule (with other shenanigans with sparse checkout) that is able to continue fetching updates, but found out that it's not possible
 ** idea about creating a git submodule of a subdirectory?
 - add submodule but don't clone
 - create sparse checkout file with only the templates/modern file to include
@@ -1013,6 +1013,7 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
 </dl>
 #+END_SRC
 ** [master da672f7] started defining table and h4 -- have to worry about alignment
-* 16oct02
+* 16oct02 Introduced CSS elements for #awards and  #publications
 ** [master 309754e] adjusted h4's margin
 ** [master 97c527c] fixed tables, so they all have the same column widths instead of depending on contents of the particular table
+** [master b8b65ef] the grid list arrangement is only applicable when it follows h3

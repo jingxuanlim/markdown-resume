@@ -114,6 +114,7 @@ h3+ul {
     li {
         margin: 0;
         padding: 0;
+        width: 33%;
     }
 
     dl {
@@ -130,6 +131,13 @@ h3+ul {
             line-height: 1.5em;
         }
     }
+}
+
+h4+ul {
+    display:inline-block;
+    margin: -1em 0 0 10.7em;
+    padding: 0;
+    list-style: none;
 }
 
 ol {
