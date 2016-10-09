@@ -1078,3 +1078,5 @@ For example, ~<div markdown="1" class="Footer"> </div>~
 ** know when to use em as a measure of size because I might want to scale the font-size up and down. I guess it makes sense for top and bottom margin/padding/border -- as the font size increases, the line spacing should also increase, but for left and right it will not :csstip:
 ** don't even bother about the footer when it comes to the PDF... that means ~display:none~
 ** [master 21765a2] hide the footer since it won't appear on every single page and that information is already present in other parts of the document
+** [master 957b7e1] changed h2 padding-bottom to .2em so that it scales with the font size
+** many of the elements in html format are getting their widths from pdf.css. pdf.css is called before resume.css. pdf.css should contain the declarations that need to be changed in the pdf. However, declarations in pdf.css that are not in resume.css are also used in the html document! This is weird as I imagined pdf.css declaration to only come into effect when the output is pdf... maybe it is critical to think in terms of specificity values instead of sequence! :csstip:

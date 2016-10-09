@@ -87,7 +87,7 @@ h3 {
     font-size: 150%;
     font-style: italic;
     font-weight: normal;
-}
+}        
 
 h3+p {
     margin: .6em 0 16px;
@@ -221,4 +221,21 @@ table {
     width: 100%;
     font-size: 11px;
     text-align: center;
+}
+
+div.personalstatement {
+
+    h3 {
+        width: 100%;
+        margin: 0;
+    }
+
+    p {
+        margin: .6em 0 16px;
+        padding: 0;
+        display: block;
+        width: 100%;
+        font-size: 104%;
+        line-height: 24px;
+    }
 }
