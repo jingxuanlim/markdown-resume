@@ -1018,7 +1018,7 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
 ** [master 97c527c] fixed tables, so they all have the same column widths instead of depending on contents of the particular table
 ** [master b8b65ef] the grid list arrangement is only applicable when it follows h3
 ** [master 48a78bc] fixed division into three columns of unordered lists in screen.css
-* 16oct09
+* 16oct09 Fixed the alignment issues in the PDF
 ** [master 23325ff] adjusted the margins/padding of h2 and table
 ** [master a64f096] planning to give pdf.css a huge reorganisation so commiting first
 ** [master 6727008] re-organised pdf.css and also a bit of resume.css so that the order of the element facilitates searching
@@ -1074,3 +1074,6 @@ For example, ~<div markdown="1" class="Footer"> </div>~
 ** position: fixed; bottom: 0; does actually work when you print it directly from a browser!
 - But the document is in a mess when directly printed from a browser!
 ** however, since Markdown resume generator is using wkhtmltopdf, which uses a Qt Webkit rendering engine, this doesn't work as well, as suggested by a comment on the stackoverflow page
+** [master 282c0e0] removed all the footer stuff I was experimenting with before
+** know when to use em as a measure of size because I might want to scale the font-size up and down. I guess it makes sense for top and bottom margin/padding/border -- as the font size increases, the line spacing should also increase, but for left and right it will not :csstip:
+** don't even bother about the footer when it comes to the PDF... that means ~display:none~

@@ -2,14 +2,14 @@ body.pdf {
     color: black;
 
     .container {
-        width: 1000px;          /* try to fit into 2 pages*/
+        width: 1000px;          /* with sufficient font size, fit into 2 pages */
         margin: 0 auto;
         padding: 0;
         background: #fff;
         border: none;
         border-width: 8px 0 2px 0;
         text-align: left;
-        font-size: 100%;        /* scale all text size */
+        font-size: 110%;        /* scale all text size */
     }
 
     .resume {
@@ -69,7 +69,7 @@ body.pdf {
         dl {
             
             dt {
-                font-size: 125%;
+                font-size: 110%;
                 font-weight: normal;
                 margin: 0 0 .75em;
             }
@@ -81,11 +81,11 @@ body.pdf {
     }
 
     h4 {
-        margin: .2em 0em 0em 9.1em;
+        margin: .2em 0 0 21%;
     }
 
     h4+ul {
-        margin: -1em 0 0 10.9em;
+        margin: -1em 0 0 21%;
     }
 
     ol {
@@ -126,7 +126,11 @@ body.pdf {
     }
 
     table {
-        margin: .2em 0em .5em 12.5em;
+        margin: .2em 0em .5em 21%;
+    }
+
+    div.footer {
+        display: none;          /* hide the footer since can't print on every page*/
     }
 
 }
