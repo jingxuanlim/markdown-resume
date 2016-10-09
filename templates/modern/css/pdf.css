@@ -129,9 +129,4 @@ body.pdf {
         margin: .2em 0em .5em 12.5em;
     }
 
-    #footer+p {
-        position: fixed;
-        bottom: 0;
-    }
-
 }

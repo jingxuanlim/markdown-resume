@@ -1042,7 +1042,7 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
     }
 }
 #+END_SRC
-** 
+** [master e18ffc9] tried the same solution but in pdf.css but it didn't seem to work as well...
 #+BEGIN_SRC 
 #footer+p {
     position: fixed;
