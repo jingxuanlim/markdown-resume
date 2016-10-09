@@ -59,23 +59,32 @@ body.pdf {
     }
 
     h3+ul {
+        width: 666px;           /*666 px max before become unaligned*/
 
         li {
-            width: 33%;
-            float: left;
+            float: left;        /*side-by-side alignment falls apart without this*/
         }
+        
         dl {
-            margin: 0;
-            padding: 0.3em 0 0;
+            
             dt {
-                font-size: 122%;
+                font-size: 125%;
                 font-weight: normal;
                 margin: 0 0 .75em;
             }
             dd {
-                padding: 0 2em 0 0;
+                padding: 0 0 0 0;
+                font-size: .75em;
             }
         }
+    }
+
+    h4 {
+        margin: .2em 0em 0em 9.1em;
+    }
+
+    h4+ul {
+        margin: -1em 0 0 10.9em;
     }
 
     ol {
@@ -97,7 +106,7 @@ body.pdf {
 
     dl {
         margin: .7em 0 0;
-        page-break-inside: avoid !important;
+        page-break-inside: auto; /* used to be: avoid !important */
         display: block;
         width:79%;
         float: left;
@@ -113,6 +122,10 @@ body.pdf {
             font-style: normal;
         }
 
+    }
+
+    table {
+        margin: .2em 0em .5em 12.5em;
     }
 
 }

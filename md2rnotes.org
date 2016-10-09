@@ -1021,3 +1021,4 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
 * 16oct09
 ** [master 23325ff] adjusted the margins/padding of h2 and table
 ** [master a64f096] planning to give pdf.css a huge reorganisation so commiting first
+** [master 6727008] re-organised pdf.css and also a bit of resume.css so that the order of the element facilitates searching
