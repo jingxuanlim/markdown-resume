@@ -213,17 +213,8 @@ table {
     }
 }
 
-@media screen {
-    #footer {
-        display: none;
-    }
-}
-
-@media print {
-    #footer {
-        position: fixed;
-        bottom: 0;
-    }
+#footer {
+    display: none;
 }
 
 #footer + p {

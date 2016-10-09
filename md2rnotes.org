@@ -1027,7 +1027,7 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
 ** TODO Viewing the html file with smaller screen still doesn't work very well. This applies not only to the elements I recently created but also to the existing elements as well.
 - State "TODO"       from              [2016-10-10 Mon 00:09]
 ** [master b92cad6] changed the color of the pdf to white so the document is black and white when printed
-** 
+** [master 68d2e5d] tried to define @media print on resume.css to get footer to be printed on all pages but didn't work..
 #+BEGIN_SRC 
 @media screen {
     #footer {
@@ -1040,5 +1040,12 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
         position: fixed;
         bottom: 0;
     }
+}
+#+END_SRC
+** 
+#+BEGIN_SRC 
+#footer+p {
+    position: fixed;
+    bottom: 0;
 }
 #+END_SRC
