@@ -9,7 +9,7 @@ body.pdf {
         border: none;
         border-width: 8px 0 2px 0;
         text-align: left;
-        font-size: 110%;        /* scale all text size */
+        font-size: 113%;        /* scale all text size */
     }
 
     .resume {
@@ -45,7 +45,7 @@ body.pdf {
         text-transform: uppercase;
         font-style: italic;
         font-weight: normal;
-        padding-bottom: 0px;    /*reduce since 'Download PDF' no longer present*/
+        padding-bottom: .2em;    /*reduce since 'Download PDF' no longer present*/
     }
     
     h3 {
@@ -61,9 +61,13 @@ body.pdf {
 
     h3+ul {
         width: 666px;           /*666 px max before become unaligned*/
+        text-align: left;
+        text-justify: none;
 
         li {
             float: left;        /*side-by-side alignment falls apart without this*/
+            margin: 0;
+            padding: 0;
         }
         
         dl {
