@@ -1022,3 +1022,7 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
 ** [master 23325ff] adjusted the margins/padding of h2 and table
 ** [master a64f096] planning to give pdf.css a huge reorganisation so commiting first
 ** [master 6727008] re-organised pdf.css and also a bit of resume.css so that the order of the element facilitates searching
+** [master 40d49b5] fixed all the alignment issues in the pdf -- now look pretty similar to html version
+** the main difference I've found so far between the pdf and the html version is their alignment. This is true especially for the element that I recently defined, which require some tweaking to the right margin/padding. :md2rtip:
+** TODO Viewing the html file with smaller screen still doesn't work very well. This applies not only to the elements I recently created but also to the existing elements as well.
+- State "TODO"       from              [2016-10-10 Mon 00:09]

@@ -2,13 +2,14 @@ body.pdf {
     color: black;
 
     .container {
-        width: 1000px;
+        width: 1000px;          /* try to fit into 2 pages*/
         margin: 0 auto;
         padding: 0;
-        background: none;
+        background: #fff;
         border: none;
         border-width: 8px 0 2px 0;
         text-align: left;
+        font-size: 100%;        /* scale all text size */
     }
 
     .resume {
