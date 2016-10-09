@@ -1027,6 +1027,8 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
 ** TODO Viewing the html file with smaller screen still doesn't work very well. This applies not only to the elements I recently created but also to the existing elements as well.
 - State "TODO"       from              [2016-10-10 Mon 00:09]
 ** [master b92cad6] changed the color of the pdf to white so the document is black and white when printed
+** trying to get the footer to print on every page
+trying: http://stackoverflow.com/questions/1360869/how-to-use-html-to-print-header-and-footer-on-every-printed-page-of-a-document
 ** [master 68d2e5d] tried to define @media print on resume.css to get footer to be printed on all pages but didn't work..
 #+BEGIN_SRC 
 @media screen {
@@ -1049,3 +1051,26 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
     bottom: 0;
 }
 #+END_SRC
+** [master a92eaca] removed the footer modifications
+** another solution would be to do it manually after finish writing my PDF -- wait that wouldn't work as well because it would disrupt the block that spans two pages
+** trying to encase the whole footer in a div with a class
+#+BEGIN_SRC 
+@media screen {
+    div.Footer {
+        display: none;
+    }
+}
+
+@media print {
+    div.Footer {
+        position: fixed;
+        bottom: 0;
+    }
+#+END_SRC
+** you can use <div> </div> and even use a class with them, but if it's not markdown="1", then markdown syntax within it wouldn't be rendered :mdtip:
+For example, ~--------~ was supposed to be rendered as ~<hr></hr>~ but it was instead printed literally
+*** using both tag works!
+For example, ~<div markdown="1" class="Footer"> </div>~
+** position: fixed; bottom: 0; does actually work when you print it directly from a browser!
+- But the document is in a mess when directly printed from a browser!
+** however, since Markdown resume generator is using wkhtmltopdf, which uses a Qt Webkit rendering engine, this doesn't work as well, as suggested by a comment on the stackoverflow page
