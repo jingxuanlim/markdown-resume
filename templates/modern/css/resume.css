@@ -74,7 +74,7 @@ h1 {
 }
 h2 {
     margin: 0;
-    padding: 0;
+    padding-bottom: 8px;        /*tweak this to adjust hr position*/
     font-size: 18px;
     font-style: italic;
     letter-spacing: -1px;
@@ -198,7 +198,7 @@ table {
     font-size: 14px;
     width: 79%;
     border-collapse: collapse;
-    margin: 0 0 0 12.1em;
+    margin: .2em 0em .5em 12.1em;
     
     thead {
 	    display:none;
