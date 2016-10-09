@@ -1026,3 +1026,19 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
 ** the main difference I've found so far between the pdf and the html version is their alignment. This is true especially for the element that I recently defined, which require some tweaking to the right margin/padding. :md2rtip:
 ** TODO Viewing the html file with smaller screen still doesn't work very well. This applies not only to the elements I recently created but also to the existing elements as well.
 - State "TODO"       from              [2016-10-10 Mon 00:09]
+** [master b92cad6] changed the color of the pdf to white so the document is black and white when printed
+** 
+#+BEGIN_SRC 
+@media screen {
+    #footer {
+        display: none;
+    }
+}
+
+@media print {
+    #footer {
+        position: fixed;
+        bottom: 0;
+    }
+}
+#+END_SRC
