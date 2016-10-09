@@ -137,4 +137,14 @@ body.pdf {
         display: none;          /* hide the footer since can't print on every page*/
     }
 
+    div.personalstatement {
+        /* only the widths of h3 and h3+p were redefined, so set them back */
+        h3 {
+            width: 100%;
+             }
+
+        p {
+            width: 100%;
+        }
+    }
 }
