@@ -1,10 +1,6 @@
 body.pdf {
     color: black;
 
-    a {
-        text-decoration: none;
-        color: black;
-    }
     .container {
         width: 1000px;
         margin: 0 auto;
@@ -20,8 +16,19 @@ body.pdf {
         padding: 40px 80px;
     }
 
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
     a[href$='.pdf'] {
         display: none;
+    }
+
+    blockquote {
+        top: 40px;
+        right: 50px;
+        position: absolute;
     }
 
     h1 {
@@ -31,6 +38,7 @@ body.pdf {
         text-transform: uppercase;
         font-weight: normal;
     }
+    
     h2 {
         letter-spacing: 0;
         text-transform: uppercase;
@@ -38,36 +46,35 @@ body.pdf {
         font-weight: normal;
         padding-bottom: 0px;    /*reduce since 'Download PDF' no longer present*/
     }
+    
     h3 {
         float: left;
         width: 16%;
         font-style: normal;
     }
+    
     h3+p {
         float: left;
         width: 78%;
     }
 
-    blockquote {
-        top: 40px;
-        right: 50px;
-        position: absolute;
-    }
+    h3+ul {
 
-    ul li {
-        width: 33%;
-        float: left;
-    }
-    ul dl {
-        margin: 0;
-        padding: 0.3em 0 0;
-        dt {
-            font-size: 122%;
-            font-weight: normal;
-            margin: 0 0 .75em;
+        li {
+            width: 33%;
+            float: left;
         }
-        dd {
-            padding: 0 2em 0 0;
+        dl {
+            margin: 0;
+            padding: 0.3em 0 0;
+            dt {
+                font-size: 122%;
+                font-weight: normal;
+                margin: 0 0 .75em;
+            }
+            dd {
+                padding: 0 2em 0 0;
+            }
         }
     }
 
