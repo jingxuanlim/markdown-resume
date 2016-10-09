@@ -36,6 +36,7 @@ body.pdf {
         text-transform: uppercase;
         font-style: italic;
         font-weight: normal;
+        padding-bottom: 0px;    /*reduce since 'Download PDF' no longer present*/
     }
     h3 {
         float: left;

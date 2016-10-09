@@ -1018,3 +1018,5 @@ altmetric-overrides.css:46:.singlespace + dl dd+dd {
 ** [master 97c527c] fixed tables, so they all have the same column widths instead of depending on contents of the particular table
 ** [master b8b65ef] the grid list arrangement is only applicable when it follows h3
 ** [master 48a78bc] fixed division into three columns of unordered lists in screen.css
+* 16oct09
+** [master 23325ff] adjusted the margins/padding of h2 and table
