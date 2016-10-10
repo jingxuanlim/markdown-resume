@@ -75,7 +75,7 @@ h1 {
 h2 {
     margin: 0;
     padding-bottom: 8px;        /*tweak this to adjust hr position*/
-    font-size: 112%;
+    font-size: 112.5%;
     font-style: italic;
     letter-spacing: -1px;
     font-weight: normal;
@@ -156,7 +156,7 @@ ol li {
     float: left;
     list-style: none;
     line-height: 24px;
-    font-size: 90%;
+    font-size: 87.5%;
 }
 ol li:nth-child(1) {
     border-top: none;

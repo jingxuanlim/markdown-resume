@@ -1107,5 +1107,8 @@ exec('wkhtmltopdf -T 1.75cm -B 1.75cm --header-right ' . escapeshellarg('[page]'
 ** [master 595bf5f] increase the font-size to 11 so as a basis of comparison for the rest of the document -- the rest of the document should at least be size 11 as well
 ** [master c1e490e] changed h1 font-size to 300% (was 48px on resume.css, pdf.css and screen.css)
 ** note previous font-sizes
-h2: 18 px
-ol li: 14 px
+h1: 48px = 300%
+h2: 18 px = 112.5%
+ol li: 14 px = 87.5%
+** [master 1ec6de7] set all font-sizes as percentages -- now they should scale properly!
+** Generally, *1em = 12pt = 16px = 100%*. When using these font-sizes, let's see what happens when you increase the base font size (using the body CSS selector) from 100% to 120%. As you can see, both the em and percent units get larger as the base font-size increases, but pixels and points do not. :csstip:
