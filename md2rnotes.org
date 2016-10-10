@@ -1096,3 +1096,9 @@ here's an example: https://davidwalsh.name/css-page-breaks
 ** [master b8d298d] fixed the alignment of h4 to h3 on pdf.css as well
 ** [master a0ac1d4] tweak the dl properties -- dt and dd font-size -- so that they look good on pdf
 ** you cannot control the margins on paper -- the margin and padding in pdf.css are for the html format too so they will only appear on the first and last page for top and bottom :csstip:
+** [master 309d2c6] increased wkhtmltopdf's print top and bottom margins to 1.75cm! -- now all the margins (top/bottom/left/right) looks similar!
+** command for page numbers that wouldn't work now because my wkhtmltopdf is not patched with qt
+#+BEGIN_SRC 
+// Process the document with wkhtmltopdf
+exec('wkhtmltopdf -T 1.75cm -B 1.75cm --header-right ' . escapeshellarg('[page]'). ' ' . $pdfSource . ' ' . $destFilename);
+#+END_SRC
