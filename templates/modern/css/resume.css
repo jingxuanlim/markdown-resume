@@ -239,3 +239,16 @@ div.personalstatement {
         line-height: 24px;
     }
 }
+
+@media all {
+	.page-break	{
+        display: none;
+    }
+}
+
+@media print {
+	.page-break	{
+        display: block;
+        page-break-before: always;
+    }
+}

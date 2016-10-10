@@ -1088,3 +1088,4 @@ For example, ~<div markdown="1" class="Footer"> </div>~
 *** leaving them there because they still make sense
 ** Guess will have to add manually page breaks when my document is complete!
 here's an example: https://davidwalsh.name/css-page-breaks
+** [master 7b684c1] added page-break-before to strengthen the case but nope, still doesn't work!
