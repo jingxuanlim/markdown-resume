@@ -1084,3 +1084,7 @@ For example, ~<div markdown="1" class="Footer"> </div>~
 ** [master 7e9fea5] fixed widths in div.personalstatement in pdf.css
 * 16oct10
 ** [master d28d699] use percentage for table left margin since don't want the left/right margin to be affect by text size -- relined the tables in the div up
+** [master 0b18ef8] added some page-break stuff in dl but that doesn't seem to work for my purposes
+*** leaving them there because they still make sense
+** Guess will have to add manually page breaks when my document is complete!
+here's an example: https://davidwalsh.name/css-page-breaks
