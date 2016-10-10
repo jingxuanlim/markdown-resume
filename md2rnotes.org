@@ -1082,3 +1082,5 @@ For example, ~<div markdown="1" class="Footer"> </div>~
 ** many of the elements in html format are getting their widths from pdf.css. pdf.css is called before resume.css. pdf.css should contain the declarations that need to be changed in the pdf. However, declarations in pdf.css that are not in resume.css are also used in the html document! This is weird as I imagined pdf.css declaration to only come into effect when the output is pdf... maybe it is critical to think in terms of specificity values instead of sequence! :csstip:
 ** [master c5641cf] created a div class personalstatement and redefined p and h3 elements there!
 ** [master 7e9fea5] fixed widths in div.personalstatement in pdf.css
+* 16oct10
+** [master d28d699] use percentage for table left margin since don't want the left/right margin to be affect by text size -- relined the tables in the div up
