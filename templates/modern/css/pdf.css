@@ -32,6 +32,11 @@ body.pdf {
         position: absolute;
     }
 
+    hr {
+        page-break-before: avoid !important;
+        page-break-after: avoid !important;
+    }
+
     h1 {
         letter-spacing: 0;
         margin-top: 0;
@@ -113,6 +118,7 @@ body.pdf {
                 /* font-size: 65%; */
                 line-height: 1.2em;
                 margin: 0;
+                word-wrap: break-word;
             }
         }
     }

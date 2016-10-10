@@ -1082,7 +1082,7 @@ For example, ~<div markdown="1" class="Footer"> </div>~
 ** many of the elements in html format are getting their widths from pdf.css. pdf.css is called before resume.css. pdf.css should contain the declarations that need to be changed in the pdf. However, declarations in pdf.css that are not in resume.css are also used in the html document! This is weird as I imagined pdf.css declaration to only come into effect when the output is pdf... maybe it is critical to think in terms of specificity values instead of sequence! :csstip:
 ** [master c5641cf] created a div class personalstatement and redefined p and h3 elements there!
 ** [master 7e9fea5] fixed widths in div.personalstatement in pdf.css
-* 16oct10 Fixed margins and page number issues
+* 16oct10 Fixed margins and page number issues; decided to go for a more readable (read: bigger) version for the PDF since it will likely be printed on paper
 ** [master d28d699] use percentage for table left margin since don't want the left/right margin to be affect by text size -- relined the tables in the div up
 ** [master 0b18ef8] added some page-break stuff in dl but that doesn't seem to work for my purposes
 *** leaving them there because they still make sense
@@ -1121,3 +1121,4 @@ therefore, it needs to be scaled 11pt/8.76pt = 1.25570776256 = 126%
 ** tested it at 11 pt and it's indeed the same font-size as 73%; perhaps why they're not the same as the page number is because the page is actually shrunk to fit the paper by wkhtmltopdf!
 ** [master 834dbcb] made a new declaration for the #skills id such that instead of being placed side-by-side, they are stacked on top of each other. The new section allows #references to continue using the side-by-side layout
 ** [master 72b9a6c] scale font-size by 140% and fixed all the indentation problems that came with it -- the pdf version now looks very different from the html version
+** [master 5d55826] fixed the unsightly reference section
