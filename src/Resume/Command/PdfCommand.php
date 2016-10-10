@@ -83,7 +83,7 @@ class PdfCommand extends HtmlCommand
         file_put_contents($pdfSource, $rendered);
 
         // Process the document with wkhtmltopdf
-        exec('~/Downloads/wkhtmltox/bin/wkhtmltopdf -T 1.75cm -B 1.75cm --footer-right ' . escapeshellarg('[page]'). ' ' . $pdfSource . ' ' . $destFilename);
+        exec('~/Downloads/wkhtmltox/bin/wkhtmltopdf -T 1.75cm -B 1.75cm --footer-right ' . escapeshellarg('[page]'). ' --footer-font-size 10 ' . $pdfSource . ' ' . $destFilename);
 
         // Unlink the temporary file
         unlink($pdfSource);

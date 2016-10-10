@@ -1102,3 +1102,4 @@ here's an example: https://davidwalsh.name/css-page-breaks
 // Process the document with wkhtmltopdf
 exec('wkhtmltopdf -T 1.75cm -B 1.75cm --header-right ' . escapeshellarg('[page]'). ' ' . $pdfSource . ' ' . $destFilename);
 #+END_SRC
+** [master 8f10f5c] edited the wkhtmltopdf command so that (1) it uses one with patched Qt, (2) it sets the top and bottom margins to 1.75 cm, and (3) it prints a footer with page numbers
