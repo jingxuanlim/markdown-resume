@@ -67,7 +67,7 @@ hr {
     font-size: 1px;
     line-height: 0;
     overflow: visible;
-    page-break-after: avoid;
+    page-break-after: avoidg;
 }
 
 h1 {
