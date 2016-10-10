@@ -1090,3 +1090,5 @@ For example, ~<div markdown="1" class="Footer"> </div>~
 here's an example: https://davidwalsh.name/css-page-breaks
 ** [master 7b684c1] added page-break-before to strengthen the case but nope, still doesn't work!
 ** [master 40afc1d] created a class that allows the manual addition of page breaks!
+** [master a61430b] scaled font-size up
+** margins can overlap but padding can't?

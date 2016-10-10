@@ -128,14 +128,15 @@ h3+ul {
 }
 
 h4 {
-    margin: .2em 0em 0em 8.8em;
+    margin: 0em 0em 0em 8.8em;
+    padding: 0.5em 0 0 0;
     font-weight: normal;
     font-size: 120%;
 }
 
 h4+ul {
     display:inline-block;
-    margin: -1em 0 0 10.7em;
+    margin: -0.4em 0 0 10.7em;
     padding: 0;
     list-style: none;
 }
