@@ -1082,7 +1082,7 @@ For example, ~<div markdown="1" class="Footer"> </div>~
 ** many of the elements in html format are getting their widths from pdf.css. pdf.css is called before resume.css. pdf.css should contain the declarations that need to be changed in the pdf. However, declarations in pdf.css that are not in resume.css are also used in the html document! This is weird as I imagined pdf.css declaration to only come into effect when the output is pdf... maybe it is critical to think in terms of specificity values instead of sequence! :csstip:
 ** [master c5641cf] created a div class personalstatement and redefined p and h3 elements there!
 ** [master 7e9fea5] fixed widths in div.personalstatement in pdf.css
-* 16oct10
+* 16oct10 Fixed margins and page number issues
 ** [master d28d699] use percentage for table left margin since don't want the left/right margin to be affect by text size -- relined the tables in the div up
 ** [master 0b18ef8] added some page-break stuff in dl but that doesn't seem to work for my purposes
 *** leaving them there because they still make sense
@@ -1103,3 +1103,4 @@ here's an example: https://davidwalsh.name/css-page-breaks
 exec('wkhtmltopdf -T 1.75cm -B 1.75cm --header-right ' . escapeshellarg('[page]'). ' ' . $pdfSource . ' ' . $destFilename);
 #+END_SRC
 ** [master 8f10f5c] edited the wkhtmltopdf command so that (1) it uses one with patched Qt, (2) it sets the top and bottom margins to 1.75 cm, and (3) it prints a footer with page numbers
+** [master b51fe33] edit footer-font-size to 10
