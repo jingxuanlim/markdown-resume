@@ -49,18 +49,20 @@ body.pdf {
     }
     
     h3 {
+        padding: 0 1em .5em;
         float: left;
         width: 16%;
         font-style: normal;
+        page-break-after: avoid !important;
     }
     
     h3+p {
         float: left;
-        width: 78%;
+        width: 71%;
     }
 
     h3+ul {
-        width: 666px;           /*666 px max before become unaligned*/
+        width: 71%;           /*666 px max before become unaligned*/
         text-align: left;
         text-justify: none;
 
@@ -73,24 +75,21 @@ body.pdf {
         dl {
             
             dt {
-                font-size: 122%;
                 font-weight: normal;
                 margin: 0 0 .75em;
             }
             dd {
                 width: 100%;
                 padding: 0 0 0 0;
-                font-size: 73%;
             }
         }
     }
 
     #skills+ul {
-        width: 666px;
 
         li {
             display: block;
-            width: 125%;
+            width: 130%;
         }
 
         dl {
@@ -99,21 +98,32 @@ body.pdf {
                 margin: 0 0 0.25em;
             }
         }
-    }            
+    }
+
+    #references+ul {
+
+        dl {
+
+            dd {
+                font-size: 70%;
+            }
+        }
+    }
 
     h4 {
-        margin: 0em 0em 0em 21%;
+        margin: 0em 0em 0em 29%;
         padding: 0.5em 0 0 0;
     }
 
     h4+ul {
-        margin: -0.4em 0 0 21%;
+        margin: -0.4em 0 0 29%;
     }
 
     ol {
         float: left;
-        width: 79%;
+        width: 71%;
         margin: .7em 0 0;
+        page-break-inside: avoid !important;
     }
 
     ol li {
@@ -130,8 +140,8 @@ body.pdf {
     dl {
         margin: .7em 0 0;
         page-break-inside: auto; /* used to be: avoid !important */
-        display: block;
-        width:79%;
+        display: inline-block;
+        width:71%;
         float: left;
         dt {
             page-break-inside: avoid !important;
@@ -153,7 +163,8 @@ body.pdf {
     }
 
     table {
-        margin: .2em 0em .5em 21%;
+        margin: .2em 0em .5em 29%;
+        width: 71%;
     }
 
     div.footer {

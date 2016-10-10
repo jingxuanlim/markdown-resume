@@ -196,7 +196,7 @@ dl {
 }
 
 table {
-    font-size: 90%;
+    font-size: 85%;
     width: 79%;
     border-collapse: collapse;
     margin: .2em 0em .5em 20.99%;
@@ -206,11 +206,11 @@ table {
     }
 
     td:nth-child(1) {
-        width: 45%;
+        width: 42.5%;
     }
 
     td:nth-child(2) {
-        width: 45%;
+        width: 42.5%;
     }
 }
 
