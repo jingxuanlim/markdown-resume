@@ -1122,3 +1122,4 @@ therefore, it needs to be scaled 11pt/8.76pt = 1.25570776256 = 126%
 ** [master 834dbcb] made a new declaration for the #skills id such that instead of being placed side-by-side, they are stacked on top of each other. The new section allows #references to continue using the side-by-side layout
 ** [master 72b9a6c] scale font-size by 140% and fixed all the indentation problems that came with it -- the pdf version now looks very different from the html version
 ** [master 5d55826] fixed the unsightly reference section
+** [master 92bffd6] prevent page break before and after horizontal rule
