@@ -99,11 +99,12 @@
         float: left;
     }
     ul dl {
+        
         dt {
             font-size: 122%;
             font-weight: normal;
-            margin-bottom: .75em;
         }
+        
         dd {
             padding: 0 2em 0 0;
         }

@@ -101,11 +101,18 @@ body.pdf {
     }
 
     #references+ul {
+        
 
         dl {
+            dt {
+                /* font-size: 115%; */
+                margin-bottom: .25em;
+            }
 
             dd {
-                font-size: 70%;
+                /* font-size: 65%; */
+                line-height: 1.2em;
+                margin: 0;
             }
         }
     }
@@ -148,7 +155,7 @@ body.pdf {
             page-break-after: avoid !important; /* avoid, but not for sure */
         }
         dd {
-            page-break-inside: avoid !important;
+            /* page-break-inside: avoid !important; */
             page-break-before: avoid !important;
         }
         strong {
