@@ -1112,3 +1112,10 @@ h2: 18 px = 112.5%
 ol li: 14 px = 87.5%
 ** [master 1ec6de7] set all font-sizes as percentages -- now they should scale properly!
 ** Generally, *1em = 12pt = 16px = 100%*. When using these font-sizes, let's see what happens when you increase the base font size (using the body CSS selector) from 100% to 120%. As you can see, both the em and percent units get larger as the base font-size increases, but pixels and points do not. :csstip:
+** [master 1a03c57] fixed all the font-sizes exactly using the following conversion: 1em = 12pt = 16px = 100%
+** I think it makes sense to set all the font-sizes to scale-able units and the padding/margin etc to em -- depending on what the font-size is
+h3+ul dl dd: 73% = 8.76 pt
+therefore, it needs to be scaled 11pt/8.76pt = 1.25570776256 = 126%
+** seems like my calculations are wrong! the scaling is applied first
+12 pt * 126% * 73% = 11.0376 
+** tested it at 11 pt and it's indeed the same font-size as 73%; perhaps why they're not the same as the page number is because the page is actually shrunk to fit the paper by wkhtmltopdf!

@@ -9,7 +9,7 @@ body.pdf {
         border: none;
         border-width: 8px 0 2px 0;
         text-align: left;
-        font-size: 115%;        /* scale all text size, was happy with 115% */
+        font-size: 140%;        /* scale all text size, was happy with 115% */
     }
 
     .resume {
@@ -78,11 +78,28 @@ body.pdf {
                 margin: 0 0 .75em;
             }
             dd {
+                width: 100%;
                 padding: 0 0 0 0;
                 font-size: 73%;
             }
         }
     }
+
+    #skills+ul {
+        width: 666px;
+
+        li {
+            display: block;
+            width: 125%;
+        }
+
+        dl {
+
+            dt {
+                margin: 0 0 0.25em;
+            }
+        }
+    }            
 
     h4 {
         margin: 0em 0em 0em 21%;
