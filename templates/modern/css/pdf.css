@@ -9,7 +9,7 @@ body.pdf {
         border: none;
         border-width: 8px 0 2px 0;
         text-align: left;
-        font-size: 113%;        /* scale all text size */
+        font-size: 115%;        /* scale all text size */
     }
 
     .resume {
