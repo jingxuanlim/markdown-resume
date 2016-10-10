@@ -9,7 +9,7 @@ body.pdf {
         border: none;
         border-width: 8px 0 2px 0;
         text-align: left;
-        font-size: 115%;        /* scale all text size */
+        font-size: 115%;        /* scale all text size, was happy with 115% */
     }
 
     .resume {
@@ -35,7 +35,7 @@ body.pdf {
     h1 {
         letter-spacing: 0;
         margin-top: 0;
-        font-size: 48px;
+        font-size: 300%;
         text-transform: uppercase;
         font-weight: normal;
     }

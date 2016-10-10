@@ -1104,3 +1104,4 @@ exec('wkhtmltopdf -T 1.75cm -B 1.75cm --header-right ' . escapeshellarg('[page]'
 #+END_SRC
 ** [master 8f10f5c] edited the wkhtmltopdf command so that (1) it uses one with patched Qt, (2) it sets the top and bottom margins to 1.75 cm, and (3) it prints a footer with page numbers
 ** [master b51fe33] edit footer-font-size to 10
+** [master 595bf5f] increase the font-size to 11 so as a basis of comparison for the rest of the document -- the rest of the document should at least be size 11 as well
