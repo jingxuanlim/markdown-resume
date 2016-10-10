@@ -1093,3 +1093,4 @@ here's an example: https://davidwalsh.name/css-page-breaks
 ** [master a61430b] scaled font-size up
 ** margins can overlap but padding can't?
 ** [master 43a0b9c] fixed the spacing between h3 and h4 with padding -- margins didn't work so well as it overlapped with hr's margin
+** [master b8d298d] fixed the alignment of h4 to h3 on pdf.css as well

@@ -73,13 +73,13 @@ body.pdf {
         dl {
             
             dt {
-                font-size: 110%;
+                font-size: 122%;
                 font-weight: normal;
                 margin: 0 0 .75em;
             }
             dd {
                 padding: 0 0 0 0;
-                font-size: .75em;
+                font-size: .73em;
             }
         }
     }
