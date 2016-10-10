@@ -115,8 +115,11 @@ body.pdf {
         display: block;
         width:79%;
         float: left;
-        dt {}
+        dt {
+            page-break-after: avoid !important; /* avoid, but not for sure */
+        }
         dd {
+            page-break-inside: avoid !important;
         }
         strong {
             float: right;
