@@ -1173,3 +1173,5 @@ Example for wide mobile layout:
 ** [master b05b91d] fixed alignment for wide screen layout, and removed the corresponding properties from resume.css since they're overwritten anyway
 ** [master 07b9108] added some instructions to manipulate Firefox window size in the md2rwiki.org
 ** [master ff2cf84] fixed the ol width for tablet and wide mobile layout
+** [master 9287530] fixed alignment for mobile layout
+** you can remove the padding, margin and width properties from ~resume.css~ once they are defined in ~screen.css~

@@ -91,10 +91,12 @@ body.pdf {
     }
 
     #skills+ul {
+        width: 77%;
 
         li {
             /* display: block;     /\* to display skills in a list form *\/ */
             /* width: 130%; */
+            width: 33%;
         }
 
         dl {
@@ -107,8 +109,14 @@ body.pdf {
     }
 
     #references+ul {
+        width: 77%;
+
+        li {
+            width: 33%;
+        }
         
         dl {
+            
             dt {
                 font-size: 115%; /* works for both skills and references */
                 margin-bottom: .25em;
