@@ -1176,3 +1176,4 @@ Example for wide mobile layout:
 ** [master 9287530] fixed alignment for mobile layout
 ** you can remove the padding, margin and width properties from ~resume.css~ once they are defined in ~screen.css~
 ** [master aaa140e] fixed the issues that arose after margin and width properties were removed from resume.css
+** [master 7e1c1f4] increased dl strong width to 20% (was unset) because its default width is causing it to be presented over two lines
