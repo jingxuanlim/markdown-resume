@@ -1123,3 +1123,12 @@ therefore, it needs to be scaled 11pt/8.76pt = 1.25570776256 = 126%
 ** [master 72b9a6c] scale font-size by 140% and fixed all the indentation problems that came with it -- the pdf version now looks very different from the html version
 ** [master 5d55826] fixed the unsightly reference section
 ** [master 92bffd6] prevent page break before and after horizontal rule
+* 16oct16
+** font-size/margin combinations that worked
+
+Because not the whole width of the container is filled, h3 width and content width doesn't add up to 100%.
+
+| font-size | h3 width | h4 margin | content width | total width |
+|-----------+----------+-----------+---------------+-------------|
+|      140% |      16% |       29% |           71% |         87% |
+|      100% |      12% |       23% |           77% |         89% |

@@ -5,11 +5,11 @@ body.pdf {
         width: 1000px;          /* with sufficient font size, fit into 2 pages */
         margin: 0 auto;
         padding: 0;
-        background: #fff;
+        background: #fff;       /* #fff for white; originally whiteSmoke */
         border: none;
         border-width: 8px 0 2px 0;
         text-align: left;
-        font-size: 140%;        /* scale all text size, was happy with 115% */
+        font-size: 100%;        /* scale all text size, was happy with 115% */
     }
 
     .resume {
@@ -56,18 +56,18 @@ body.pdf {
     h3 {
         padding: 0 1em .5em;
         float: left;
-        width: 16%;
+        width: 12%;
         font-style: normal;
         page-break-after: avoid !important;
     }
     
     h3+p {
         float: left;
-        width: 71%;
+        width: 77%;
     }
 
     h3+ul {
-        width: 71%;           /*666 px max before become unaligned*/
+        width: 77%;           /*666 px max before become unaligned*/
         text-align: left;
         text-justify: none;
 
@@ -93,24 +93,24 @@ body.pdf {
     #skills+ul {
 
         li {
-            display: block;
-            width: 130%;
+            /* display: block; */
+            /* width: 130%; */
         }
 
         dl {
 
             dt {
-                margin: 0 0 0.25em;
+                font-size: 115%; /* works for both skills and references */
+                /* margin: 0 0 0.25em; */
             }
         }
     }
 
     #references+ul {
         
-
         dl {
             dt {
-                /* font-size: 115%; */
+                font-size: 115%; /* works for both skills and references */
                 margin-bottom: .25em;
             }
 
@@ -124,17 +124,17 @@ body.pdf {
     }
 
     h4 {
-        margin: 0em 0em 0em 29%;
+        margin: 0em 0em 0em 23%;
         padding: 0.5em 0 0 0;
     }
 
     h4+ul {
-        margin: -0.4em 0 0 29%;
+        margin: -0.4em 0 0 23%;
     }
 
     ol {
         float: left;
-        width: 71%;
+        width: 77%;
         margin: .7em 0 0;
         page-break-inside: avoid !important;
     }
@@ -154,7 +154,7 @@ body.pdf {
         margin: .7em 0 0;
         page-break-inside: auto; /* used to be: avoid !important */
         display: inline-block;
-        width:71%;
+        width: 77%;
         float: left;
         dt {
             page-break-inside: avoid !important;
@@ -176,8 +176,8 @@ body.pdf {
     }
 
     table {
-        margin: .2em 0em .5em 29%;
-        width: 71%;
+        margin: .2em 0em .5em 23%;
+        width: 77%;
     }
 
     div.footer {
