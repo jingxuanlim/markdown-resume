@@ -1134,3 +1134,4 @@ Because not the whole width of the container is filled (h3 has its own padding e
 |      100% |      12% |       23% |           77% |         89% |
 
 ** [master 9e2e129] changed container font-size back to 100% and table column width back to 45% 45% 10% so that everything aligns/fits
+** [master 37f01e4] fixed alignment for tablet layout
