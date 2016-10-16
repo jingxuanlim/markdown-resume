@@ -7,6 +7,37 @@
 */
 
 @media screen and (min-width: 15em) {
+
+    h3+ul {
+        width: 100%;
+        
+        li {
+            width: 100%;
+        }
+    }
+
+    dl {
+        width: 100%;
+    }
+
+    h4 {
+        margin: 0;
+        padding: 0.25em 0 0 0;
+    }
+    
+    h4+ul {
+        margin: 0.4em 0 0 0em;
+    }
+    
+    table {
+        margin: 0;
+        width: 100%;
+    }
+    
+    ol {
+        margin: 0 0 0 0em;
+        width: 94%;
+    }    
 }
 
 
