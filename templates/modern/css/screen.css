@@ -38,8 +38,26 @@
     h1 { /* Open up the top section height so we don't collapse on the blockquote */
         margin-top: .5em;
     }
+    h3+ul {
+        width: 100%;
+        
+        li {
+            width: 100%;
+        }
+    }
+    h4 {
+        margin: 0;
+        padding: 0.25em 0 0 0;
+    }
+    h4+ul {
+        margin: 0.4em 0 0 0em;
+    }
+    dl {
+        width: 100%;
+    }
     ol {
         margin: 0 0 0 1em;
+        width: 94%;
     }
     ol li {
         width: 50%;
@@ -47,6 +65,10 @@
     }
     ol li:nth-child(1), ol li:nth-child(2) {
         border-top: none;
+    }
+    table {
+        margin: 0;
+        width: 100%;
     }
 }
 

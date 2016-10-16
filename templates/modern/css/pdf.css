@@ -93,7 +93,7 @@ body.pdf {
     #skills+ul {
 
         li {
-            /* display: block; */
+            /* display: block;     /\* to display skills in a list form *\/ */
             /* width: 130%; */
         }
 

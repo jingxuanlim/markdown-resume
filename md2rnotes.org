@@ -1126,9 +1126,11 @@ therefore, it needs to be scaled 11pt/8.76pt = 1.25570776256 = 126%
 * 16oct16
 ** font-size/margin combinations that worked
 
-Because not the whole width of the container is filled, h3 width and content width doesn't add up to 100%.
+Because not the whole width of the container is filled (h3 has its own padding etc), h3 width and content width doesn't add up to 100%.
 
 | font-size | h3 width | h4 margin | content width | total width |
 |-----------+----------+-----------+---------------+-------------|
 |      140% |      16% |       29% |           71% |         87% |
 |      100% |      12% |       23% |           77% |         89% |
+
+** [master 9e2e129] changed container font-size back to 100% and table column width back to 45% 45% 10% so that everything aligns/fits
