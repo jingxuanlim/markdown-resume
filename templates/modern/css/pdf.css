@@ -175,6 +175,7 @@ body.pdf {
         strong {
             float: right;
             margin-top: -2em;
+            width: 20%
         }
         em {
             font-size: 130%;
