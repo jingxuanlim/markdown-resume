@@ -1170,3 +1170,5 @@ Example for wide mobile layout:
         width: 86%;
     }
 #+END_SRC
+** [master b05b91d] fixed alignment for wide screen layout, and removed the corresponding properties from resume.css since they're overwritten anyway
+** [master 07b9108] added some instructions to manipulate Firefox window size in the md2rwiki.org
