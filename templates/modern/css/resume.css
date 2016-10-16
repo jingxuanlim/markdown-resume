@@ -102,14 +102,12 @@ h3+ul {
     padding: 0;
     list-style: none;
     display: table;
-    width: 79%;
     text-align: left;
 
 
     li {
         margin: 0;
         padding: 0;
-        width: 33%;
     }
 
     dl {
@@ -131,23 +129,18 @@ h3+ul {
 }
 
 h4 {
-    margin: 0em 0em 0em 8.8em;
-    padding: 0.5em 0 0 0;
     font-weight: normal;
     font-size: 120%;
 }
 
 h4+ul {
     display: inline-block;
-    margin: -0.4em 0 0 10.7em;
     padding: 0;
     list-style: none;
 }
 
 ol {
-    margin: 0;
     padding: 0 0 .75em;
-    width: 84%;
     display: inline-block;
 }
 
@@ -167,7 +160,6 @@ ol li:nth-child(1) {
 
 dl {
     display: inline-block;
-    width: 79%;
     margin: 0;
     padding: 0;
     dt {
@@ -200,9 +192,7 @@ dl {
 
 table {
     font-size: 85%;
-    width: 77%;
     border-collapse: collapse;
-    margin: .2em 0em .5em 20.99%;
     
     thead {
 	    display:none;

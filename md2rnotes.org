@@ -1135,3 +1135,38 @@ Because not the whole width of the container is filled (h3 has its own padding e
 
 ** [master 9e2e129] changed container font-size back to 100% and table column width back to 45% 45% 10% so that everything aligns/fits
 ** [master 37f01e4] fixed alignment for tablet layout
+** [master f9d7a40] fixed alignment for wide mobile layout
+** these are basically the elements that I changed for tablet and wide mobile layout
+Example for wide mobile layout:
+#+BEGIN_SRC 
+    h3+ul {
+        width: 100%;
+        
+        li {
+            width: 100%;
+        }
+    }
+
+    dl {
+        width: 100%;
+    }
+
+    h4 {
+        margin: 0;
+        padding: 0.25em 0 0 0;
+    }
+    
+    h4+ul {
+        margin: 0.4em 0 0 0em;
+    }
+    
+    table {
+        margin: 0;
+        width: 100%;
+    }
+    
+    ol {
+        margin: 0 0 0 0em;
+        width: 86%;
+    }
+#+END_SRC

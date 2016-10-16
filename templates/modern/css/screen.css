@@ -141,10 +141,31 @@
         float: left;
         width: 16%;
     }
+
+    h3+ul{
+        width: 79%;
+
+        li {
+            width: 33%;
+        }
+    }
     
     h3+p {
         float: left;
         width: 78%;
+    }
+
+    dl {
+        width: 79%
+    }
+
+    h4 {
+        margin: 0em 0em 0em 8.8em;
+        padding: 0.5em 0 0 0;
+    }
+
+    h4+ul {
+        margin: -0.4em 0 0 10.7em;
     }
     
     ul li {
@@ -197,6 +218,10 @@
         
     }
 
+    table {
+        width: 77%;
+        margin: .2em 0em .5em 20.99%;
+    }
 
 }
 
