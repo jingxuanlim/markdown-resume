@@ -1123,7 +1123,7 @@ therefore, it needs to be scaled 11pt/8.76pt = 1.25570776256 = 126%
 ** [master 72b9a6c] scale font-size by 140% and fixed all the indentation problems that came with it -- the pdf version now looks very different from the html version
 ** [master 5d55826] fixed the unsightly reference section
 ** [master 92bffd6] prevent page break before and after horizontal rule
-* 16oct16
+* 16oct16 Reverted PDF version back to 100% font-size and fixed all the alignment problems
 ** font-size/margin combinations that worked
 
 Because not the whole width of the container is filled (h3 has its own padding etc), h3 width and content width doesn't add up to 100%.
@@ -1178,7 +1178,8 @@ Example for wide mobile layout:
 ** [master aaa140e] fixed the issues that arose after margin and width properties were removed from resume.css
 ** [master 7e1c1f4] increased dl strong width to 20% (was unset) because its default width is causing it to be presented over two lines
 ** [master 0cc52a9] fixed space between the two cells (BS and PhD), line spacing of references dd, and h4+ul top margin
-** 
+** [master 269f7f0] fixed h4 and h4+ul margin -- used to depend on text size, now percentage
+Before:
 #+BEGIN_SRC 
 h4 {
     margin: 0em 0em 0em 8.8em;

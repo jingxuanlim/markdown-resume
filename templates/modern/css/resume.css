@@ -36,18 +36,29 @@ a {
 }
 
 a[href$='.pdf'] {
-    display: inline-block;
-    background: #666;
-    color: white;
-    padding: 6px 12px;
-    margin-bottom: 6px;
-    text-decoration: none;
+
+    background: url(icons/pdf_icon.svg) center right no-repeat;
+    padding:0 25px 0 0;
+    white-space: nowrap;
+    background-size: contain;
+
 }
+
 
 blockquote {
     margin: 0;
     padding: 0;
     line-height: 1.4em;
+
+    a[href$='.pdf'] {
+        
+        display: inline-block;
+        background: #666;
+        color: white;
+        padding: 6px 12px;
+        margin-bottom: 6px;
+        text-decoration: none;
+    }
 }
 
 hr {
