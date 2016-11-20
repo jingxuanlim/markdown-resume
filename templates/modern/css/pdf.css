@@ -133,7 +133,7 @@ body.pdf {
 
     h4 {
         margin: 0em 0em 0em 22.5%;
-        padding: 0;
+        padding: 0.5em 0;
     }
 
     h4+ul {

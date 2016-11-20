@@ -1192,3 +1192,5 @@ h4+ul {
 #+END_SRC
 * 16oct28
 ** [master 8f4cfce] use pdf icons for pdf links
+* 16nov20
+** [master 2d84e73] set margins between list items of h4+ul to be 0.5 em or 8 px
