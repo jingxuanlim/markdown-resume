@@ -1190,8 +1190,9 @@ h4+ul {
     margin: -0.4em 0 0 10.7em;
 }
 #+END_SRC
-* 16oct28
+* 16oct28 Use PDF icons for PDF links
 ** [master 8f4cfce] use pdf icons for pdf links
-* 16nov20
+* 16nov20 Corrected the line spacing between unordered list items and after h4
 ** [master 2d84e73] set margins between list items of h4+ul to be 0.5 em or 8 px
 ** [master 959a351] added padding also to the bottom of h4 and added padding to both the top and bottom of h4 when processing the CV as a pdf
+** [master 008a169] html h4-table spacing seems to work fine -- reduced the top margin of table in pdf form
