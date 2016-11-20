@@ -1194,3 +1194,4 @@ h4+ul {
 ** [master 8f4cfce] use pdf icons for pdf links
 * 16nov20
 ** [master 2d84e73] set margins between list items of h4+ul to be 0.5 em or 8 px
+** [master 959a351] added padding also to the bottom of h4 and added padding to both the top and bottom of h4 when processing the CV as a pdf
