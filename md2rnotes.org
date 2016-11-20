@@ -1190,3 +1190,5 @@ h4+ul {
     margin: -0.4em 0 0 10.7em;
 }
 #+END_SRC
+* 16oct28
+** [master 8f4cfce] use pdf icons for pdf links
