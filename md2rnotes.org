@@ -1196,3 +1196,5 @@ h4+ul {
 ** [master 2d84e73] set margins between list items of h4+ul to be 0.5 em or 8 px
 ** [master 959a351] added padding also to the bottom of h4 and added padding to both the top and bottom of h4 when processing the CV as a pdf
 ** [master 008a169] html h4-table spacing seems to work fine -- reduced the top margin of table in pdf form
+* 16nov24 Major makeover for the PDF version, mostly to adapt it to bigger font sizes so people can actually read my CV when it's printed out!
+** [master f0f95a1] enlarged all body text in PDF, and changed the 'skills' section so that it's vertical not horizontal, and added print out of links to the PDF

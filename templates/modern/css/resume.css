@@ -57,6 +57,10 @@ blockquote {
         margin-bottom: 6px;
         text-decoration: none;
     }
+
+    a[href$='.html'] {          /*hide website link*/
+        display: none;
+    }
 }
 
 hr {
@@ -249,6 +253,7 @@ div.personalstatement {
     h3 {
         width: 100%;
         margin: 0;
+        padding: 0;
     }
 
     p {
@@ -256,7 +261,9 @@ div.personalstatement {
         padding: 0;
         display: block;
         width: 100%;
-        font-size: 104%;
+        font-size: 104%;        /*same size as h3+p*/
+        text-align: justify;
+        text-justify: distribute;
         line-height: 24px;
     }
 }
