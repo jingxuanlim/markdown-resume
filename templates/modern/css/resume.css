@@ -37,13 +37,11 @@ a {
 
 a[href$='.pdf'] {
 
-    background: url(icons/pdf_icon.svg) center right no-repeat;
+    background: url(icons/pdf_icon.svg) right center no-repeat;
     padding:0 25px 0 0;
     white-space: nowrap;
     background-size: contain;
-
 }
-
 
 blockquote {
     margin: 0;
@@ -213,6 +211,10 @@ table {
 	    display:none;
     }
 
+    td {
+        vertical-align: top;
+    }
+
     td:nth-child(1) {
         width: 45%;
     }
@@ -220,6 +222,16 @@ table {
     td:nth-child(2) {
         width: 45%;
     }
+}
+
+#coursework+table {
+    td:nth-child(1) {
+        width: 65%;
+    }
+
+    td:nth-child(2) {
+        width: 35%;
+    }        
 }
 
 #footer {

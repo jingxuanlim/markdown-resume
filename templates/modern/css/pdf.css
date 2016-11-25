@@ -9,7 +9,7 @@ body.pdf {
         border: none;
         border-width: 8px 0 2px 0;
         text-align: left;
-        font-size: 100%;        /* scale all text size, was happy with 115% */
+        font-size: 130%;        /* scale all text size, was happy with 115% */
     }
 
     .resume {
@@ -20,16 +20,29 @@ body.pdf {
     a {
         text-decoration: none;
         color: black;
+	    word-wrap: break-word;
+    }
+
+    a[href$='.pdf']:after {
+        content: "\00a0\00a0\00a0\00a0\00a0" attr(href); /*add non-breaking whitespace*/
     }
 
     a[href$='.pdf'] {
-        display: none;
-    }
 
+        background: url(icons/pdf_icon.svg) left center no-repeat;
+        /* padding:0 25px 0 0; */
+        white-space: nowrap;
+        background-size: contain;
+    }
+    
     blockquote {
         top: 40px;
         right: 50px;
         position: absolute;
+
+        a[href$='.pdf'] {
+            display: none;
+        }
     }
 
     hr {
@@ -52,22 +65,27 @@ body.pdf {
         font-weight: normal;
         padding-bottom: .2em;    /*reduce since 'Download PDF' no longer present*/
     }
+
+    h3, h4 {
+        page-break-after: avoid !important;
+    }
     
     h3 {
         padding: 0 1em .5em;
         float: left;
-        width: 12%;
+        width: 15%;
+        font-size: 130%;
         font-style: normal;
         page-break-after: avoid !important;
     }
     
     h3+p {
         float: left;
-        width: 77%;
+        width: 73%;
     }
 
     h3+ul {
-        width: 77%;           /*666 px max before become unaligned*/
+        width: 73%;           /*666 px max before become unaligned*/
         text-align: left;
         text-justify: none;
 
@@ -91,39 +109,47 @@ body.pdf {
     }
 
     #skills+ul {
-        width: 77%;
+        width: 73%;
 
         li {
-            /* display: block;     /\* to display skills in a list form *\/ */
-            /* width: 130%; */
-            width: 33%;
+            display: block;     /*list form*/
+            width: 130%;        /*list: 130%; table: 33%*/
         }
 
         dl {
 
             dt {
-                font-size: 115%; /* works for both skills and references */
+                /* font-size: 115%; /\* works for both skills and references *\/ */
                 /* margin: 0 0 0.25em; */
+            }
+
+            dd {
+                font-size: 90%;
             }
         }
     }
 
     #references+ul {
-        width: 77%;
+        width: 73%;
 
         li {
-            width: 33%;
+            display: block;
+            width: 31%;        /*list: 130%; table: 33%*/
+        }
+
+        li:nth-child(1) {
+            width: 38%;
         }
         
         dl {
             
             dt {
-                font-size: 115%; /* works for both skills and references */
+                /* font-size: 115%; /\* works for both skills and references *\/ */
                 margin-bottom: .25em;
             }
 
             dd {
-                /* font-size: 65%; */
+                font-size: 90%;
                 /* line-height: 1.2em; */
                 margin: 0;
                 word-wrap: break-word;
@@ -132,17 +158,17 @@ body.pdf {
     }
 
     h4 {
-        margin: 0em 0em 0em 22.5%;
+        margin: 0em 0em 0em 26.2%;
         padding: 0.5em 0;
     }
 
     h4+ul {
-        margin: -1em 0 0 22.5%;
+        margin: -1em 0 0 26.2%;
     }
 
     ol {
         float: left;
-        width: 77%;
+        width: 73%;
         margin: .7em 0 0;
         page-break-inside: avoid !important;
     }
@@ -150,6 +176,7 @@ body.pdf {
     ol li {
         width: 33%;
         margin: 0;
+        font-size: 95%;
     }
     ol li:nth-child(3n) {
         width: 34%;
@@ -162,13 +189,13 @@ body.pdf {
         margin: .7em 0 0;
         page-break-inside: auto; /* used to be: avoid !important */
         display: inline-block;
-        width: 77%;
+        width: 73%;
         float: left;
         dt {
-            page-break-inside: avoid !important;
             page-break-after: avoid !important; /* avoid, but not for sure */
         }
         dd {
+            font-size: 90%;
             /* page-break-inside: avoid !important; */
             page-break-before: avoid !important;
         }
@@ -185,8 +212,36 @@ body.pdf {
     }
 
     table {
-        margin: -0.6em 0em .5em 22.5%;
-        width: 77%;
+        margin: -0.6em 0em .5em 26.2%;
+        width: 73%;
+        font-size: 90%;
+        page-break-inside: avoid !important;
+        page-break-before: avoid !important;        
+    }
+
+    #fellowships+table, #travel+table, #programs+table {
+
+        td {
+            padding-bottom: 10px;
+        }
+        
+        td:nth-child(1) {
+            width: 45%;
+        }
+
+        td:nth-child(2) {
+            width: 40%;
+        }
+    }
+
+    #coursework+table {
+        td:nth-child(1) {
+            width: 65%;
+        }
+
+        td:nth-child(2) {
+            width: 35%;
+        }        
     }
 
     div.footer {
