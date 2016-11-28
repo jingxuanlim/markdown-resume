@@ -261,7 +261,7 @@ div.personalstatement {
         padding: 0;
         display: block;
         width: 100%;
-        font-size: 104%;        /*same size as h3+p*/
+        font-size: 100%;
         text-align: justify;
         text-justify: distribute;
         line-height: 24px;
