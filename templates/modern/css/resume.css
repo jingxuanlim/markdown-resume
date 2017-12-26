@@ -210,10 +210,6 @@ dl {
 table {
     font-size: 85%;
     border-collapse: collapse;
-    
-    thead {
-	    display:none;
-    }
 
     td {
         vertical-align: top;
@@ -229,6 +225,7 @@ table {
 }
 
 #coursework+table {
+    
     td:nth-child(1) {
         width: 65%;
     }
@@ -236,6 +233,16 @@ table {
     td:nth-child(2) {
         width: 35%;
     }        
+}
+
+#fellowships+table,
+#travel+table,
+#programs+table,
+#conferences+table {
+
+    thead {
+	    display:none;
+    }
 }
 
 #footer {
