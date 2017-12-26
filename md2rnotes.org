@@ -1198,5 +1198,9 @@ h4+ul {
 ** [master 008a169] html h4-table spacing seems to work fine -- reduced the top margin of table in pdf form
 * 16nov24 Major makeover for the PDF version, mostly to adapt it to bigger font sizes so people can actually read my CV when it's printed out!
 ** [master f0f95a1] enlarged all body text in PDF, and changed the 'skills' section so that it's vertical not horizontal, and added print out of links to the PDF
-* 16nov25
+* 16nov25 Print out the website in the PDF version so that people know that they can also view my CV online
 ** [master 754923e] align blockquote to the right and print out website of CV in pdf
+* 16nov28 Reduced font-size of my personal statement to 100% -- no reason to increase it from 12 pt (scaled up 130% by pdf.css)
+** [master 8c1c898] reduced the font-size of personal statement to 100%
+- scaled up 130% in pdf.css so not sure what's the final size
+- just remember that the font-size of the page number is 11 pt
