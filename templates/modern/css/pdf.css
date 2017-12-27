@@ -2,8 +2,8 @@ body.pdf {
     color: black;
 
     .container {
-        width: 1000px;          /* with sufficient font size, fit into 2 pages */
-        margin: 0 auto;
+        width: 1250px;          /* with sufficient font size, fit into 2 pages */
+        margin: auto -65px;
         padding: 0;
         background: #fff;       /* #fff for white; originally whiteSmoke */
         border: none;
@@ -82,7 +82,7 @@ body.pdf {
     h3 {
         padding: 0 1em .5em;
         float: left;
-        width: 15%;
+        width: 11%;  /* change to move content to the right */
         font-size: 130%;
         font-style: normal;
         page-break-after: avoid !important;
@@ -90,7 +90,7 @@ body.pdf {
     
     h3+p {
         float: left;
-        width: 73%;
+        width: 76%;
     }
 
     h3+ul {
@@ -118,14 +118,15 @@ body.pdf {
     }
 
     #skills+ul {
-        width: 73%;
+        width: 80%;
 
         li {
             display: block;     /*list form*/
-            width: 130%;        /*list: 130%; table: 33%*/
+            width: 33%;        /*list: 130%; table: 33%*/
         }
 
         dl {
+            width: 98%;
 
             dt {
                 /* font-size: 115%; /\* works for both skills and references *\/ */
@@ -134,24 +135,28 @@ body.pdf {
 
             dd {
                 font-size: 90%;
+                -webkit-hyphens: auto;
+                -moz-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
         }
     }
 
     #references+ul {
-        width: 73%;
+        width: 77%;
 
         li {
             display: block;
-            width: 31%;        /*list: 130%; table: 33%*/
+            width: 32%;        /*list: 130%; table: 33%*/
         }
 
         li:nth-child(1) {
-            width: 38%;
+            width: 36%;
         }
         
         dl {
-            
+            margin: 0;
             dt {
                 /* font-size: 115%; /\* works for both skills and references *\/ */
                 margin-bottom: .25em;
@@ -167,12 +172,15 @@ body.pdf {
     }
 
     h4 {
-        margin: 0em 0em 0em 26.2%;
+        margin: 0em 0em 0em 20%;
         padding: 0.5em 0;
+        page-break-after: avoid !important;
     }
 
     h4+ul {
-        margin: -1em 0 0 26.2%;
+        width: 76%;
+        margin: -1em 0 0 20%;
+        page-break-before: avoid !important;
     }
 
     ol {
@@ -198,7 +206,7 @@ body.pdf {
         margin: .7em 0 0;
         page-break-inside: auto; /* used to be: avoid !important */
         display: inline-block;
-        width: 73%;
+        width: 76%;
         float: left;
         dt {
             page-break-after: avoid !important; /* avoid, but not for sure */
@@ -221,25 +229,28 @@ body.pdf {
     }
 
     table {
-        margin: -0.6em 0em .5em 26.2%;
-        width: 73%;
+        margin: -0.6em 0em 1em 20%;
+        width: 75%;
         font-size: 90%;
         page-break-inside: avoid !important;
         page-break-before: avoid !important;        
     }
 
-    #fellowships+table, #travel+table, #programs+table {
+    #fellowships+table,
+    #travel+table,
+    #programs+table,
+    #conferences+table {
 
         td {
-            padding-bottom: 10px; /*better spacing between multiline cells*/
+            padding-bottom: 0px; /*10px for better spacing between multiline cells*/
         }
         
         td:nth-child(1) {
-            width: 45%;
+            width: 47%;
         }
 
         td:nth-child(2) {
-            width: 40%;
+            width: 41%;
         }
     }
 
