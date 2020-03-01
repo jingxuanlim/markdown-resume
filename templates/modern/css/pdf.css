@@ -151,9 +151,17 @@ body.pdf {
             width: 32%;        /*list: 130%; table: 33%*/
         }
 
-        li:nth-child(1) {
+        li:nth-child(1) {  /* first reference */
+            width: 33%;
+        }        
+
+        li:nth-child(2) {  /* second reference */
             width: 36%;
         }
+
+        li:nth-child(3) {  /* third reference */
+            width: 31%;
+        }        
         
         dl {
             margin: 0;
@@ -254,13 +262,15 @@ body.pdf {
         }
     }
 
+    #programs+table,
+    #travel+table,
     #coursework+table {
         td:nth-child(1) {
-            width: 65%;
+            width: 80%;
         }
 
         td:nth-child(2) {
-            width: 35%;
+            width: 20%;
         }        
     }
 
