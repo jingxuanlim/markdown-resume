@@ -148,19 +148,19 @@ body.pdf {
 
         li {
             display: block;
-            width: 33%;        /*list: 130%; table: 33%*/
+            width: 33.3%;        /*list: 130%; table: 33%*/
         }
 
         li:nth-child(1) {  /* first reference */
-            width: 33%;
+            width: 33.3%;
         }        
 
         li:nth-child(2) {  /* second reference */
-            width: 36%;
+            width: 33.3%;
         }
 
         li:nth-child(3) {  /* third reference */
-            width: 31%;
+            width: 33.3%;
         }        
         
         dl {
