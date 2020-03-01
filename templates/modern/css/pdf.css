@@ -148,7 +148,7 @@ body.pdf {
 
         li {
             display: block;
-            width: 32%;        /*list: 130%; table: 33%*/
+            width: 33%;        /*list: 130%; table: 33%*/
         }
 
         li:nth-child(1) {  /* first reference */
@@ -262,17 +262,21 @@ body.pdf {
         }
     }
 
-    #programs+table,
-    #travel+table,
-    #coursework+table {
+    #fellowshipsshort+table,
+    #travelshort+table,
+    #programsshort+table,
+    #conferencesshort+table {
+
+        td {
+            padding-bottom: 0px; /*10px for better spacing between multiline cells*/
+        }
+        
         td:nth-child(1) {
             width: 80%;
         }
 
-        td:nth-child(2) {
-            width: 20%;
-        }        
-    }
+    }    
+
 
     div.footer {
         display: none;          /* hide the footer since can't print on every page*/

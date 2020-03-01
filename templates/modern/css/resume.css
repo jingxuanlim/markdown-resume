@@ -240,12 +240,39 @@ table {
 #fellowships+table,
 #travel+table,
 #programs+table,
-#conferences+table {
+#conferences+table,
+#fellowshipsshort+table,
+#travelshort+table,
+#programsshort+table,
+#conferencesshort+table,
+#teaching+table {
 
     thead {
 	    display:none;
     }
 }
+
+#fellowshipsshort+table,
+#travelshort+table,
+#programsshort+table,
+#conferencesshort+table {
+    
+    td:nth-child(1) {
+        width: 85%;
+    }
+}
+
+#teaching+table {
+    
+    td:nth-child(1) {
+        width: 75%;
+    }
+
+    td:nth-child(2) {
+        width: 15%;
+    }    
+}
+
 
 #footer {
     display: none;
