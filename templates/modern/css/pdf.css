@@ -20,12 +20,25 @@ body.pdf {
     a {
         text-decoration: none;
         color: black;
-	    word-wrap: break-word;
+        word-wrap: break-word;
     }
+
+    a[href*='www.biorxiv.org'] {
+
+        /* not sure why icon_bioRX.svg, icon_bioRxiv.ico, icon_bioRxiv.svg doesn't work */
+        /* probably not a dimensions problem */
+        background: url(https://jingxlim.github.io/icons/icon_bioRX.png) left center no-repeat; 
+        White-space: nowrap;
+        background-size: contain;
+    }
+
+    a[href*='www.biorxiv.org']:after {
+        content: "\00a0\00a0\00a0\00a0\00a0" attr(href); /*add non-breaking whitespace*/
+    }    
 
     a[href$='.pdf'] {
 
-        background: url(icons/pdf_icon.svg) left center no-repeat;
+        background: url(https://jingxlim.github.io/icons/pdf_icon.svg) left center no-repeat;
         /* padding:0 25px 0 0; */
         white-space: nowrap;
         background-size: contain;
@@ -52,6 +65,10 @@ body.pdf {
         a[href$='.html'] {
             display: inline;
         }
+
+        /* a[href$='github.io'] { */
+        /*     display: inline; */
+        /* }         */
     }
 
     hr {
@@ -122,8 +139,21 @@ body.pdf {
 
         li {
             display: block;     /*list form*/
-            width: 33%;        /*list: 130%; table: 33%*/
+            /* width: 33%;        /\*list: 130%; table: 33%*\/ */
         }
+
+        /* Adjust the widths according to how long the blurbrs are */
+        li:nth-child(1) {
+            width: 31.5%;
+        }
+
+        li:nth-child(2) {
+            width: 37.5%;
+        }
+
+        li:nth-child(3) {
+            width: 31%;
+        }                
 
         dl {
             width: 98%;
@@ -139,6 +169,8 @@ body.pdf {
                 -moz-hyphens: auto;
                 -ms-hyphens: auto;
                 hyphens: auto;
+                text-align: left;
+                text-justify: inter-word;
             }
         }
     }
@@ -206,6 +238,7 @@ body.pdf {
         float: left;
         dt {
             page-break-after: avoid !important; /* avoid, but not for sure */
+            font-size: 130%;  /* Education and Experience font size */
         }
         dd {
             font-size: 90%;
@@ -260,7 +293,7 @@ body.pdf {
         }
         
         td:nth-child(1) {
-            width: 80%;
+            width: 87%;
         }
 
     }    
@@ -276,7 +309,7 @@ body.pdf {
     }
 
     div.footer {
-        display: none;          /* hide the footer since can't print on every page*/
+        display: none;          /* none: hide the footer since can't print on every page*/
     }
 
     div.personalstatement {
