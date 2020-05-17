@@ -2675,3 +2675,13 @@ Wrote pdf resume to: ./work/docs/cv.pdf
 /usr/share/fonts/X11/75dpi/timBI10-ISO8859-1.pcf.gz: Times:style=Bold Italic
 /usr/share/fonts/type1/gsfonts/n019003l.pfb: Nimbus Sans L:style=Regular
 #+end_src
+* 20MAY17
+** Tried to fix page-break issues when printing with wkhtmltopdf
+*** Two common causes
+1. parent ~div~ is ~float~: https://github.com/wkhtmltopdf/wkhtmltopdf/issues/1604
+2. ~overflow: hidden~: https://github.com/wkhtmltopdf/wkhtmltopdf/issues/1551#issuecomment-618993844
+*** What I tried
+- Tried remedying this by fixing those properties in e.g. ~body.pdf~, ~.container~ and ~.resume~ but to no avail.
+- It's not a problem specific to the ~page-break~ command being unavoidable. Even if the opposite command is given (i.e. ~page-break-before: always;~, the command is ignored.
+- also not entirely sure if it is the problem with ~wkhtmltopdf~ -- the command is also not respected when printing directly from the html, from a Chrome browser.
+- although I must say that there are no weird page breaks when printing directly from the browser, and could be a permanent solution is I manage to fix the ugly font

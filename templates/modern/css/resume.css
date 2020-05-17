@@ -319,8 +319,10 @@ div.personalstatement {
 }
 
 @media print {
+    
 	.page-break	{
         display: block;
         page-break-before: always;
-    }
+        }
+        
 }

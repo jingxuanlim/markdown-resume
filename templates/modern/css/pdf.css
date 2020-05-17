@@ -1,5 +1,6 @@
 body.pdf {
     color: black;
+    font-family: Arial, sans-serif;
 
     .container {
         width: 1250px;          /* with sufficient font size, fit into 2 pages */
@@ -16,6 +17,11 @@ body.pdf {
         position:relative;
         padding: 40px 80px;
     }
+
+
+    h1, h2, h3, h4, ul dl dt {
+        font-family: "Century Gothic", sans-serif;
+    }    
 
     a {
         text-decoration: none;
@@ -208,7 +214,7 @@ body.pdf {
     h4+ul {
         width: 76%;
         margin: -1em 0 0 20%;
-        page-break-before: avoid !important;
+        page-break-before: avoid !important;  /* doesn't  work even when it is set to always */
     }
 
     ol {
@@ -350,4 +356,30 @@ body.pdf {
             margin: 0;
         }
     }
+
+    
+    @media print {
+    
+	.page-break	{
+            display: block !important;
+            page-break-before: always !important;
+            float: none !important;
+            position: static !important;
+            overflow: visible !important;        
+        }
+        
+        h4 {
+            page-break-after: avoid !important;
+        }
+        
+        h4+ul {
+
+            display: block !important;
+            float: none !important;
+            position: static !important;
+            overflow: visible !important;                    
+
+        }
+        
+    }    
 }
