@@ -1,7 +1,11 @@
 body.pdf {
     color: black;
+    position: relative;
+    overflow: visible !important;    
 
     .container {
+        overflow: visible !important;        
+        position: relative;
         width: 1250px;          /* with sufficient font size, fit into 2 pages */
         margin: auto -65px;
         padding: 0;
@@ -13,6 +17,7 @@ body.pdf {
     }
 
     .resume {
+        overflow: visible !important;        
         position:relative;
         padding: 40px 80px;
     }
@@ -93,6 +98,7 @@ body.pdf {
     }
 
     h3, h4 {
+        position: relative;
         page-break-after: avoid !important;
     }
     
@@ -200,15 +206,20 @@ body.pdf {
     }
 
     h4 {
+        position: relative;
         margin: 0em 0em 0em 20%;
         padding: 0.5em 0;
+        page-break-before: auto;
         page-break-after: avoid !important;
     }
 
     h4+ul {
+        position: relative;
         width: 76%;
         margin: -1em 0 0 20%;
         page-break-before: avoid !important;
+        page-break-inside: auto;
+        page-break-after: auto;
     }
 
     ol {
