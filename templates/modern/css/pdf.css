@@ -25,11 +25,23 @@ body.pdf {
 
     a {
         text-decoration: none;
-        color: black;
+        color: #1A0DAB;
         word-wrap: break-word;
     }
 
-    a[href*='www.biorxiv.org'] {
+    a[href*='https://www.tandfonline.com'] {
+
+        background: url(https://jingxlim.github.io/icons/icon_link.png) left center no-repeat; 
+        White-space: nowrap;
+        background-size: contain;
+    }
+    
+    a[href*='https://www.tandfonline.com']:after {
+        content: "\00a0\00a0\00a0\00a0\00a0" attr(href); /*add non-breaking whitespace*/
+    }
+    
+    a[href*='www.biorxiv.org'],
+    a[href*='https://doi.org/10.1101'] {
 
         /* not sure why icon_bioRX.svg, icon_bioRxiv.ico, icon_bioRxiv.svg doesn't work */
         /* probably not a dimensions problem */
@@ -38,11 +50,51 @@ body.pdf {
         background-size: contain;
     }
 
-    a[href*='www.biorxiv.org']:after {
+    a[href*='www.biorxiv.org']:after,
+    a[href*='https://doi.org/10.1101']:after {
+        content: "\00a0\00a0\00a0\00a0\00a0" attr(href); /*add non-breaking whitespace*/
+    }    
+    
+    a[href*='https://doi.org/10.25378'] {
+
+        /* not sure why icon_bioRX.svg, icon_bioRxiv.ico, icon_bioRxiv.svg doesn't work */
+        /* probably not a dimensions problem */
+        background: url(https://jingxlim.github.io/icons/icon_figshare.svg) left center no-repeat; 
+        White-space: nowrap;
+        background-size: contain;
+    }
+
+    a[href*='https://doi.org/10.25378']:after {
         content: "\00a0\00a0\00a0\00a0\00a0" attr(href); /*add non-breaking whitespace*/
     }    
 
-    a[href$='.pdf'] {
+    a[href*='https://www.science.org/doi/10.1126'] {
+
+        /* not sure why icon_bioRX.svg, icon_bioRxiv.ico, icon_bioRxiv.svg doesn't work */
+        /* probably not a dimensions problem */
+        background: url(https://jingxlim.github.io/icons/icon_science-advances.jpg) left center no-repeat; 
+        White-space: nowrap;
+        background-size: contain;
+    }
+
+    a[href*='https://www.science.org/doi/10.1126']:after {
+        content: "\00a0\00a0\00a0\00a0\00a0" attr(href); /*add non-breaking whitespace*/
+    }    
+
+     a[href*='http://meetings.aps.org'] {
+
+        /* not sure why icon_bioRX.svg, icon_bioRxiv.ico, icon_bioRxiv.svg doesn't work */
+        /* probably not a dimensions problem */
+        background: url(https://jingxlim.github.io/icons/icon_aps-physics.gif) left center no-repeat; 
+        White-space: nowrap;
+        background-size: contain;
+    }
+
+    a[href*='http://meetings.aps.org']:after {
+        content: "\00a0\00a0\00a0\00a0\00a0" attr(href); /*add non-breaking whitespace*/
+    }    
+
+   a[href$='.pdf'] {
 
         background: url(https://jingxlim.github.io/icons/pdf_icon.svg) left center no-repeat;
         /* padding:0 25px 0 0; */
@@ -215,6 +267,8 @@ body.pdf {
         width: 76%;
         margin: -1em 0 0 20%;
         page-break-before: avoid !important;  /* doesn't  work even when it is set to always */
+        page-break-inside: auto;
+        break-inside: auto;
     }
 
     ol {

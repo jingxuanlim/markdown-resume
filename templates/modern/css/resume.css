@@ -35,10 +35,43 @@ a {
     color: #990003;
 }
 
+a[href*='https://www.tandfonline.com'] {
+
+    background: url(https://jingxlim.github.io/icons/icon_link.svg) right center no-repeat;
+    padding:0 20px 0 0; /* this create space on the right for the image to sit */
+    white-space: nowrap;
+    background-size: contain;
+}
+
 /* this before definition for pdf because biorxiv pdf should follow pdf settings */
-a[href*='www.biorxiv.org'] {
+a[href*='www.biorxiv.org'],
+a[href*='https://doi.org/10.1101'] {
 
     background: url(https://jingxlim.github.io/icons/icon_bioRxiv.svg) right center no-repeat;
+    padding:0 20px 0 0; /* this create space on the right for the image to sit */
+    white-space: nowrap;
+    background-size: contain;
+}
+
+a[href*='https://doi.org/10.25378']{
+
+    background: url(https://jingxlim.github.io/icons/icon_figshare.svg) right center no-repeat;
+    padding:0 20px 0 0; /* this create space on the right for the image to sit */
+    white-space: nowrap;
+    background-size: contain;
+}
+
+a[href*='https://www.science.org/doi/10.1126'] {
+
+    background: url(https://jingxlim.github.io/icons/icon_science-advances.jpg) right center no-repeat;
+    padding:0 20px 0 0; /* this create space on the right for the image to sit */
+    white-space: nowrap;
+    background-size: contain;
+}
+
+a[href*='http://meetings.aps.org'] {
+
+    background: url(https://jingxlim.github.io/icons/icon_aps-physics.gif) right center no-repeat;
     padding:0 20px 0 0; /* this create space on the right for the image to sit */
     white-space: nowrap;
     background-size: contain;
