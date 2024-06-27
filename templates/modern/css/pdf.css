@@ -238,9 +238,21 @@ body.pdf {
 
         li {
             display: block;
-            width: 33%;        /*list: 130%; table: 33%*/
+            width: 33.3%;        /*list: 130%; table: 33%*/
         }
 
+        li:nth-child(1) {  /* first reference */
+            width: 33.3%;
+        }        
+
+        li:nth-child(2) {  /* second reference */
+            width: 33.3%;
+        }
+
+        li:nth-child(3) {  /* third reference */
+            width: 33.3%;
+        }        
+        
         dl {
             margin: 0;
             dt {
@@ -358,15 +370,6 @@ body.pdf {
 
     }    
 
-    #coursework+table {
-        td:nth-child(1) {
-            width: 65%;
-        }
-
-        td:nth-child(2) {
-            width: 35%;
-        }        
-    }
 
     div.footer {
         display: none;          /* none: hide the footer since can't print on every page*/

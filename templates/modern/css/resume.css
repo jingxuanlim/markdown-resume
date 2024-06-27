@@ -266,14 +266,16 @@ table {
     }
 }
 
+#programs+table,
+#travel+table,
 #coursework+table {
     
     td:nth-child(1) {
-        width: 65%;
+        width: 80%;
     }
 
     td:nth-child(2) {
-        width: 35%;
+        width: 20%;
     }        
 }
 
