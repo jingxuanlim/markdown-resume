@@ -248,6 +248,9 @@ Available commands:
   templates    List available templates
   version      Show current version information
 #+END_SRC
+* Tips & Tricks
+- [[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet][Markdown Cheatsheet]]: helpful for formatting your document and finding out what formatting names markup symbols have
+- Searching for e.g. "html li tag" and visiting https://www.w3schools.com/ is generally helpful if you forget what the tags mean
 * How to use the Markdown Resume Generator
 Github: [[https://github.com/there4/markdown-resume][Markdown Resume Generator]]
 

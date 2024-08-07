@@ -85,8 +85,8 @@ class PdfCommand extends HtmlCommand
         // Process the document with wkhtmltopdf
         exec('wkhtmltopdf --enable-local-file-access -T 1.75cm -B 1.75cm --footer-right ' . escapeshellarg('[page]'). ' --footer-font-size 11 ' . $pdfSource . ' ' . $destFilename);
 
-        // Unlink the temporary file
-        unlink($pdfSource);
+        // Unlink the temporary file (unlink = delete)
+        // unlink($pdfSource);
 
         $output->writeln(
             sprintf(

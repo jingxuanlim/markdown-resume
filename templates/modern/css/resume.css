@@ -10,7 +10,7 @@
 }
 
 body {
-    font-family: 'Hoefler Text', Times New Roman, Times, serif;
+    font-family: TimesNewRomanPSMT, "Times New Roman", Times, serif; /* Hoefler Text */
     color: #444;
 }
 h1, h2, h3, h4, ul dl dt {
@@ -35,9 +35,51 @@ a {
     color: #990003;
 }
 
+a[href*='https://www.tandfonline.com'] {
+
+    background: url(https://jingxlim.github.io/icons/icon_link.svg) right center no-repeat;
+    padding:0 20px 0 0; /* this create space on the right for the image to sit */
+    white-space: nowrap;
+    background-size: contain;
+}
+
+/* this before definition for pdf because biorxiv pdf should follow pdf settings */
+a[href*='www.biorxiv.org'],
+a[href*='https://doi.org/10.1101'] {
+
+    background: url(https://jingxlim.github.io/icons/icon_bioRxiv.svg) right center no-repeat;
+    padding:0 20px 0 0; /* this create space on the right for the image to sit */
+    white-space: nowrap;
+    background-size: contain;
+}
+
+a[href*='https://doi.org/10.25378']{
+
+    background: url(https://jingxlim.github.io/icons/icon_figshare.svg) right center no-repeat;
+    padding:0 20px 0 0; /* this create space on the right for the image to sit */
+    white-space: nowrap;
+    background-size: contain;
+}
+
+a[href*='https://www.science.org/doi/10.1126'] {
+
+    background: url(https://jingxlim.github.io/icons/icon_science-advances.jpg) right center no-repeat;
+    padding:0 20px 0 0; /* this create space on the right for the image to sit */
+    white-space: nowrap;
+    background-size: contain;
+}
+
+a[href*='http://meetings.aps.org'] {
+
+    background: url(https://jingxlim.github.io/icons/icon_aps-physics.gif) right center no-repeat;
+    padding:0 20px 0 0; /* this create space on the right for the image to sit */
+    white-space: nowrap;
+    background-size: contain;
+}
+
 a[href$='.pdf'] {
 
-    background: url(icons/pdf_icon.svg) right center no-repeat;
+    background: url(https://jingxlim.github.io/icons/pdf_icon.svg) right center no-repeat;
     padding:0 25px 0 0;
     white-space: nowrap;
     background-size: contain;
@@ -312,8 +354,10 @@ div.personalstatement {
 }
 
 @media print {
+    
 	.page-break	{
         display: block;
         page-break-before: always;
-    }
+        }
+        
 }
