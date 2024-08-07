@@ -60,19 +60,20 @@
         },
         {
             "name": "indeyets/pake",
-            "version": "1.99.4",
+            "version": "1.99.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/indeyets/pake.git",
-                "reference": "324ed26475b425d42c8aeb59e98b58136207a2d7"
+                "reference": "2b6100821857639d2171ae0a3e78543ad06278e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/indeyets/pake/zipball/324ed26475b425d42c8aeb59e98b58136207a2d7",
-                "reference": "324ed26475b425d42c8aeb59e98b58136207a2d7",
+                "url": "https://api.github.com/repos/indeyets/pake/zipball/2b6100821857639d2171ae0a3e78543ad06278e5",
+                "reference": "2b6100821857639d2171ae0a3e78543ad06278e5",
                 "shasum": ""
             },
             "require": {
+                "ext-ctype": "*",
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "php": ">=5.2.1"
@@ -130,7 +131,7 @@
                 "source": "https://github.com/indeyets/pake",
                 "wiki": "https://github.com/indeyets/pake/wiki"
             },
-            "time": "2019-12-03T21:43:39+00:00"
+            "time": "2021-12-13T10:45:45+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -176,12 +177,12 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Assetic": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
+                ],
+                "psr-0": {
+                    "Assetic": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -887,12 +888,12 @@
             "version": "1.5.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
                 "reference": "6f3e42d311b882b25b4d409d23a289f4d3b803d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/6f3e42d311b882b25b4d409d23a289f4d3b803d5",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/6f3e42d311b882b25b4d409d23a289f4d3b803d5",
                 "reference": "6f3e42d311b882b25b4d409d23a289f4d3b803d5",
                 "shasum": ""
             },
@@ -959,6 +960,20 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name%5B%5D=PHP_CodeSniffer",
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer"
             },
+            "funding": [
+                {
+                    "url": "https://github.com/PHPCSStandards",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/jrfnl",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/php_codesniffer",
+                    "type": "open_collective"
+                }
+            ],
             "time": "2014-12-04T22:32:15+00:00"
         },
         {
@@ -1251,12 +1266,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Ctype\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1463,5 +1478,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }

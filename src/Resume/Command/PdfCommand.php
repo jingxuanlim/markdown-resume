@@ -57,7 +57,7 @@ class PdfCommand extends HtmlCommand
             $destFilename = $destination . DIRECTORY_SEPARATOR . $sourceName . '.pdf';
         }
         // Make sure we've got out converter available
-        exec('wkhtmltopdf -V', $results, $returnVal);
+        exec('wkhtmltopdf --enable-local-file-access -V', $results, $returnVal);
         if ($returnVal) {
             $output->writeln(
                 "\n<error>Error:</error> Unable to locate wkhtmltopdf.\n" .
@@ -83,7 +83,7 @@ class PdfCommand extends HtmlCommand
         file_put_contents($pdfSource, $rendered);
 
         // Process the document with wkhtmltopdf
-        exec('wkhtmltopdf -T 1.75cm -B 1.75cm --footer-right ' . escapeshellarg('[page]'). ' --footer-font-size 11 ' . $pdfSource . ' ' . $destFilename);
+        exec('wkhtmltopdf --enable-local-file-access -T 1.75cm -B 1.75cm --footer-right ' . escapeshellarg('[page]'). ' --footer-font-size 11 ' . $pdfSource . ' ' . $destFilename);
 
         // Unlink the temporary file
         unlink($pdfSource);

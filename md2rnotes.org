@@ -2062,3 +2062,864 @@ Done
 Exit with code 1 due to network error: ContentNotFoundError
 Wrote pdf resume to: ./work/docs/cv.pdf
 #+end_src
+
+* <2024-03-05 Tue> Installed ~markdown-resume~ on ~Pangu~
+** Installing ~markdown-resume~ on ~Pangu~
+*** Installing php
+#+begin_src
+(base) jxlim@Pangu ~ $ sudo apt-add-repository ppa:ondrej/php
+PPA publishes dbgsym, you may need to include 'main/debug' component
+Repository: 'deb https://ppa.launchpadcontent.net/ondrej/php/ubuntu/ jammy main'
+Description:
+Co-installable PHP versions: PHP 5.6, PHP 7.x, PHP 8.x and most requested extensions are included. Only Supported Versions of PHP (http://php.net/supported-versions.php) for Supported Ubuntu Releases (https://wiki.ubuntu.com/Releases) are provided. Don't ask for end-of-life PHP versions or Ubuntu release, they won't be provided.
+
+Debian oldstable and stable packages are provided as well: https://deb.sury.org/#debian-dpa
+
+You can get more information about the packages at https://deb.sury.org
+
+IMPORTANT: The <foo>-backports is now required on older Ubuntu releases.
+
+BUGS&FEATURES: This PPA now has a issue tracker:
+https://deb.sury.org/#bug-reporting
+
+CAVEATS:
+1. If you are using php-gearman, you need to add ppa:ondrej/pkg-gearman
+2. If you are using apache2, you are advised to add ppa:ondrej/apache2
+3. If you are using nginx, you are advised to add ppa:ondrej/nginx-mainline
+   or ppa:ondrej/nginx
+
+PLEASE READ: If you like my work and want to give me a little motivation, please consider donating regularly: https://donate.sury.org/
+
+WARNING: add-apt-repository is broken with non-UTF-8 locales, see
+https://github.com/oerdnj/deb.sury.org/issues/56 for workaround:
+
+# LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
+More info: https://launchpad.net/~ondrej/+archive/ubuntu/php
+Adding repository.
+Press [ENTER] to continue or Ctrl-c to cancel.
+Adding deb entry to /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list
+Adding disabled deb-src entry to /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list
+Adding key to /etc/apt/trusted.gpg.d/ondrej-ubuntu-php.gpg with fingerprint 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+Get:1 file:/var/cuda-repo-wsl-ubuntu-12-3-local  InRelease [1572 B]
+Get:1 file:/var/cuda-repo-wsl-ubuntu-12-3-local  InRelease [1572 B]
+Hit:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Hit:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Get:6 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1424 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [279 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [1508 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [249 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1052 kB]
+Get:11 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease [23.9 kB]
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1208 kB]
+Get:13 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 Packages [122 kB]
+Get:14 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main Translation-en [37.5 kB]
+Get:15 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [219 kB]
+Get:16 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [1480 kB]
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [245 kB]
+Get:18 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [846 kB]
+Fetched 8923 kB in 1s (6723 kB/s)
+Reading package lists... Done
+(base) jxlim@Pangu ~ $ sudo apt-get update
+Get:1 file:/var/cuda-repo-wsl-ubuntu-12-3-local  InRelease [1572 B]
+Get:1 file:/var/cuda-repo-wsl-ubuntu-12-3-local  InRelease [1572 B]
+Hit:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Hit:6 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Reading package lists... Done
+(base) jxlim@Pangu ~ $ sudo apt-get install -y git php7.0 php7.0-curl php7.0-xml php7.0-mbstring php7.0-gd php7.0-sqlite3 php7.0-mysql
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+git is already the newest version (1:2.34.1-1ubuntu1.10).
+The following additional packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils libapache2-mod-php7.0 libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.3-0 libpcre16-3 libpcre3 libpcre3-dev libpcre32-3
+  libpcrecpp0v5 libxslt1.1 mailcap mime-support php-common php7.0-cli php7.0-common php7.0-json php7.0-opcache
+  php7.0-readline ssl-cert
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser php-pear
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils libapache2-mod-php7.0 libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.3-0 libxslt1.1 mailcap mime-support php-common php7.0
+  php7.0-cli php7.0-common php7.0-curl php7.0-gd php7.0-json php7.0-mbstring php7.0-mysql php7.0-opcache
+  php7.0-readline php7.0-sqlite3 php7.0-xml ssl-cert
+The following packages will be upgraded:
+  libpcre16-3 libpcre3 libpcre3-dev libpcre32-3 libpcrecpp0v5
+5 upgraded, 27 newly installed, 0 to remove and 45 not upgraded.
+Need to get 8087 kB of archives.
+After this operation, 25.5 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libapr1 amd64 1.7.0-8ubuntu0.22.04.1 [108 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1 amd64 1.6.1-5ubuntu4.22.04.2 [92.8 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-5ubuntu4.22.04.2 [11.3 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-ldap amd64 1.6.1-5ubuntu4.22.04.2 [9170 B]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 liblua5.3-0 amd64 5.3.6-1build1 [140 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-bin amd64 2.4.52-1ubuntu4.7 [1346 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-data all 2.4.52-1ubuntu4.7 [165 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-utils amd64 2.4.52-1ubuntu4.7 [88.8 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 mailcap all 3.70+nmu1ubuntu1 [23.8 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy/main amd64 mime-support all 3.66 [3696 B]
+Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2 amd64 2.4.52-1ubuntu4.7 [97.8 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libxslt1.1 amd64 1.1.34-4ubuntu0.22.04.1 [164 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy/main amd64 ssl-cert all 1.1.2 [17.4 kB]
+Get:14 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 libpcre3-dev amd64 2:8.45-1+ubuntu22.04.1+deb.sury.org+1 [596 kB]
+Get:15 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 libpcre16-3 amd64 2:8.45-1+ubuntu22.04.1+deb.sury.org+1 [176 kB]
+Get:16 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 libpcre32-3 amd64 2:8.45-1+ubuntu22.04.1+deb.sury.org+1 [167 kB]
+Get:17 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 libpcrecpp0v5 amd64 2:8.45-1+ubuntu22.04.1+deb.sury.org+1 [52.0 kB]
+Get:18 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 libpcre3 amd64 2:8.45-1+ubuntu22.04.1+deb.sury.org+1 [257 kB]
+Get:19 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php-common all 2:94+ubuntu22.04.1+deb.sury.org+2 [16.7 kB]
+Get:20 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-common amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [587 kB]
+Get:21 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-json amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [18.6 kB]
+Get:22 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-opcache amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [86.1 kB]
+Get:23 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-readline amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [13.5 kB]
+Get:24 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-cli amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [1464 kB]
+Get:25 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 libapache2-mod-php7.0 amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [1394 kB]
+Get:26 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0 all 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [62.2 kB]
+Get:27 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-curl amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [31.2 kB]
+Get:28 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-gd amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [31.9 kB]
+Get:29 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-mbstring amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [562 kB]
+Get:30 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-mysql amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [142 kB]
+Get:31 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-sqlite3 amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [29.2 kB]
+Get:32 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 php7.0-xml amd64 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 [132 kB]
+Fetched 8087 kB in 8s (990 kB/s)
+Extracting templates from packages: 100%
+Preconfiguring packages ...
+Selecting previously unselected package libapr1:amd64.
+(Reading database ... 41593 files and directories currently installed.)
+Preparing to unpack .../0-libapr1_1.7.0-8ubuntu0.22.04.1_amd64.deb ...
+Unpacking libapr1:amd64 (1.7.0-8ubuntu0.22.04.1) ...
+Selecting previously unselected package libaprutil1:amd64.
+Preparing to unpack .../1-libaprutil1_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+Unpacking libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../2-libaprutil1-dbd-sqlite3_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../3-libaprutil1-ldap_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+Unpacking libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Selecting previously unselected package liblua5.3-0:amd64.
+Preparing to unpack .../4-liblua5.3-0_5.3.6-1build1_amd64.deb ...
+Unpacking liblua5.3-0:amd64 (5.3.6-1build1) ...
+Preparing to unpack .../5-libpcre3-dev_2%3a8.45-1+ubuntu22.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libpcre3-dev:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) over (2:8.39-13ubuntu0.22.04.1) ...
+Preparing to unpack .../6-libpcre16-3_2%3a8.45-1+ubuntu22.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libpcre16-3:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) over (2:8.39-13ubuntu0.22.04.1) ...
+Preparing to unpack .../7-libpcre32-3_2%3a8.45-1+ubuntu22.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libpcre32-3:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) over (2:8.39-13ubuntu0.22.04.1) ...
+Preparing to unpack .../8-libpcrecpp0v5_2%3a8.45-1+ubuntu22.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libpcrecpp0v5:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) over (2:8.39-13ubuntu0.22.04.1) ...
+Preparing to unpack .../9-libpcre3_2%3a8.45-1+ubuntu22.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libpcre3:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) over (2:8.39-13ubuntu0.22.04.1) ...
+Setting up libpcre3:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) ...
+Selecting previously unselected package apache2-bin.
+(Reading database ... 41633 files and directories currently installed.)
+Preparing to unpack .../00-apache2-bin_2.4.52-1ubuntu4.7_amd64.deb ...
+Unpacking apache2-bin (2.4.52-1ubuntu4.7) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../01-apache2-data_2.4.52-1ubuntu4.7_all.deb ...
+Unpacking apache2-data (2.4.52-1ubuntu4.7) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../02-apache2-utils_2.4.52-1ubuntu4.7_amd64.deb ...
+Unpacking apache2-utils (2.4.52-1ubuntu4.7) ...
+Selecting previously unselected package mailcap.
+Preparing to unpack .../03-mailcap_3.70+nmu1ubuntu1_all.deb ...
+Unpacking mailcap (3.70+nmu1ubuntu1) ...
+Selecting previously unselected package mime-support.
+Preparing to unpack .../04-mime-support_3.66_all.deb ...
+Unpacking mime-support (3.66) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../05-apache2_2.4.52-1ubuntu4.7_amd64.deb ...
+Unpacking apache2 (2.4.52-1ubuntu4.7) ...
+Selecting previously unselected package php-common.
+Preparing to unpack .../06-php-common_2%3a94+ubuntu22.04.1+deb.sury.org+2_all.deb ...
+Unpacking php-common (2:94+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-common.
+Preparing to unpack .../07-php7.0-common_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-common (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-json.
+Preparing to unpack .../08-php7.0-json_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-json (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-opcache.
+Preparing to unpack .../09-php7.0-opcache_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-opcache (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-readline.
+Preparing to unpack .../10-php7.0-readline_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-readline (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-cli.
+Preparing to unpack .../11-php7.0-cli_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-cli (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package libapache2-mod-php7.0.
+Preparing to unpack .../12-libapache2-mod-php7.0_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking libapache2-mod-php7.0 (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package libxslt1.1:amd64.
+Preparing to unpack .../13-libxslt1.1_1.1.34-4ubuntu0.22.04.1_amd64.deb ...
+Unpacking libxslt1.1:amd64 (1.1.34-4ubuntu0.22.04.1) ...
+Selecting previously unselected package php7.0.
+Preparing to unpack .../14-php7.0_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_all.deb ...
+Unpacking php7.0 (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-curl.
+Preparing to unpack .../15-php7.0-curl_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-curl (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-gd.
+Preparing to unpack .../16-php7.0-gd_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-gd (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-mbstring.
+Preparing to unpack .../17-php7.0-mbstring_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-mbstring (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-mysql.
+Preparing to unpack .../18-php7.0-mysql_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-mysql (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-sqlite3.
+Preparing to unpack .../19-php7.0-sqlite3_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-sqlite3 (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package php7.0-xml.
+Preparing to unpack .../20-php7.0-xml_7.0.33-68+ubuntu22.04.1+deb.sury.org+2_amd64.deb ...
+Unpacking php7.0-xml (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../21-ssl-cert_1.1.2_all.deb ...
+Unpacking ssl-cert (1.1.2) ...
+Setting up libpcrecpp0v5:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) ...
+Setting up php-common (2:94+ubuntu22.04.1+deb.sury.org+2) ...
+Created symlink /etc/systemd/system/timers.target.wants/phpsessionclean.timer → /lib/systemd/system/phpsessionclean.timer.
+Setting up php7.0-common (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/calendar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ctype.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/exif.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/fileinfo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ftp.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/gettext.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/iconv.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/phar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/posix.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/shmop.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sockets.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvmsg.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvsem.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvshm.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/tokenizer.ini with new version
+Setting up php7.0-mbstring (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/mbstring.ini with new version
+Setting up libpcre16-3:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) ...
+Setting up php7.0-gd (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/gd.ini with new version
+Setting up libapr1:amd64 (1.7.0-8ubuntu0.22.04.1) ...
+Setting up php7.0-readline (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/readline.ini with new version
+Setting up php7.0-sqlite3 (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/sqlite3.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo_sqlite.ini with new version
+Setting up php7.0-curl (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/curl.ini with new version
+Setting up php7.0-json (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/json.ini with new version
+Setting up ssl-cert (1.1.2) ...
+Setting up libpcre32-3:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) ...
+Setting up php7.0-mysql (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/mysqlnd.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/mysqli.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo_mysql.ini with new version
+Setting up liblua5.3-0:amd64 (5.3.6-1build1) ...
+Setting up libxslt1.1:amd64 (1.1.34-4ubuntu0.22.04.1) ...
+Setting up apache2-data (2.4.52-1ubuntu4.7) ...
+Setting up mailcap (3.70+nmu1ubuntu1) ...
+Setting up libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Setting up php7.0-opcache (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/opcache.ini with new version
+Setting up mime-support (3.66) ...
+Setting up php7.0-cli (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+update-alternatives: using /usr/bin/php7.0 to provide /usr/bin/php (php) in auto mode
+update-alternatives: using /usr/bin/phar7.0 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: using /usr/bin/phar.phar7.0 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+
+Creating config file /etc/php/7.0/cli/php.ini with new version
+Setting up libpcre3-dev:amd64 (2:8.45-1+ubuntu22.04.1+deb.sury.org+1) ...
+Setting up libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Setting up php7.0-xml (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/mods-available/dom.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/simplexml.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/wddx.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/xml.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/xmlreader.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/xmlwriter.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/xsl.ini with new version
+Setting up apache2-utils (2.4.52-1ubuntu4.7) ...
+Setting up apache2-bin (2.4.52-1ubuntu4.7) ...
+Setting up apache2 (2.4.52-1ubuntu4.7) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+Setting up libapache2-mod-php7.0 (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+
+Creating config file /etc/php/7.0/apache2/php.ini with new version
+Module mpm_event disabled.
+Enabling module mpm_prefork.
+apache2_switch_mpm Switch to prefork
+apache2_invoke: Enable module php7.0
+Setting up php7.0 (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.6) ...
+/sbin/ldconfig.real: /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link
+
+Processing triggers for ufw (0.36.1-4ubuntu0.1) ...
+Processing triggers for php7.0-cli (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+Processing triggers for libapache2-mod-php7.0 (7.0.33-68+ubuntu22.04.1+deb.sury.org+2) ...
+(base) jxlim@Pangu ~ $ php -v
+PHP 7.0.33-68+ubuntu22.04.1+deb.sury.org+2 (cli) (built: Sep  2 2023 08:12:36) ( NTS )
+Copyright (c) 1997-2017 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
+    with Zend OPcache v7.0.33-68+ubuntu22.04.1+deb.sury.org+2, Copyright (c) 1999-2017, by Zend Technologies
+#+end_src
+*** Installing wkhtmltox
+#+begin_src
+(base) jxlim@Pangu ~ $ cd downloads/
+(base) jxlim@Pangu downloads $ wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+--2024-03-05 00:34:20--  https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+Resolving github.com (github.com)... 140.82.114.3
+Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/131323182/900fb146-6cd3-472f-8e44-20abd005d992?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240305%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240305T053419Z&X-Amz-Expires=300&X-Amz-Signature=05b4617cea843266f52d059ed567bd6596517e8a2364e6759b33352b2149f8ce&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=131323182&response-content-disposition=attachment%3B%20filename%3Dwkhtmltox_0.12.6.1-2.jammy_amd64.deb&response-content-type=application%2Foctet-stream [following]
+--2024-03-05 00:34:20--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/131323182/900fb146-6cd3-472f-8e44-20abd005d992?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240305%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240305T053419Z&X-Amz-Expires=300&X-Amz-Signature=05b4617cea843266f52d059ed567bd6596517e8a2364e6759b33352b2149f8ce&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=131323182&response-content-disposition=attachment%3B%20filename%3Dwkhtmltox_0.12.6.1-2.jammy_amd64.deb&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.109.133, 185.199.108.133, 185.199.111.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 17352866 (17M) [application/octet-stream]
+Saving to: ‘wkhtmltox_0.12.6.1-2.jammy_amd64.deb’
+
+wkhtmltox_0.12.6.1-2.jammy_ 100%[===========================================>]  16.55M  92.0MB/s    in 0.2s
+
+2024-03-05 00:34:20 (92.0 MB/s) - ‘wkhtmltox_0.12.6.1-2.jammy_amd64.deb’ saved [17352866/17352866]
+
+(base) jxlim@Pangu downloads $ sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+Selecting previously unselected package wkhtmltox.
+(Reading database ... 42560 files and directories currently installed.)
+Preparing to unpack wkhtmltox_0.12.6.1-2.jammy_amd64.deb ...
+Unpacking wkhtmltox (1:0.12.6.1-2.jammy) ...
+dpkg: dependency problems prevent configuration of wkhtmltox:
+ wkhtmltox depends on xfonts-75dpi; however:
+  Package xfonts-75dpi is not installed.
+ wkhtmltox depends on xfonts-base; however:
+  Package xfonts-base is not installed.
+
+dpkg: error processing package wkhtmltox (--install):
+ dependency problems - leaving unconfigured
+Processing triggers for man-db (2.10.2-1) ...
+Errors were encountered while processing:
+ wkhtmltox
+(base) jxlim@Pangu downloads $ sudo apt install -f
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Correcting dependencies... Done
+The following additional packages will be installed:
+  xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils
+Suggested packages:
+  xfs | xserver
+The following NEW packages will be installed:
+  xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils
+0 upgraded, 4 newly installed, 0 to remove and 45 not upgraded.
+1 not fully installed or removed.
+Need to get 9934 kB of archives.
+After this operation, 12.2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 xfonts-utils amd64 1:7.7+6build2 [94.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/universe amd64 xfonts-75dpi all 1:1.0.4+nmu1.1 [3365 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 xfonts-base all 1:1.0.5 [5896 kB]
+Fetched 9934 kB in 0s (24.6 MB/s)
+Selecting previously unselected package xfonts-encodings.
+(Reading database ... 42579 files and directories currently installed.)
+Preparing to unpack .../xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+Selecting previously unselected package xfonts-utils.
+Preparing to unpack .../xfonts-utils_1%3a7.7+6build2_amd64.deb ...
+Unpacking xfonts-utils (1:7.7+6build2) ...
+Selecting previously unselected package xfonts-75dpi.
+Preparing to unpack .../xfonts-75dpi_1%3a1.0.4+nmu1.1_all.deb ...
+Unpacking xfonts-75dpi (1:1.0.4+nmu1.1) ...
+Selecting previously unselected package xfonts-base.
+Preparing to unpack .../xfonts-base_1%3a1.0.5_all.deb ...
+Unpacking xfonts-base (1:1.0.5) ...
+Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+Setting up xfonts-utils (1:7.7+6build2) ...
+Setting up xfonts-base (1:1.0.5) ...
+Setting up xfonts-75dpi (1:1.0.4+nmu1.1) ...
+Setting up wkhtmltox (1:0.12.6.1-2.jammy) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for fontconfig (2.13.1-4.2ubuntu5) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.6) ...
+/sbin/ldconfig.real: /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link
+#+end_src
+*** Installing fonts
+#+begin_src
+(base) jxlim@Pangu downloads $ sudo apt-get install -y openssl build-essential libssl-dev libxrender-dev git-core libx11-dev libxext-dev libfontconfig1-dev libfreetype6-dev fontconfig
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Note, selecting 'git' instead of 'git-core'
+build-essential is already the newest version (12.9ubuntu3).
+build-essential set to manually installed.
+fontconfig is already the newest version (2.13.1-4.2ubuntu5).
+libfontconfig1-dev is already the newest version (2.13.1-4.2ubuntu5).
+libfontconfig1-dev set to manually installed.
+libxext-dev is already the newest version (2:1.3.4-1build1).
+libxext-dev set to manually installed.
+libxrender-dev is already the newest version (1:0.9.10-1build4).
+libxrender-dev set to manually installed.
+git is already the newest version (1:2.34.1-1ubuntu1.10).
+libfreetype6-dev is already the newest version (2.11.1+dfsg-1ubuntu0.2).
+libfreetype6-dev set to manually installed.
+libx11-dev is already the newest version (2:1.7.5-1ubuntu0.3).
+libx11-dev set to manually installed.
+openssl is already the newest version (3.0.2-0ubuntu1.15).
+openssl set to manually installed.
+Suggested packages:
+  libssl-doc
+The following NEW packages will be installed:
+  libssl-dev
+0 upgraded, 1 newly installed, 0 to remove and 45 not upgraded.
+Need to get 2376 kB of archives.
+After this operation, 12.4 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libssl-dev amd64 3.0.2-0ubuntu1.15 [2376 kB]
+Fetched 2376 kB in 0s (12.2 MB/s)
+Selecting previously unselected package libssl-dev:amd64.
+(Reading database ... 43465 files and directories currently installed.)
+Preparing to unpack .../libssl-dev_3.0.2-0ubuntu1.15_amd64.deb ...
+Unpacking libssl-dev:amd64 (3.0.2-0ubuntu1.15) ...
+Setting up libssl-dev:amd64 (3.0.2-0ubuntu1.15) ...
+(base) jxlim@Pangu downloads $ sudo apt install ttf-mscorefonts-installer
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  cabextract fonts-liberation libmspack0 python3-chardet python3-debconf python3-debian update-notifier-common
+  zstd
+The following NEW packages will be installed:
+  cabextract fonts-liberation libmspack0 python3-chardet python3-debconf python3-debian
+  ttf-mscorefonts-installer update-notifier-common zstd
+0 upgraded, 9 newly installed, 0 to remove and 45 not upgraded.
+Need to get 1906 kB of archives.
+After this operation, 7292 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 libmspack0 amd64 0.10.1-2build2 [39.6 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/universe amd64 cabextract amd64 1.9-3 [23.4 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-chardet all 4.0.0-1 [98.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 zstd amd64 1.4.8+dfsg-3build1 [603 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-debian all 0.1.43ubuntu1.1 [107 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-debconf all 1.5.79ubuntu1 [3914 B]
+Get:7 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 update-notifier-common all 3.192.54.6 [185 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 ttf-mscorefonts-installer all 3.8ubuntu2 [24.9 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-liberation all 1:1.07.4-11 [822 kB]
+Fetched 1906 kB in 0s (6034 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libmspack0:amd64.
+(Reading database ... 43613 files and directories currently installed.)
+Preparing to unpack .../0-libmspack0_0.10.1-2build2_amd64.deb ...
+Unpacking libmspack0:amd64 (0.10.1-2build2) ...
+Selecting previously unselected package cabextract.
+Preparing to unpack .../1-cabextract_1.9-3_amd64.deb ...
+Unpacking cabextract (1.9-3) ...
+Selecting previously unselected package python3-chardet.
+Preparing to unpack .../2-python3-chardet_4.0.0-1_all.deb ...
+Unpacking python3-chardet (4.0.0-1) ...
+Selecting previously unselected package zstd.
+Preparing to unpack .../3-zstd_1.4.8+dfsg-3build1_amd64.deb ...
+Unpacking zstd (1.4.8+dfsg-3build1) ...
+Selecting previously unselected package python3-debian.
+Preparing to unpack .../4-python3-debian_0.1.43ubuntu1.1_all.deb ...
+Unpacking python3-debian (0.1.43ubuntu1.1) ...
+Selecting previously unselected package python3-debconf.
+Preparing to unpack .../5-python3-debconf_1.5.79ubuntu1_all.deb ...
+Unpacking python3-debconf (1.5.79ubuntu1) ...
+Selecting previously unselected package update-notifier-common.
+Preparing to unpack .../6-update-notifier-common_3.192.54.6_all.deb ...
+Unpacking update-notifier-common (3.192.54.6) ...
+Selecting previously unselected package ttf-mscorefonts-installer.
+Preparing to unpack .../7-ttf-mscorefonts-installer_3.8ubuntu2_all.deb ...
+Unpacking ttf-mscorefonts-installer (3.8ubuntu2) ...
+Selecting previously unselected package fonts-liberation.
+Preparing to unpack .../8-fonts-liberation_1%3a1.07.4-11_all.deb ...
+Unpacking fonts-liberation (1:1.07.4-11) ...
+Setting up python3-debconf (1.5.79ubuntu1) ...
+Setting up libmspack0:amd64 (0.10.1-2build2) ...
+Setting up python3-chardet (4.0.0-1) ...
+Setting up fonts-liberation (1:1.07.4-11) ...
+Setting up zstd (1.4.8+dfsg-3build1) ...
+Setting up cabextract (1.9-3) ...
+Setting up python3-debian (0.1.43ubuntu1.1) ...
+Setting up update-notifier-common (3.192.54.6) ...
+ttf-mscorefonts-installer: processing...
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/andale32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/andale32.exe [198 kB]
+Fetched 198 kB in 1s (251 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/arial32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/arial32.exe [554 kB]
+Fetched 554 kB in 1s (1091 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/arialb32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/arialb32.exe [168 kB]
+Fetched 168 kB in 1s (257 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/comic32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/comic32.exe [246 kB]
+Fetched 246 kB in 0s (532 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/courie32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/courie32.exe [646 kB]
+Fetched 646 kB in 1s (830 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/georgi32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/georgi32.exe [392 kB]
+Fetched 392 kB in 1s (484 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/impact32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/impact32.exe [173 kB]
+Fetched 173 kB in 1s (245 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/times32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/times32.exe [662 kB]
+Fetched 662 kB in 0s (1452 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/trebuc32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/trebuc32.exe [357 kB]
+Fetched 357 kB in 1s (493 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/verdan32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/verdan32.exe [352 kB]
+Fetched 352 kB in 1s (531 kB/s)
+ttf-mscorefonts-installer: downloading http://downloads.sourceforge.net/corefonts/webdin32.exe
+Get:1 http://downloads.sourceforge.net/corefonts/webdin32.exe [185 kB]
+Fetched 185 kB in 0s (504 kB/s)
+
+These fonts were provided by Microsoft "in the interest of cross-
+platform compatibility".  This is no longer the case, but they are
+still available from third parties.
+
+You are free to download these fonts and use them for your own use,
+but you may not redistribute them in modified form, including changes
+to the file name or packaging format.
+
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/andale32.exe
+  extracting fontinst.inf
+  extracting andale.inf
+  extracting fontinst.exe
+  extracting AndaleMo.TTF
+  extracting ADVPACK.DLL
+  extracting W95INF32.DLL
+  extracting W95INF16.DLL
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/arial32.exe
+  extracting FONTINST.EXE
+  extracting fontinst.inf
+  extracting Ariali.TTF
+  extracting Arialbd.TTF
+  extracting Arialbi.TTF
+  extracting Arial.TTF
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/arialb32.exe
+  extracting fontinst.exe
+  extracting fontinst.inf
+  extracting AriBlk.TTF
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/comic32.exe
+  extracting fontinst.inf
+  extracting Comicbd.TTF
+  extracting Comic.TTF
+  extracting fontinst.exe
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/courie32.exe
+  extracting cour.ttf
+  extracting courbd.ttf
+  extracting courbi.ttf
+  extracting fontinst.inf
+  extracting couri.ttf
+  extracting fontinst.exe
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/georgi32.exe
+  extracting fontinst.inf
+  extracting Georgiaz.TTF
+  extracting Georgiab.TTF
+  extracting Georgiai.TTF
+  extracting Georgia.TTF
+  extracting fontinst.exe
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/impact32.exe
+  extracting fontinst.exe
+  extracting Impact.TTF
+  extracting fontinst.inf
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/times32.exe
+  extracting fontinst.inf
+  extracting Times.TTF
+  extracting Timesbd.TTF
+  extracting Timesbi.TTF
+  extracting Timesi.TTF
+  extracting FONTINST.EXE
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/trebuc32.exe
+  extracting FONTINST.EXE
+  extracting trebuc.ttf
+  extracting Trebucbd.ttf
+  extracting trebucbi.ttf
+  extracting trebucit.ttf
+  extracting fontinst.inf
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/verdan32.exe
+  extracting fontinst.exe
+  extracting fontinst.inf
+  extracting Verdanab.TTF
+  extracting Verdanai.TTF
+  extracting Verdanaz.TTF
+  extracting Verdana.TTF
+
+All done, no errors.
+Extracting cabinet: /var/lib/update-notifier/package-data-downloads/partial/webdin32.exe
+  extracting fontinst.exe
+  extracting Webdings.TTF
+  extracting fontinst.inf
+  extracting Licen.TXT
+
+All done, no errors.
+All fonts downloaded and installed.
+Created symlink /etc/systemd/system/timers.target.wants/update-notifier-download.timer → /lib/systemd/system/update-notifier-download.timer.
+Created symlink /etc/systemd/system/timers.target.wants/update-notifier-motd.timer → /lib/systemd/system/update-notifier-motd.timer.
+update-notifier-download.service is a disabled or a static unit, not starting it.
+update-notifier-motd.service is a disabled or a static unit, not starting it.
+Setting up ttf-mscorefonts-installer (3.8ubuntu2) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.6) ...
+/sbin/ldconfig.real: /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link
+
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for fontconfig (2.13.1-4.2ubuntu5) ...
+(base) jxlim@Pangu downloads $ sudo fc-cache -f -v
+/usr/share/fonts: caching, new cache contents: 0 fonts, 4 dirs
+/usr/share/fonts/X11: caching, new cache contents: 0 fonts, 4 dirs
+/usr/share/fonts/X11/75dpi: caching, new cache contents: 358 fonts, 0 dirs
+/usr/share/fonts/X11/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/X11/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/X11/misc: caching, new cache contents: 89 fonts, 0 dirs
+/usr/share/fonts/X11/util: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cMap: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap: caching, new cache contents: 0 fonts, 5 dirs
+/usr/share/fonts/cmap/adobe-cns1: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap/adobe-gb1: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap/adobe-japan1: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap/adobe-japan2: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap/adobe-korea1: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/truetype: caching, new cache contents: 0 fonts, 4 dirs
+/usr/share/fonts/truetype/dejavu: caching, new cache contents: 22 fonts, 0 dirs
+/usr/share/fonts/truetype/liberation: caching, new cache contents: 16 fonts, 0 dirs
+/usr/share/fonts/truetype/msttcorefonts: caching, new cache contents: 60 fonts, 0 dirs
+/usr/share/fonts/truetype/ubuntu: caching, new cache contents: 14 fonts, 0 dirs
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 0 dirs
+/root/.local/share/fonts: skipping, no such directory
+/root/.fonts: skipping, no such directory
+/usr/share/fonts/X11: skipping, looped directory detected
+/usr/share/fonts/cMap: skipping, looped directory detected
+/usr/share/fonts/cmap: skipping, looped directory detected
+/usr/share/fonts/truetype: skipping, looped directory detected
+/usr/share/fonts/X11/75dpi: skipping, looped directory detected
+/usr/share/fonts/X11/encodings: skipping, looped directory detected
+/usr/share/fonts/X11/misc: skipping, looped directory detected
+/usr/share/fonts/X11/util: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-cns1: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-gb1: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-japan1: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-japan2: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-korea1: skipping, looped directory detected
+/usr/share/fonts/truetype/dejavu: skipping, looped directory detected
+/usr/share/fonts/truetype/liberation: skipping, looped directory detected
+/usr/share/fonts/truetype/msttcorefonts: skipping, looped directory detected
+/usr/share/fonts/truetype/ubuntu: skipping, looped directory detected
+/usr/share/fonts/X11/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: cleaning cache directory
+/root/.cache/fontconfig: not cleaning non-existent cache directory
+/root/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+#+end_src
+
+*** Installing composer
+**** First attempt using the old instructions
+#+begin_src
+(base) jxlim@Pangu (master *) markdown-resume $ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+(base) jxlim@Pangu (master *) markdown-resume $ php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+Installer corrupt
+(base) jxlim@Pangu (master *) markdown-resume $ php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+PHP Warning:  hash_file(composer-setup.php): failed to open stream: No such file or directory in Command line code on line 1
+Installer corruptPHP Warning:  unlink(composer-setup.php): No such file or directory in Command line code on line 1
+#+end_src
+**** Second attempt with the updated instructions
+#+begin_src
+(base) jxlim@Pangu (master *) markdown-resume $ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+(base) jxlim@Pangu (master *) markdown-resume $ php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+Installer verified
+(base) jxlim@Pangu (master *) markdown-resume $ php composer-setup.php
+All settings correct for using Composer
+Downloading...
+
+Composer (version 2.2.23) successfully installed to: /home/jxlim/proj/markdown-resume/composer.phar
+Use it: php composer.phar
+
+(base) jxlim@Pangu (master *) markdown-resume $ php -r "unlink('composer-setup.php');"
+(base) jxlim@Pangu (master *) markdown-resume $ php composer.phar install
+Installing dependencies from lock file (including require-dev)
+Verifying lock file contents can be installed on current platform.
+Package operations: 25 installs, 0 updates, 0 removals
+  - Downloading symfony/finder (2.8.x-dev 1444eac)
+  - Downloading symfony/polyfill-ctype (v1.19.0)
+  - Downloading symfony/filesystem (2.8.x-dev 7ae4687)
+  - Downloading symfony/console (v2.3.4)
+  - Downloading sebastian/diff (1.1.0)
+  - Downloading friendsofphp/php-cs-fixer (v0.4.0)
+  - Downloading indeyets/pake (1.99.4)
+  - Downloading symfony/process (2.8.x-dev c3591a0)
+  - Downloading kriswallsmith/assetic (v1.1.2)
+  - Downloading leafo/lessphp (v0.4.0)
+  - Downloading michelf/php-markdown (1.4.0)
+  - Downloading michelf/php-smartypants (1.6.0-beta1)
+  - Downloading mustache/mustache (v2.5.1)
+  - Downloading phpunit/php-token-stream (1.2.2)
+  - Downloading symfony/yaml (v2.3.4)
+  - Downloading phpunit/php-text-template (1.2.1)
+  - Downloading phpunit/phpunit-mock-objects (1.2.x-dev c39c451)
+  - Downloading phpunit/php-timer (1.0.x-dev 9513098)
+  - Downloading phpunit/php-file-iterator (1.4.x-dev 730b01b)
+  - Downloading phpunit/php-code-coverage (1.2.18)
+  - Downloading phpunit/phpunit (3.7.38)
+  - Downloading squizlabs/php_codesniffer (1.5.x-dev 6f3e42d)
+  - Downloading sunra/php-simple-html-dom-parser (v1.5.0)
+  - Downloading symfony/config (v2.3.4)
+  - Downloading twig/twig (v1.13.2)
+  - Installing symfony/finder (2.8.x-dev 1444eac): Extracting archive
+  - Installing symfony/polyfill-ctype (v1.19.0): Extracting archive
+  - Installing symfony/filesystem (2.8.x-dev 7ae4687): Extracting archive
+  - Installing symfony/console (v2.3.4): Extracting archive
+  - Installing sebastian/diff (1.1.0): Extracting archive
+  - Installing friendsofphp/php-cs-fixer (v0.4.0): Extracting archive
+  - Installing indeyets/pake (1.99.4): Extracting archive
+  - Installing symfony/process (2.8.x-dev c3591a0): Extracting archive
+  - Installing kriswallsmith/assetic (v1.1.2): Extracting archive
+  - Installing leafo/lessphp (v0.4.0): Extracting archive
+  - Installing michelf/php-markdown (1.4.0): Extracting archive
+  - Installing michelf/php-smartypants (1.6.0-beta1): Extracting archive
+  - Installing mustache/mustache (v2.5.1): Extracting archive
+  - Installing phpunit/php-token-stream (1.2.2): Extracting archive
+  - Installing symfony/yaml (v2.3.4): Extracting archive
+  - Installing phpunit/php-text-template (1.2.1): Extracting archive
+  - Installing phpunit/phpunit-mock-objects (1.2.x-dev c39c451): Extracting archive
+  - Installing phpunit/php-timer (1.0.x-dev 9513098): Extracting archive
+  - Installing phpunit/php-file-iterator (1.4.x-dev 730b01b): Extracting archive
+  - Installing phpunit/php-code-coverage (1.2.18): Extracting archive
+  - Installing phpunit/phpunit (3.7.38): Extracting archive
+  - Installing squizlabs/php_codesniffer (1.5.x-dev 6f3e42d): Extracting archive
+  - Installing sunra/php-simple-html-dom-parser (v1.5.0): Extracting archive
+  - Installing symfony/config (v2.3.4): Extracting archive
+  - Installing twig/twig (v1.13.2): Extracting archive
+Package phpunit/php-token-stream is abandoned, you should avoid using it. No replacement was suggested.
+Package phpunit/phpunit-mock-objects is abandoned, you should avoid using it. No replacement was suggested.
+Generating autoload files
+1 package you are using is looking for funding.
+Use the `composer fund` command to find out more!
+(base) jxlim@Pangu (master *) markdown-resume $ php composer.phar update
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 0 installs, 1 update, 0 removals
+  - Upgrading indeyets/pake (1.99.4 => 1.99.5)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 0 installs, 1 update, 0 removals
+  - Downloading indeyets/pake (1.99.5)
+  - Upgrading indeyets/pake (1.99.4 => 1.99.5): Extracting archive
+Package phpunit/php-token-stream is abandoned, you should avoid using it. No replacement was suggested.
+Package phpunit/phpunit-mock-objects is abandoned, you should avoid using it. No replacement was suggested.
+Generating autoload files
+1 package you are using is looking for funding.
+Use the `composer fund` command to find out more!
+(base) jxlim@Pangu (master *) markdown-resume $ php md2resume_dev.php
+Markdown Resume Generator version 2.0.10 by Craig Davis
+
+Usage:
+  [options] command [arguments]
+
+Options:
+  --help           -h Display this help message.
+  --quiet          -q Do not output any message.
+  --verbose        -v|vv|vvv Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+  --version        -V Display this application version.
+  --ansi              Force ANSI output.
+  --no-ansi           Disable ANSI output.
+  --no-interaction -n Do not ask any interactive question.
+
+Available commands:
+  help         Displays help for a command
+  html         Generate an HTML resume from a markdown file
+  list         Lists commands
+  pdf          Generate a PDF from a markdown file
+  selfupdate   Updates md2resume.phar to the latest version.
+  stats        Generate a word frequency analysis of your resume
+  templates    List available templates
+  version      Show current version information
+#+end_src

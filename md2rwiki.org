@@ -40,7 +40,7 @@ sudo apt-get install wkhtmltopdf
 Guide: https://gist.github.com/faniska/37f896d5e9de5fee925925d7caf3cb9e
 
 #+begin_src 
-wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
+wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb  ## check website for latest version
 sudo dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
 ## Ran into errors with dependencies here
 sudo apt install -f  ## fixed dependency issues
@@ -52,22 +52,23 @@ sudo fc-cache -f -v
 
 Guide: https://getcomposer.org/download/
 
-Seems like instructions change. Check website above for updated instructions and hash etc...
+NOTE: Seems like instructions change. Check website above for updated instructions and hash etc...
 
 *** 1) Download the installer
 
 #+BEGIN_SRC 
-$ cd ~/markdown-resume
-$ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+cd ~/markdown-resume
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 #+END_SRC
 
 *** 2) Verify the installer SHA-384
 
 #+BEGIN_SRC 
-$ php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-
-Installer verified
+php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 #+END_SRC
+
+#+RESULTS:
+Installer verified
 
 *** 3) Run the installer
 #+BEGIN_SRC 
